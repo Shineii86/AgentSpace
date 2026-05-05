@@ -9,7 +9,8 @@
 [![GitHub Issues](https://img.shields.io/github/issues/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/issues)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/commits/main)
 
-*Every agent follows a consistent structure: **Role → Inputs → Process → Output Format → Guidelines***
+*Every agent follows a consistent structure:
+**Role → Inputs → Process → Output Format → Guidelines***
 
 </div>
 

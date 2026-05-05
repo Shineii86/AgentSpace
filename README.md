@@ -1,8 +1,6 @@
 <div align="center">
 
-# 🚀 AgentSpace
-
-**A curated collection of structured agent definitions for building AI-powered workflows.**
+<img src="assets/banners/hero.svg" alt="AgentSpace" width="100%"/>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Agents: 41](https://img.shields.io/badge/Agents-41-brightgreen.svg?style=flat-square)](#-categories)
@@ -10,8 +8,6 @@
 [![GitHub Stars](https://img.shields.io/github/stars/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/stargazers)
 [![GitHub Issues](https://img.shields.io/github/issues/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/issues)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/commits/main)
-
----
 
 *Every agent follows a consistent structure: **Role → Inputs → Process → Output Format → Guidelines***
 
@@ -68,6 +64,10 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ---
 
+<div align="center">
+<img src="assets/banners/evaluation.svg" alt="Evaluation" width="100%"/>
+</div>
+
 ### 📊 Evaluation
 
 > *Agents for judging, comparing, and grading outputs.*
@@ -88,6 +88,10 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 </table>
 
 ---
+
+<div align="center">
+<img src="assets/banners/development.svg" alt="Development" width="100%"/>
+</div>
 
 ### 💻 Development
 
@@ -114,6 +118,10 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ---
 
+<div align="center">
+<img src="assets/banners/content.svg" alt="Content" width="100%"/>
+</div>
+
 ### ✍️ Content
 
 > *Agents for creating, editing, and transforming written content.*
@@ -139,6 +147,10 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ---
 
+<div align="center">
+<img src="assets/banners/research.svg" alt="Research" width="100%"/>
+</div>
+
 ### 🔬 Research
 
 > *Agents for investigating topics, verifying claims, and analyzing data.*
@@ -159,6 +171,10 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 </table>
 
 ---
+
+<div align="center">
+<img src="assets/banners/operations.svg" alt="Operations" width="100%"/>
+</div>
 
 ### ⚙️ Operations
 
@@ -181,6 +197,10 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ---
 
+<div align="center">
+<img src="assets/banners/communication.svg" alt="Communication" width="100%"/>
+</div>
+
 ### 📨 Communication
 
 > *Agents for professional communication and meeting management.*
@@ -197,6 +217,10 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 </table>
 
 ---
+
+<div align="center">
+<img src="assets/banners/github.svg" alt="GitHub" width="100%"/>
+</div>
 
 ### 🐙 GitHub
 

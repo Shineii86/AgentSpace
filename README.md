@@ -3,7 +3,7 @@
 <img src="assets/banners/hero.svg" alt="AgentSpace" width="100%"/>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
-[![Agents: 41](https://img.shields.io/badge/Agents-41-brightgreen.svg?style=flat-square)](#-categories)
+[![Agents: 41](https://img.shields.io/badge/Agents-47-brightgreen.svg?style=flat-square)](#-categories)
 [![Categories: 7](https://img.shields.io/badge/Categories-7-orange.svg?style=flat-square)](#-categories)
 [![GitHub Stars](https://img.shields.io/github/stars/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/stargazers)
 [![GitHub Issues](https://img.shields.io/github/issues/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/issues)
@@ -52,13 +52,13 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 | Category | Agents | Description |
 |:---------|:------:|:------------|
-| [📊 Evaluation](#-evaluation) | 3 | Judge, compare, and grade outputs |
-| [💻 Development](#-development) | 4 | Write, review, debug, and test code |
-| [✍️ Content](#%EF%B8%8F-content) | 4 | Create, edit, summarize, and translate text |
-| [🔬 Research](#-research) | 3 | Investigate, verify, and analyze data |
-| [⚙️ Operations](#%EF%B8%8F-operations) | 3 | Deploy, monitor, and schedule tasks |
+| [📊 Evaluation](#-evaluation) | 4 | Judge, compare, grade, and experiment |
+| [💻 Development](#-development) | 6 | Write, review, debug, test, audit, and architect |
+| [✍️ Content](#%EF%B8%8F-content) | 5 | Create, edit, summarize, translate, and socialize |
+| [🔬 Research](#-research) | 4 | Investigate, verify, analyze, and compete |
+| [⚙️ Operations](#%EF%B8%8F-operations) | 4 | Deploy, monitor, schedule, and postmortem |
 | [📨 Communication](#-communication) | 2 | Draft emails and summarize meetings |
-| [🐙 GitHub](#-github) | 22 | Full GitHub ecosystem coverage |
+| [🐙 GitHub](#-github) | 27 | Full GitHub ecosystem coverage |
 
 </div>
 
@@ -84,6 +84,10 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 <tr>
 <td><strong><a href="evaluation/GRADER.md">GRADER</a></strong></td>
 <td>Evaluate expectations against execution transcripts. Grades pass/fail with evidence, critiques weak evals, and surfaces hidden claims.</td>
+</tr>
+<tr>
+<td><strong><a href="evaluation/A-B-TESTER.md">A-B-TESTER</a></strong></td>
+<td>Design A/B tests with sample size calculation, metric selection, statistical analysis, and decision frameworks.</td>
 </tr>
 </table>
 
@@ -114,6 +118,14 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 <td><strong><a href="development/TESTER.md">TESTER</a></strong></td>
 <td>Generate comprehensive test suites covering happy paths, edge cases, error conditions, and security scenarios.</td>
 </tr>
+<tr>
+<td><strong><a href="development/SECURITY-AUDITOR.md">SECURITY-AUDITOR</a></strong></td>
+<td>Comprehensive security audits for codebases. Scans for injection, auth flaws, data exposure, and crypto issues with remediation guidance.</td>
+</tr>
+<tr>
+<td><strong><a href="development/ARCHITECTURE.md">ARCHITECTURE</a></strong></td>
+<td>Generate Architecture Decision Records (ADRs), design docs, and RFCs that capture technical decisions and their rationale.</td>
+</tr>
 </table>
 
 ---
@@ -143,6 +155,10 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 <td><strong><a href="content/TRANSLATOR.md">TRANSLATOR</a></strong></td>
 <td>Translate content between languages with cultural adaptation. Handles idioms, technical terms, and preserves formatting.</td>
 </tr>
+<tr>
+<td><strong><a href="content/SOCIAL-MEDIA.md">SOCIAL-MEDIA</a></strong></td>
+<td>Generate platform-optimized social media posts for Twitter/X, LinkedIn, Reddit, and Discord with engagement strategies.</td>
+</tr>
 </table>
 
 ---
@@ -168,6 +184,10 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 <td><strong><a href="research/DATA-ANALYST.md">DATA-ANALYST</a></strong></td>
 <td>Analyze datasets with descriptive, diagnostic, predictive, and comparative methods. Identifies patterns, anomalies, and actionable insights.</td>
 </tr>
+<tr>
+<td><strong><a href="research/COMPETITIVE-ANALYSIS.md">COMPETITIVE-ANALYSIS</a></strong></td>
+<td>Analyze competitors with feature comparison, pricing, SWOT analysis, and market positioning to inform strategy.</td>
+</tr>
 </table>
 
 ---
@@ -192,6 +212,10 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 <tr>
 <td><strong><a href="operations/SCHEDULER.md">SCHEDULER</a></strong></td>
 <td>Plan task schedules with dependency graphs, critical path analysis, resource allocation, and risk assessment.</td>
+</tr>
+<tr>
+<td><strong><a href="operations/POSTMORTEM.md">POSTMORTEM</a></strong></td>
+<td>Generate blameless incident postmortems with timeline reconstruction, 5-Whys root cause analysis, and action items.</td>
 </tr>
 </table>
 

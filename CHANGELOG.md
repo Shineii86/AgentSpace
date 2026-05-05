@@ -4,126 +4,77 @@ All notable changes to this project will be documented in this file.
 
 Newest entries are added at the top.
 
+## [2026-05-06] — Cross-Category Expansion: 6 New Agents
+
+### Added
+
+#### Development Agents (NEW)
+- `development/SECURITY-AUDITOR.md` — Comprehensive security audits for codebases (injection, auth, crypto, config)
+- `development/ARCHITECTURE.md` — Architecture Decision Records (ADRs), design docs, and RFCs
+
+#### Operations Agents (NEW)
+- `operations/POSTMORTEM.md` — Blameless incident postmortems with root cause analysis and action items
+
+#### Content Agents (NEW)
+- `content/SOCIAL-MEDIA.md` — Platform-optimized social media posts (Twitter/X, LinkedIn, Reddit, Discord)
+
+#### Research Agents (NEW)
+- `research/COMPETITIVE-ANALYSIS.md` — Competitor analysis with feature comparison, SWOT, and market positioning
+
+#### Evaluation Agents (NEW)
+- `evaluation/A-B-TESTER.md` — A/B test design with sample size calculation, metrics, and statistical analysis
+
+#### Documentation
+- `README.md` — Updated all category tables with new agents
+
+---
+
 ## [2026-05-06] — GitHub Category: 5 More Agents (Markdown, Profiles, APIs, Diagrams, OSS)
 
 ### Added
 
 #### GitHub Agents (NEW)
-- `github/MARKDOWN-GUIDE.md` — Generate GitHub Flavored Markdown cheatsheets and guides
-- `github/PROFILE-OPTIMIZER.md` — Generate optimized GitHub profile READMEs with stats widgets
-- `github/API-REFERENCE.md` — Generate comprehensive API reference documentation
-- `github/ARCHITECTURE-DIAGRAM.md` — Generate Mermaid diagrams for system architecture and data flows
-- `github/OPEN-SOURCE-GUIDE.md` — Generate guides for open source maintainers and communities
-
-#### Documentation
-- `README.md` — Updated GitHub category with new agents and documentation sub-section
+- `github/MARKDOWN-GUIDE.md` — GitHub Flavored Markdown cheatsheets and guides
+- `github/PROFILE-OPTIMIZER.md` — Optimized GitHub profile READMEs with stats widgets
+- `github/API-REFERENCE.md` — Comprehensive API reference documentation
+- `github/ARCHITECTURE-DIAGRAM.md` — Mermaid diagrams for system architecture
+- `github/OPEN-SOURCE-GUIDE.md` — Open source maintainer guides and governance
 
 ---
 
 ## [2026-05-06] — SVG Banners Added to README
 
 ### Added
-- `assets/banners/hero.svg` — Main header with gradient glow effect and tagline
-- `assets/banners/evaluation.svg` — Orange/coral category banner
-- `assets/banners/development.svg` — Green/blue category banner
-- `assets/banners/content.svg` — Purple/pink category banner
-- `assets/banners/research.svg` — Blue/green category banner
-- `assets/banners/operations.svg` — Orange/gold category banner
-- `assets/banners/communication.svg` — Pink/purple category banner
-- `assets/banners/github.svg` — Gray/blue category banner
-
-### Changed
-- `README.md` — Integrated SVG banners above each category section
+- `assets/banners/` — 8 SVG banners (hero + 7 category banners) with GitHub dark theme styling
 
 ---
 
 ## [2026-05-06] — GitHub Category Expansion: 10 More Agents
 
 ### Added
-
-#### GitHub Agents (NEW)
-- `github/MIGRATION-GUIDE.md` — Version migration guides with upgrade instructions
-- `github/GITHUB-ACTIONS-AUDITOR.md` — Workflow security and efficiency audits
-- `github/REPO-SETUP.md` — Bootstrap new repos with essential config
-- `github/LABEL-MANAGER.md` — Label taxonomy design for issues/PRs
-- `github/FUNDING-SETUP.md` — FUNDING.yml and monetization config
-- `github/ISSUE-TRIAGER.md` — Automatic issue categorization and routing
-- `github/REPO-HEALTH.md` — Repository health scoring and assessment
-- `github/CONTRIBUTING-GUIDE.md` — Contributing guidelines generation
-- `github/DEPENDENCY-AUDITOR.md` — Dependency vulnerability and license audits
-- `github/BADGE-GENERATOR.md` — README badge generation
+- 10 new GitHub agents: MIGRATION-GUIDE, GITHUB-ACTIONS-AUDITOR, REPO-SETUP, LABEL-MANAGER, FUNDING-SETUP, ISSUE-TRIAGER, REPO-HEALTH, CONTRIBUTING-GUIDE, DEPENDENCY-AUDITOR, BADGE-GENERATOR
 
 ---
 
 ## [2026-05-06] — Expanded GitHub Category with 6 More Agents
 
 ### Added
-
-#### GitHub Agents (NEW)
-- `github/COMMIT-MESSAGE.md` — Generate conventional commit messages from diffs
-- `github/CHANGELOG-WRITER.md` — Generate structured changelogs from commits and PRs
-- `github/CI-CD-WRITER.md` — Generate GitHub Actions workflows for CI/CD
-- `github/SECURITY-POLICY.md` — Generate SECURITY.md and security documentation
-- `github/CODEOWNERS-GENERATOR.md` — Generate CODEOWNERS files for review assignment
-- `github/DISCUSSION-WRITER.md` — Generate GitHub Discussions posts for community
+- 6 new GitHub agents: COMMIT-MESSAGE, CHANGELOG-WRITER, CI-CD-WRITER, SECURITY-POLICY, CODEOWNERS-GENERATOR, DISCUSSION-WRITER
 
 ---
 
 ## [2026-05-06] — Added GitHub Category & Renamed All Files to UPPERCASE
 
 ### Added
-
-#### GitHub Agents (NEW)
-- `github/README-WRITER.md` — Generate comprehensive README files for repositories
-- `github/WIKI-WRITER.md` — Create structured wiki documentation for projects
-- `github/DOCS-WRITER.md` — Generate technical documentation for codebases
-- `github/RELEASE-WRITER.md` — Create polished release notes from changes and commits
-- `github/PR-DESCRIPTION.md` — Generate clear, informative pull request descriptions
-- `github/ISSUE-TEMPLATE.md` — Create structured issue templates
+- 6 initial GitHub agents: README-WRITER, WIKI-WRITER, DOCS-WRITER, RELEASE-WRITER, PR-DESCRIPTION, ISSUE-TEMPLATE
 
 ### Changed
-
-#### File Renames (UPPERCASE)
-All agent definition files renamed to UPPERCASE for consistency with GitHub conventions.
+- All agent definition files renamed to UPPERCASE
 
 ---
 
 ## [2026-05-06] — Initial Repository Restructuring
 
 ### Added
-
-#### Evaluation Agents
-- `evaluation/ANALYZER.md` — Post-hoc Analyzer agent
-- `evaluation/COMPARATOR.md` — Blind Comparator agent
-- `evaluation/GRADER.md` — Grader agent
-
-#### Development Agents
-- `development/CODER.md` — Coder agent
-- `development/REVIEWER.md` — Code Reviewer agent
-- `development/DEBUGGER.md` — Debugger agent
-- `development/TESTER.md` — Test Writer agent
-
-#### Content Agents
-- `content/WRITER.md` — Content Writer agent
-- `content/EDITOR.md` — Content Editor agent
-- `content/SUMMARIZER.md` — Summarizer agent
-- `content/TRANSLATOR.md` — Translator agent
-
-#### Research Agents
-- `research/RESEARCHER.md` — Researcher agent
-- `research/FACT-CHECKER.md` — Fact-Checker agent
-- `research/DATA-ANALYST.md` — Data Analyst agent
-
-#### Operations Agents
-- `operations/DEPLOYER.md` — Deployer agent
-- `operations/MONITOR.md` — Monitor agent
-- `operations/SCHEDULER.md` — Scheduler agent
-
-#### Communication Agents
-- `communication/EMAIL-DRAFTER.md` — Email Drafter agent
-- `communication/MEETING-SUMMARIZER.md` — Meeting Summarizer agent
-
-#### Documentation
-- `README.md` — Project overview
-- `CONTRIBUTING.md` — Contributing guidelines
-- `CHANGELOG.md` — This file
+- 19 initial agents across 6 categories (Evaluation, Development, Content, Research, Operations, Communication)
+- README.md, CONTRIBUTING.md, CHANGELOG.md

@@ -7,6 +7,45 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Newest entries are added at the top.
 
+## [1.8.0] - 2026-05-06
+
+### Changed
+
+#### SVG Banners — Complete Redesign
+
+All 9 SVG banners redesigned with professional-grade visuals:
+
+**Hero Banner (`assets/banners/hero.svg`)**
+- Animated floating particles with pulse animations
+- Ambient glow orbs with blur effects
+- Grid pattern overlay for depth
+- Gradient accent bar (blue → purple → pink → orange)
+- Tag pills: 59 Agents, 8 Categories, MIT License, Copy & Paste, Any LLM Ready, Composable
+- Glassmorphism card with frosted background
+- Animated shimmer on accent underline
+
+**Category Banners (8 files)**
+- Theme-aware: `@media (prefers-color-scheme: light/dark)` for automatic dark/light switching
+- Glassmorphism cards with translucent backgrounds
+- Left accent gradient bar per category
+- Agent count badge pills
+- Animated floating dots with staggered pulse timing
+- Bottom accent shimmer line
+- Ambient glow orbs with blur filters
+
+**Files Changed:**
+- `assets/banners/hero.svg` — Full redesign with animations (2,133 → 7,589 bytes)
+- `assets/banners/evaluation.svg` — Orange/pink gradient theme
+- `assets/banners/development.svg` — Green/blue gradient theme
+- `assets/banners/content.svg` — Purple/pink gradient theme
+- `assets/banners/research.svg` — Blue/green gradient theme
+- `assets/banners/operations.svg` — Orange/gold gradient theme
+- `assets/banners/communication.svg` — Pink/purple gradient theme
+- `assets/banners/github.svg` — Gray/blue gradient theme
+- `assets/banners/api.svg` — Green/orange gradient theme
+
+---
+
 ## [1.7.0] - 2026-05-06
 
 ### Added

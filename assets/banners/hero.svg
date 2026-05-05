@@ -1,32 +1,275 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0d1117"/>
-      <stop offset="50%" style="stop-color:#161b22"/>
-      <stop offset="100%" style="stop-color:#0d1117"/>
+    <style>
+      @media (prefers-color-scheme: light) {
+        .bg { fill: #f0f2f5; }
+        .sub { fill: #656d76; }
+        .node-fill { fill: rgba(88,166,255,0.12); stroke: rgba(88,166,255,0.4); }
+        .node-fill2 { fill: rgba(188,140,255,0.12); stroke: rgba(188,140,255,0.4); }
+        .node-fill3 { fill: rgba(247,120,186,0.12); stroke: rgba(247,120,186,0.4); }
+        .conn { stroke: rgba(88,166,255,0.15); }
+        .conn2 { stroke: rgba(188,140,255,0.12); }
+        .star { fill: rgba(0,0,0,0.15); }
+        .ring { fill:none; stroke:rgba(88,166,255,0.15); }
+      }
+      @media (prefers-color-scheme: dark) {
+        .bg { fill: #0a0e17; }
+        .sub { fill: #8b949e; }
+        .node-fill { fill: rgba(88,166,255,0.08); stroke: rgba(88,166,255,0.5); }
+        .node-fill2 { fill: rgba(188,140,255,0.08); stroke: rgba(188,140,255,0.5); }
+        .node-fill3 { fill: rgba(247,120,186,0.08); stroke: rgba(247,120,186,0.5); }
+        .conn { stroke: rgba(88,166,255,0.12); }
+        .conn2 { stroke: rgba(188,140,255,0.08); }
+        .star { fill: rgba(255,255,255,0.5); }
+        .ring { fill:none; stroke:rgba(88,166,255,0.1); }
+      }
+
+      /* Stars twinkle */
+      .tw1 { animation: twinkle 2s ease-in-out infinite; }
+      .tw2 { animation: twinkle 3s ease-in-out infinite 0.5s; }
+      .tw3 { animation: twinkle 2.5s ease-in-out infinite 1s; }
+      .tw4 { animation: twinkle 4s ease-in-out infinite 0.3s; }
+      .tw5 { animation: twinkle 3.5s ease-in-out infinite 1.5s; }
+      .tw6 { animation: twinkle 2s ease-in-out infinite 0.8s; }
+      .tw7 { animation: twinkle 3s ease-in-out infinite 2s; }
+      .tw8 { animation: twinkle 2.5s ease-in-out infinite 0.2s; }
+      @keyframes twinkle { 0%,100%{opacity:0.2} 50%{opacity:1} }
+
+      /* Nodes orbit */
+      .orb1 { animation: orbit1 20s linear infinite; }
+      .orb2 { animation: orbit2 25s linear infinite; }
+      .orb3 { animation: orbit3 18s linear infinite; }
+      .orb4 { animation: orbit4 22s linear infinite; }
+      .orb5 { animation: orbit5 28s linear infinite; }
+      .orb6 { animation: orbit6 15s linear infinite; }
+      @keyframes orbit1 { 0%{transform:rotate(0deg) translateX(40px) rotate(0deg)} 100%{transform:rotate(360deg) translateX(40px) rotate(-360deg)} }
+      @keyframes orbit2 { 0%{transform:rotate(0deg) translateX(30px) rotate(0deg)} 100%{transform:rotate(-360deg) translateX(30px) rotate(360deg)} }
+      @keyframes orbit3 { 0%{transform:rotate(0deg) translateX(50px) rotate(0deg)} 100%{transform:rotate(360deg) translateX(50px) rotate(-360deg)} }
+      @keyframes orbit4 { 0%{transform:rotate(0deg) translateX(35px) rotate(0deg)} 100%{transform:rotate(-360deg) translateX(35px) rotate(360deg)} }
+      @keyframes orbit5 { 0%{transform:rotate(0deg) translateX(45px) rotate(0deg)} 100%{transform:rotate(360deg) translateX(45px) rotate(-360deg)} }
+      @keyframes orbit6 { 0%{transform:rotate(0deg) translateX(25px) rotate(0deg)} 100%{transform:rotate(-360deg) translateX(25px) rotate(360deg)} }
+
+      /* Pulse nodes */
+      .pulse1 { animation: npulse 3s ease-in-out infinite; }
+      .pulse2 { animation: npulse 4s ease-in-out infinite 1s; }
+      .pulse3 { animation: npulse 3.5s ease-in-out infinite 0.5s; }
+      @keyframes npulse { 0%,100%{r:6;opacity:0.6} 50%{r:9;opacity:1} }
+
+      /* Ring expand */
+      .ring1 { animation: rexpand 6s ease-out infinite; }
+      .ring2 { animation: rexpand 6s ease-out infinite 2s; }
+      .ring3 { animation: rexpand 6s ease-out infinite 4s; }
+      @keyframes rexpand { 0%{r:0;opacity:0.3;stroke-width:2} 100%{r:200;opacity:0;stroke-width:0.5} }
+
+      /* Title wave */
+      .w0 { animation: wave 3s ease-in-out infinite 0s; }
+      .w1 { animation: wave 3s ease-in-out infinite 0.12s; }
+      .w2 { animation: wave 3s ease-in-out infinite 0.24s; }
+      .w3 { animation: wave 3s ease-in-out infinite 0.36s; }
+      .w4 { animation: wave 3s ease-in-out infinite 0.48s; }
+      .w5 { animation: wave 3s ease-in-out infinite 0.6s; }
+      .w6 { animation: wave 3s ease-in-out infinite 0.72s; }
+      .w7 { animation: wave 3s ease-in-out infinite 0.84s; }
+      .w8 { animation: wave 3s ease-in-out infinite 0.96s; }
+      .w9 { animation: wave 3s ease-in-out infinite 1.08s; }
+      @keyframes wave { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+      .cursor { animation: blink 1s step-end infinite; }
+      @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+      .shimmer { animation: shimmer 4s ease-in-out infinite; }
+      @keyframes shimmer { 0%{opacity:0.3} 50%{opacity:0.8} 100%{opacity:0.3} }
+
+      /* Connection lines pulse */
+      .conn-pulse { animation: cpulse 4s ease-in-out infinite; }
+      @keyframes cpulse { 0%,100%{opacity:0.06} 50%{opacity:0.2} }
+    </style>
+
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="30%" stop-color="#bc8cff"/>
+      <stop offset="70%" stop-color="#f778ba"/>
+      <stop offset="100%" stop-color="#f0883e"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#58a6ff"/>
-      <stop offset="50%" style="stop-color:#bc8cff"/>
-      <stop offset="100%" style="stop-color:#f778ba"/>
-    </linearGradient>
-    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#58a6ff"/>
-      <stop offset="100%" style="stop-color:#bc8cff"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+    <radialGradient id="nebula1" cx="20%" cy="30%">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula2" cx="80%" cy="70%">
+      <stop offset="0%" stop-color="#bc8cff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#bc8cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula3" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#f778ba" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#f778ba" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <clipPath id="c1"><rect width="1280" height="720" rx="16"/></clipPath>
   </defs>
-  <rect width="1200" height="300" fill="url(#bg)" rx="12"/>
-  <rect x="2" y="2" width="1196" height="296" fill="none" stroke="url(#accent)" stroke-width="1" rx="11" opacity="0.3"/>
-  <line x1="100" y1="260" x2="1100" y2="260" stroke="url(#accent)" stroke-width="1" opacity="0.2"/>
-  <text x="600" y="100" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#8b949e" letter-spacing="8">CURATED AGENT DEFINITIONS</text>
-  <text x="600" y="165" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-weight="800" font-size="64" fill="url(#text-grad)" filter="url(#glow)">🚀 AgentSpace</text>
-  <text x="600" y="210" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#8b949e">59 structured agents · 8 categories · Role → Inputs → Process → Output → Guidelines</text>
-  <circle cx="200" cy="50" r="2" fill="#58a6ff" opacity="0.5"/>
-  <circle cx="400" cy="30" r="1.5" fill="#bc8cff" opacity="0.4"/>
-  <circle cx="800" cy="40" r="2" fill="#f778ba" opacity="0.3"/>
-  <circle cx="1000" cy="60" r="1.5" fill="#58a6ff" opacity="0.4"/>
+
+  <g clip-path="url(#c1)">
+    <!-- Deep space background -->
+    <rect width="1280" height="720" class="bg"/>
+
+    <!-- Nebula clouds -->
+    <rect width="1280" height="720" fill="url(#nebula1)"/>
+    <rect width="1280" height="720" fill="url(#nebula2)"/>
+    <rect width="1280" height="720" fill="url(#nebula3)"/>
+
+    <!-- Starfield -->
+    <circle cx="45" cy="30" r="1" class="star tw1"/>
+    <circle cx="120" cy="90" r="1.5" class="star tw2"/>
+    <circle cx="250" cy="45" r="1" class="star tw3"/>
+    <circle cx="380" cy="20" r="0.8" class="star tw4"/>
+    <circle cx="510" cy="80" r="1.2" class="star tw5"/>
+    <circle cx="640" cy="35" r="1" class="star tw6"/>
+    <circle cx="770" cy="70" r="1.5" class="star tw7"/>
+    <circle cx="890" cy="25" r="0.8" class="star tw8"/>
+    <circle cx="1020" cy="55" r="1" class="star tw1"/>
+    <circle cx="1150" cy="40" r="1.3" class="star tw3"/>
+    <circle cx="80" cy="200" r="0.8" class="star tw5"/>
+    <circle cx="200" cy="650" r="1" class="star tw2"/>
+    <circle cx="350" cy="580" r="1.5" class="star tw6"/>
+    <circle cx="480" cy="660" r="0.8" class="star tw4"/>
+    <circle cx="620" cy="690" r="1.2" class="star tw7"/>
+    <circle cx="760" cy="640" r="1" class="star tw1"/>
+    <circle cx="900" cy="680" r="1.5" class="star tw8"/>
+    <circle cx="1050" cy="660" r="0.8" class="star tw3"/>
+    <circle cx="1180" cy="690" r="1" class="star tw5"/>
+    <circle cx="60" cy="450" r="1.2" class="star tw2"/>
+    <circle cx="1220" cy="300" r="1" class="star tw6"/>
+    <circle cx="1100" cy="180" r="0.8" class="star tw4"/>
+    <circle cx="180" cy="380" r="1.3" class="star tw7"/>
+    <circle cx="950" cy="400" r="1" class="star tw1"/>
+
+    <!-- Neural network: connection lines -->
+    <g stroke-width="1" class="conn conn-pulse">
+      <line x1="150" y1="200" x2="320" y2="320"/>
+      <line x1="320" y1="320" x2="250" y2="500"/>
+      <line x1="320" y1="320" x2="500" y2="250"/>
+      <line x1="500" y1="250" x2="640" y2="360"/>
+      <line x1="640" y1="360" x2="500" y2="520"/>
+      <line x1="640" y1="360" x2="820" y2="280"/>
+      <line x1="820" y1="280" x2="1000" y2="380"/>
+      <line x1="1000" y1="380" x2="1100" y2="250"/>
+      <line x1="1000" y1="380" x2="1050" y2="530"/>
+      <line x1="250" y1="500" x2="450" y2="580"/>
+      <line x1="500" y1="520" x2="700" y2="580"/>
+      <line x1="700" y1="580" x2="900" y2="520"/>
+      <line x1="900" y1="520" x2="1050" y2="530"/>
+      <line x1="150" y1="200" x2="350" y2="150"/>
+      <line x1="350" y1="150" x2="550" y2="180"/>
+      <line x1="550" y1="180" x2="750" y2="150"/>
+      <line x1="750" y1="150" x2="950" y2="200"/>
+      <line x1="950" y1="200" x2="1100" y2="250"/>
+    </g>
+
+    <!-- Secondary connections -->
+    <g stroke-width="0.5" class="conn2 conn-pulse">
+      <line x1="150" y1="200" x2="500" y2="250"/>
+      <line x1="320" y1="320" x2="640" y2="360"/>
+      <line x1="820" y1="280" x2="1050" y2="530"/>
+      <line x1="250" y1="500" x2="700" y2="580"/>
+      <line x1="500" y1="520" x2="900" y2="520"/>
+    </g>
+
+    <!-- Expanding rings at node positions -->
+    <circle cx="320" cy="320" r="0" class="ring ring1" stroke-width="1.5"/>
+    <circle cx="640" cy="360" r="0" class="ring ring2" stroke-width="1.5"/>
+    <circle cx="1000" cy="380" r="0" class="ring ring3" stroke-width="1.5"/>
+
+    <!-- Neural nodes with orbiting particles -->
+    <g>
+      <circle cx="150" cy="200" r="8" class="node-fill" stroke-width="1.5" filter="url(#glow)"/>
+      <circle cx="150" cy="200" r="3" fill="#58a6ff" class="orb1 pulse1"/>
+
+      <circle cx="320" cy="320" r="10" class="node-fill" stroke-width="1.5" filter="url(#glow)"/>
+      <circle cx="320" cy="320" r="3" fill="#58a6ff" class="orb2 pulse2"/>
+
+      <circle cx="250" cy="500" r="7" class="node-fill2" stroke-width="1.5" filter="url(#glow)"/>
+      <circle cx="250" cy="500" r="2.5" fill="#bc8cff" class="orb3 pulse3"/>
+
+      <circle cx="500" cy="250" r="8" class="node-fill2" stroke-width="1.5" filter="url(#glow)"/>
+      <circle cx="500" cy="250" r="3" fill="#bc8cff" class="orb4 pulse1"/>
+
+      <circle cx="640" cy="360" r="12" class="node-fill" stroke-width="2" filter="url(#glow)"/>
+      <circle cx="640" cy="360" r="4" fill="#58a6ff" class="orb5 pulse2"/>
+
+      <circle cx="500" cy="520" r="7" class="node-fill3" stroke-width="1.5" filter="url(#glow)"/>
+      <circle cx="500" cy="520" r="2.5" fill="#f778ba" class="orb6 pulse3"/>
+
+      <circle cx="820" cy="280" r="9" class="node-fill" stroke-width="1.5" filter="url(#glow)"/>
+      <circle cx="820" cy="280" r="3" fill="#58a6ff" class="orb1 pulse1"/>
+
+      <circle cx="1000" cy="380" r="10" class="node-fill2" stroke-width="1.5" filter="url(#glow)"/>
+      <circle cx="1000" cy="380" r="3.5" fill="#bc8cff" class="orb2 pulse2"/>
+
+      <circle cx="1100" cy="250" r="7" class="node-fill3" stroke-width="1.5" filter="url(#glow)"/>
+      <circle cx="1100" cy="250" r="2.5" fill="#f778ba" class="orb3 pulse3"/>
+
+      <circle cx="1050" cy="530" r="8" class="node-fill" stroke-width="1.5" filter="url(#glow)"/>
+      <circle cx="1050" cy="530" r="3" fill="#58a6ff" class="orb4 pulse1"/>
+
+      <circle cx="450" cy="580" r="6" class="node-fill3" stroke-width="1" filter="url(#glow)"/>
+      <circle cx="450" cy="580" r="2" fill="#f778ba" class="orb5 pulse2"/>
+
+      <circle cx="700" cy="580" r="6" class="node-fill2" stroke-width="1" filter="url(#glow)"/>
+      <circle cx="700" cy="580" r="2" fill="#bc8cff" class="orb6 pulse3"/>
+
+      <circle cx="900" cy="520" r="7" class="node-fill" stroke-width="1.5" filter="url(#glow)"/>
+      <circle cx="900" cy="520" r="2.5" fill="#58a6ff" class="orb1 pulse1"/>
+
+      <circle cx="350" cy="150" r="6" class="node-fill2" stroke-width="1" filter="url(#glow)"/>
+      <circle cx="350" cy="150" r="2" fill="#bc8cff" class="orb2 pulse2"/>
+
+      <circle cx="550" cy="180" r="5" class="node-fill3" stroke-width="1" filter="url(#glow)"/>
+      <circle cx="550" cy="180" r="2" fill="#f778ba" class="orb3 pulse3"/>
+
+      <circle cx="750" cy="150" r="6" class="node-fill" stroke-width="1" filter="url(#glow)"/>
+      <circle cx="750" cy="150" r="2" fill="#58a6ff" class="orb4 pulse1"/>
+
+      <circle cx="950" cy="200" r="7" class="node-fill2" stroke-width="1.5" filter="url(#glow)"/>
+      <circle cx="950" cy="200" r="2.5" fill="#bc8cff" class="orb5 pulse2"/>
+    </g>
+
+    <!-- Title with wave animation -->
+    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
+      <tspan class="w0" x="255" y="410">A</tspan>
+    </text>
+    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
+      <tspan class="w1" x="350" y="410">g</tspan>
+    </text>
+    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
+      <tspan class="w2" x="438" y="410">e</tspan>
+    </text>
+    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
+      <tspan class="w3" x="520" y="410">n</tspan>
+    </text>
+    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
+      <tspan class="w4" x="612" y="410">t</tspan>
+    </text>
+    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
+      <tspan class="w5" x="675" y="410">S</tspan>
+    </text>
+    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
+      <tspan class="w6" x="770" y="410">p</tspan>
+    </text>
+    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
+      <tspan class="w7" x="860" y="410">a</tspan>
+    </text>
+    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
+      <tspan class="w8" x="946" y="410">c</tspan>
+    </text>
+    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
+      <tspan class="w9" x="1028" y="410">e</tspan>
+    </text>
+
+    <!-- Accent line -->
+    <rect x="250" y="435" width="830" height="3" rx="1.5" fill="url(#g1)" class="shimmer"/>
+
+    <!-- Subtitle -->
+    <text x="640" y="490" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',Helvetica,Arial,sans-serif" font-weight="400" font-size="26" class="sub">Battle-tested agent definitions for the AI era</text>
+
+    <!-- Blinking cursor -->
+    <rect x="1060" y="340" width="4" height="70" rx="2" fill="url(#g1)" class="cursor"/>
+  </g>
 </svg>

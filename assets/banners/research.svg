@@ -1,17 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100">
   <defs>
-    <linearGradient id="res-bg" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#1a1e2e"/>
-      <stop offset="100%" style="stop-color:#0d1117"/>
+    <style>
+      @media (prefers-color-scheme: light) {
+        .cat-bg { fill: #f6f8fa; }
+        .cat-card { fill: rgba(255,255,255,0.85); stroke: rgba(0,0,0,0.08); }
+        .cat-title { fill: #1f2328; }
+        .cat-sub { fill: #656d76; }
+        .cat-badge { fill: rgba(0,0,0,0.04); stroke: rgba(0,0,0,0.1); }
+        .cat-badge-text { fill: #1f2328; }
+        .cat-sep { stroke: rgba(0,0,0,0.08); }
+        .cat-glow { opacity: 0.1; }
+        .cat-dot { opacity: 0.2; }
+      }
+      @media (prefers-color-scheme: dark) {
+        .cat-bg { fill: #0d1117; }
+        .cat-card { fill: rgba(22,27,34,0.6); stroke: rgba(255,255,255,0.06); }
+        .cat-title { fill: #f0f6fc; }
+        .cat-sub { fill: #8b949e; }
+        .cat-badge { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.08); }
+        .cat-badge-text { fill: #c9d1d9; }
+        .cat-sep { stroke: rgba(255,255,255,0.06); }
+        .cat-glow { opacity: 0.2; }
+        .cat-dot { opacity: 0.35; }
+      }
+      .cat-pulse1 { animation: cpulse 4s ease-in-out infinite; }
+      .cat-pulse2 { animation: cpulse 5s ease-in-out infinite 1.5s; }
+      .cat-shimmer { animation: cshimmer 3s ease-in-out infinite; }
+      @keyframes cpulse { 0%,100%{opacity:0.15;r:3} 50%{opacity:0.45;r:5} }
+      @keyframes cshimmer { 0%{opacity:0.4} 50%{opacity:1} 100%{opacity:0.4} }
+    </style>
+
+    <linearGradient id="research-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#3fb950"/>
     </linearGradient>
-    <linearGradient id="res-accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#58a6ff"/>
-      <stop offset="100%" style="stop-color:#3fb950"/>
-    </linearGradient>
+    <clipPath id="research-clip"><rect width="1200" height="100" rx="10"/></clipPath>
+    <filter id="research-blur"><feGaussianBlur stdDeviation="15"/></filter>
   </defs>
-  <rect width="1200" height="80" fill="url(#res-bg)" rx="8"/>
-  <rect x="0" y="0" width="6" height="80" fill="url(#res-accent)" rx="3"/>
-  <text x="30" y="48" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-weight="700" font-size="28" fill="#58a6ff">🔬 Research</text>
-  <text x="240" y="48" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" fill="#8b949e">3 agents · Investigate · Verify · Analyze</text>
-  <line x1="220" y1="20" x2="220" y2="60" stroke="#30363d" stroke-width="1"/>
+
+  <g clip-path="url(#research-clip)">
+    <!-- Background -->
+    <rect width="1200" height="100" class="cat-bg"/>
+
+    <!-- Ambient glow -->
+    <circle cx="100" cy="50" r="100" fill="#58a6ff" class="cat-glow" filter="url(#research-blur)"/>
+    <circle cx="1100" cy="50" r="80" fill="#3fb950" class="cat-glow" filter="url(#research-blur)"/>
+
+    <!-- Card -->
+    <rect x="12" y="8" width="1176" height="84" rx="10" class="cat-card" stroke-width="1"/>
+
+    <!-- Left accent bar -->
+    <rect x="12" y="8" width="5" height="84" rx="2.5" fill="url(#research-accent)"/>
+
+    <!-- Floating dots -->
+    <circle cx="1140" cy="25" r="3" fill="#58a6ff" class="cat-dot cat-pulse1"/>
+    <circle cx="1160" cy="65" r="2.5" fill="#3fb950" class="cat-dot cat-pulse2"/>
+
+    <!-- Emoji -->
+    <text x="40" y="62" font-family="'SF Pro Display','Segoe UI',sans-serif" font-size="32">🔬</text>
+
+    <!-- Title -->
+    <text x="90" y="58" font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="700" font-size="28" class="cat-title">Research</text>
+
+    <!-- Separator -->
+    <line x1="238" y1="25" x2="238" y2="75" class="cat-sep" stroke-width="1"/>
+
+    <!-- Agent count badge -->
+    <rect x="253" y="32" width="88" height="28" rx="14" class="cat-badge" stroke-width="1"/>
+    <text x="297" y="51" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',sans-serif" font-size="12" font-weight="600" class="cat-badge-text">4 agents</text>
+
+    <!-- Description -->
+    <text x="361" y="52" font-family="'SF Pro Text','Segoe UI',Helvetica,Arial,sans-serif" font-size="15" class="cat-sub">Investigate · Verify · Analyze · Compete</text>
+
+    <!-- Bottom accent line -->
+    <rect x="12" y="89" width="1176" height="3" rx="1.5" fill="url(#research-accent)" opacity="0.4" class="cat-shimmer"/>
+  </g>
 </svg>

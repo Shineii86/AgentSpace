@@ -13,55 +13,67 @@ Agents for evaluating, comparing, and grading outputs.
 
 | Agent | Purpose |
 |-------|---------|
-| [Analyzer](evaluation/analyzer.md) | Post-hoc analysis of comparison results to extract actionable insights |
-| [Comparator](evaluation/comparator.md) | Blind comparison of two outputs without bias |
-| [Grader](evaluation/grader.md) | Evaluate expectations against execution transcripts |
+| [ANALYZER](evaluation/ANALYZER.md) | Post-hoc analysis of comparison results to extract actionable insights |
+| [COMPARATOR](evaluation/COMPARATOR.md) | Blind comparison of two outputs without bias |
+| [GRADER](evaluation/GRADER.md) | Evaluate expectations against execution transcripts |
 
 ### 💻 [Development](development/)
 Agents for writing, reviewing, debugging, and testing code.
 
 | Agent | Purpose |
 |-------|---------|
-| [Coder](development/coder.md) | Write clean, production-ready code from specifications |
-| [Reviewer](development/reviewer.md) | Structured code reviews with actionable feedback |
-| [Debugger](development/debugger.md) | Systematic bug diagnosis and fixing |
-| [Tester](development/tester.md) | Generate comprehensive test suites |
+| [CODER](development/CODER.md) | Write clean, production-ready code from specifications |
+| [REVIEWER](development/REVIEWER.md) | Structured code reviews with actionable feedback |
+| [DEBUGGER](development/DEBUGGER.md) | Systematic bug diagnosis and fixing |
+| [TESTER](development/TESTER.md) | Generate comprehensive test suites |
 
 ### ✍️ [Content](content/)
 Agents for writing, editing, summarizing, and translating content.
 
 | Agent | Purpose |
 |-------|---------|
-| [Writer](content/writer.md) | Generate high-quality content for various purposes |
-| [Editor](content/editor.md) | Review and improve existing content |
-| [Summarizer](content/summarizer.md) | Create concise, accurate summaries |
-| [Translator](content/translator.md) | Translate content between languages |
+| [WRITER](content/WRITER.md) | Generate high-quality content for various purposes |
+| [EDITOR](content/EDITOR.md) | Review and improve existing content |
+| [SUMMARIZER](content/SUMMARIZER.md) | Create concise, accurate summaries |
+| [TRANSLATOR](content/TRANSLATOR.md) | Translate content between languages |
 
 ### 🔬 [Research](research/)
 Agents for investigating topics, verifying claims, and analyzing data.
 
 | Agent | Purpose |
 |-------|---------|
-| [Researcher](research/researcher.md) | Conduct thorough research and produce structured findings |
-| [Fact-Checker](research/fact-checker.md) | Verify claims, statistics, and statements |
-| [Data Analyst](research/data-analyst.md) | Analyze datasets and extract actionable insights |
+| [RESEARCHER](research/RESEARCHER.md) | Conduct thorough research and produce structured findings |
+| [FACT-CHECKER](research/FACT-CHECKER.md) | Verify claims, statistics, and statements |
+| [DATA-ANALYST](research/DATA-ANALYST.md) | Analyze datasets and extract actionable insights |
 
 ### ⚙️ [Operations](operations/)
 Agents for deploying, monitoring, and scheduling.
 
 | Agent | Purpose |
 |-------|---------|
-| [Deployer](operations/deployer.md) | Manage deployments with safety checks and rollback |
-| [Monitor](operations/monitor.md) | Track system health, detect anomalies, generate alerts |
-| [Scheduler](operations/scheduler.md) | Plan and coordinate task scheduling |
+| [DEPLOYER](operations/DEPLOYER.md) | Manage deployments with safety checks and rollback |
+| [MONITOR](operations/MONITOR.md) | Track system health, detect anomalies, generate alerts |
+| [SCHEDULER](operations/SCHEDULER.md) | Plan and coordinate task scheduling |
 
 ### 📨 [Communication](communication/)
 Agents for drafting emails and summarizing meetings.
 
 | Agent | Purpose |
 |-------|---------|
-| [Email Drafter](communication/email-drafter.md) | Compose professional, effective emails |
-| [Meeting Summarizer](communication/meeting-summarizer.md) | Transform meeting notes into actionable records |
+| [EMAIL-DRAFTER](communication/EMAIL-DRAFTER.md) | Compose professional, effective emails |
+| [MEETING-SUMMARIZER](communication/MEETING-SUMMARIZER.md) | Transform meeting notes into actionable records |
+
+### 🐙 [GitHub](github/)
+Agents for GitHub-specific documentation and workflows.
+
+| Agent | Purpose |
+|-------|---------|
+| [README-WRITER](github/README-WRITER.md) | Generate comprehensive README files for repositories |
+| [WIKI-WRITER](github/WIKI-WRITER.md) | Create structured wiki documentation |
+| [DOCS-WRITER](github/DOCS-WRITER.md) | Generate technical documentation for codebases |
+| [RELEASE-WRITER](github/RELEASE-WRITER.md) | Create polished release notes from changes |
+| [PR-DESCRIPTION](github/PR-DESCRIPTION.md) | Generate clear, informative PR descriptions |
+| [ISSUE-TEMPLATE](github/ISSUE-TEMPLATE.md) | Create structured issue templates |
 
 ## 📋 Agent Definition Format
 

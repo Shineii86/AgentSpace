@@ -3,8 +3,8 @@
 <img src="assets/banners/hero.svg" alt="AgentSpace" width="100%"/>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
-[![Agents: 41](https://img.shields.io/badge/Agents-47-brightgreen.svg?style=flat-square)](#-categories)
-[![Categories: 7](https://img.shields.io/badge/Categories-7-orange.svg?style=flat-square)](#-categories)
+[![Agents: 41](https://img.shields.io/badge/Agents-59-brightgreen.svg?style=flat-square)](#-categories)
+[![Categories: 7](https://img.shields.io/badge/Categories-8-orange.svg?style=flat-square)](#-categories)
 [![GitHub Stars](https://img.shields.io/github/stars/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/stargazers)
 [![GitHub Issues](https://img.shields.io/github/issues/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/issues)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/commits/main)
@@ -24,6 +24,7 @@
   - [⚙️ Operations](#%EF%B8%8F-operations)
   - [📨 Communication](#-communication)
   - [🐙 GitHub](#-github)
+  - [🔌 API](#-api)
 - [Agent Definition Format](#-agent-definition-format)
 - [Usage](#-usage)
 - [Contributing](#-contributing)
@@ -59,6 +60,7 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 | [⚙️ Operations](#%EF%B8%8F-operations) | 4 | Deploy, monitor, schedule, and postmortem |
 | [📨 Communication](#-communication) | 2 | Draft emails and summarize meetings |
 | [🐙 GitHub](#-github) | 27 | Full GitHub ecosystem coverage |
+| [🔌 API](#-api) | 12 | Design, build, scrape, test, and document APIs |
 
 </div>
 
@@ -384,6 +386,85 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 </table>
 
 ---
+
+
+---
+
+<div align="center">
+<img src="assets/banners/api.svg" alt="API" width="100%"/>
+</div>
+
+### 🔌 API
+
+> *The complete API lifecycle — from design to deployment to monitoring.*
+
+#### 📐 Design & Build
+
+<table>
+<tr>
+<td width="30%"><strong><a href="api/API-DESIGNER.md">API-DESIGNER</a></strong></td>
+<td>Design REST, GraphQL, and gRPC API schemas with contracts, validation rules, and error formats.</td>
+</tr>
+<tr>
+<td><strong><a href="api/API-BUILDER.md">API-BUILDER</a></strong></td>
+<td>Generate production-ready API server code from specs. Routes, handlers, validation, error handling, and tests.</td>
+</tr>
+<tr>
+<td><strong><a href="api/API-CLIENT.md">API-CLIENT</a></strong></td>
+<td>Generate type-safe SDK/client libraries from API specs. TypeScript, Python, Go, Java, Ruby.</td>
+</tr>
+<tr>
+<td><strong><a href="api/API-MOCK.md">API-MOCK</a></strong></td>
+<td>Create mock API servers with realistic data, delays, error simulation, and stateful CRUD.</td>
+</tr>
+</table>
+
+#### 🕷️ Data & Scraping
+
+<table>
+<tr>
+<td width="30%"><strong><a href="api/API-SCRAPER.md">API-SCRAPER</a></strong></td>
+<td>Scrape websites, HTML tables, JSON-LD, and API docs to create structured, queryable APIs.</td>
+</tr>
+<tr>
+<td><strong><a href="api/API-TRANSFORMER.md">API-TRANSFORMER</a></strong></td>
+<td>Transform data between formats: REST↔GraphQL, SOAP↔REST, CSV↔JSON, flat↔nested.</td>
+</tr>
+<tr>
+<td><strong><a href="api/API-MIGRATION.md">API-MIGRATION</a></strong></td>
+<td>Migrate between API versions, formats, and protocols with compatibility layers and rollback plans.</td>
+</tr>
+</table>
+
+#### 🔧 Infrastructure
+
+<table>
+<tr>
+<td width="30%"><strong><a href="api/API-GATEWAY.md">API-GATEWAY</a></strong></td>
+<td>Design API gateway configs for routing, auth, rate limiting, and observability (Kong, Nginx, AWS).</td>
+</tr>
+<tr>
+<td><strong><a href="api/API-MONITOR.md">API-MONITOR</a></strong></td>
+<td>Design monitoring with SLIs, SLOs, dashboards, alerts, and health check scripts.</td>
+</tr>
+<tr>
+<td><strong><a href="api/API-SECURITY.md">API-SECURITY</a></strong></td>
+<td>Audit and harden API security against OWASP API Top 10. Auth, validation, rate limiting, headers.</td>
+</tr>
+</table>
+
+#### 📋 Testing & Documentation
+
+<table>
+<tr>
+<td width="30%"><strong><a href="api/API-TESTER.md">API-TESTER</a></strong></td>
+<td>Generate comprehensive test suites: functional, contract, edge cases, auth, and error handling.</td>
+</tr>
+<tr>
+<td><strong><a href="api/API-DOCUMENTATION.md">API-DOCUMENTATION</a></strong></td>
+<td>Generate interactive API docs with Redoc, Swagger, or custom platforms. Working examples included.</td>
+</tr>
+</table>
 
 ## 📋 Agent Definition Format
 

@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 
 Newest entries are added at the top.
 
+## [2026-05-06] — GitHub Category Expansion: 10 More Agents
+
+### Added
+
+#### GitHub Agents (NEW)
+- `github/MIGRATION-GUIDE.md` — Generate version migration guides with step-by-step upgrade instructions
+- `github/GITHUB-ACTIONS-AUDITOR.md` — Audit existing workflows for security, efficiency, best practices
+- `github/REPO-SETUP.md` — Bootstrap new repos with essential config files (.gitignore, .editorconfig, LICENSE, CI)
+- `github/LABEL-MANAGER.md` — Design label taxonomies for issues and PRs with colors and descriptions
+- `github/FUNDING-SETUP.md` — Generate FUNDING.yml and open source monetization config
+- `github/ISSUE-TRIAGER.md` — Automatically categorize, prioritize, and route GitHub issues
+- `github/REPO-HEALTH.md` — Score and assess repository health across documentation, code quality, security, community
+- `github/CONTRIBUTING-GUIDE.md` — Generate comprehensive contributing guidelines for open source projects
+- `github/DEPENDENCY-AUDITOR.md` — Audit dependencies for vulnerabilities, licenses, and staleness
+- `github/BADGE-GENERATOR.md` — Generate README badges for build status, coverage, version, and more
+
+#### Documentation
+- `README.md` — Updated GitHub category table with all 22 agents
+
+---
+
 ## [2026-05-06] — Expanded GitHub Category with 6 More Agents
 
 ### Added
@@ -15,9 +36,6 @@ Newest entries are added at the top.
 - `github/SECURITY-POLICY.md` — Generate SECURITY.md and security documentation
 - `github/CODEOWNERS-GENERATOR.md` — Generate CODEOWNERS files for review assignment
 - `github/DISCUSSION-WRITER.md` — Generate GitHub Discussions posts for community
-
-#### Documentation
-- `README.md` — Updated GitHub category table with all 12 agents
 
 ---
 
@@ -36,41 +54,7 @@ Newest entries are added at the top.
 ### Changed
 
 #### File Renames (UPPERCASE)
-All agent definition files renamed to UPPERCASE for consistency with GitHub conventions (README, LICENSE, CHANGELOG style):
-
-**Evaluation:**
-- `evaluation/analyzer.md` → `evaluation/ANALYZER.md`
-- `evaluation/comparator.md` → `evaluation/COMPARATOR.md`
-- `evaluation/grader.md` → `evaluation/GRADER.md`
-
-**Development:**
-- `development/coder.md` → `development/CODER.md`
-- `development/reviewer.md` → `development/REVIEWER.md`
-- `development/debugger.md` → `development/DEBUGGER.md`
-- `development/tester.md` → `development/TESTER.md`
-
-**Content:**
-- `content/writer.md` → `content/WRITER.md`
-- `content/editor.md` → `content/EDITOR.md`
-- `content/summarizer.md` → `content/SUMMARIZER.md`
-- `content/translator.md` → `content/TRANSLATOR.md`
-
-**Research:**
-- `research/researcher.md` → `research/RESEARCHER.md`
-- `research/fact-checker.md` → `research/FACT-CHECKER.md`
-- `research/data-analyst.md` → `research/DATA-ANALYST.md`
-
-**Operations:**
-- `operations/deployer.md` → `operations/DEPLOYER.md`
-- `operations/monitor.md` → `operations/MONITOR.md`
-- `operations/scheduler.md` → `operations/SCHEDULER.md`
-
-**Communication:**
-- `communication/email-drafter.md` → `communication/EMAIL-DRAFTER.md`
-- `communication/meeting-summarizer.md` → `communication/MEETING-SUMMARIZER.md`
-
-#### Documentation
-- `README.md` — Updated with GitHub category table and UPPERCASE file references
+All agent definition files renamed to UPPERCASE for consistency with GitHub conventions.
 
 ---
 
@@ -79,84 +63,37 @@ All agent definition files renamed to UPPERCASE for consistency with GitHub conv
 ### Added
 
 #### Evaluation Agents
-- `evaluation/ANALYZER.md` — Post-hoc Analyzer agent for analyzing blind comparison results
-- `evaluation/COMPARATOR.md` — Blind Comparator agent for unbiased output comparison
-- `evaluation/GRADER.md` — Grader agent for evaluating expectations against transcripts
+- `evaluation/ANALYZER.md` — Post-hoc Analyzer agent
+- `evaluation/COMPARATOR.md` — Blind Comparator agent
+- `evaluation/GRADER.md` — Grader agent
 
 #### Development Agents
-- `development/CODER.md` — Coder agent for writing production-ready code
-- `development/REVIEWER.md` — Code Reviewer agent for structured code reviews
-- `development/DEBUGGER.md` — Debugger agent for systematic bug diagnosis
-- `development/TESTER.md` — Test Writer agent for comprehensive test suites
+- `development/CODER.md` — Coder agent
+- `development/REVIEWER.md` — Code Reviewer agent
+- `development/DEBUGGER.md` — Debugger agent
+- `development/TESTER.md` — Test Writer agent
 
 #### Content Agents
-- `content/WRITER.md` — Content Writer agent for generating written content
-- `content/EDITOR.md` — Content Editor agent for reviewing and improving content
-- `content/SUMMARIZER.md` — Summarizer agent for creating concise summaries
-- `content/TRANSLATOR.md` — Translator agent for translating content between languages
+- `content/WRITER.md` — Content Writer agent
+- `content/EDITOR.md` — Content Editor agent
+- `content/SUMMARIZER.md` — Summarizer agent
+- `content/TRANSLATOR.md` — Translator agent
 
 #### Research Agents
-- `research/RESEARCHER.md` — Researcher agent for structured research
-- `research/FACT-CHECKER.md` — Fact-Checker agent for verifying claims
-- `research/DATA-ANALYST.md` — Data Analyst agent for dataset analysis
+- `research/RESEARCHER.md` — Researcher agent
+- `research/FACT-CHECKER.md` — Fact-Checker agent
+- `research/DATA-ANALYST.md` — Data Analyst agent
 
 #### Operations Agents
-- `operations/DEPLOYER.md` — Deployer agent for deployment management
-- `operations/MONITOR.md` — Monitor agent for system health tracking
-- `operations/SCHEDULER.md` — Scheduler agent for task scheduling
+- `operations/DEPLOYER.md` — Deployer agent
+- `operations/MONITOR.md` — Monitor agent
+- `operations/SCHEDULER.md` — Scheduler agent
 
 #### Communication Agents
-- `communication/EMAIL-DRAFTER.md` — Email Drafter agent for composing emails
-- `communication/MEETING-SUMMARIZER.md` — Meeting Summarizer agent for meeting records
+- `communication/EMAIL-DRAFTER.md` — Email Drafter agent
+- `communication/MEETING-SUMMARIZER.md` — Meeting Summarizer agent
 
 #### Documentation
-- `README.md` — Project overview with category tables and usage guide
-- `CONTRIBUTING.md` — Guidelines for adding new agents
-- `CHANGELOG.md` — This file, tracking all changes
-
-### Structure
-```
-AgentSpace/
-├── README.md
-├── CHANGELOG.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── evaluation/
-│   ├── ANALYZER.md
-│   ├── COMPARATOR.md
-│   └── GRADER.md
-├── development/
-│   ├── CODER.md
-│   ├── REVIEWER.md
-│   ├── DEBUGGER.md
-│   └── TESTER.md
-├── content/
-│   ├── WRITER.md
-│   ├── EDITOR.md
-│   ├── SUMMARIZER.md
-│   └── TRANSLATOR.md
-├── research/
-│   ├── RESEARCHER.md
-│   ├── FACT-CHECKER.md
-│   └── DATA-ANALYST.md
-├── operations/
-│   ├── DEPLOYER.md
-│   ├── MONITOR.md
-│   └── SCHEDULER.md
-├── communication/
-│   ├── EMAIL-DRAFTER.md
-│   └── MEETING-SUMMARIZER.md
-└── github/
-    ├── README-WRITER.md
-    ├── WIKI-WRITER.md
-    ├── DOCS-WRITER.md
-    ├── RELEASE-WRITER.md
-    ├── PR-DESCRIPTION.md
-    ├── ISSUE-TEMPLATE.md
-    ├── COMMIT-MESSAGE.md
-    ├── CHANGELOG-WRITER.md
-    ├── CI-CD-WRITER.md
-    ├── SECURITY-POLICY.md
-    ├── CODEOWNERS-GENERATOR.md
-    └── DISCUSSION-WRITER.md
-```
+- `README.md` — Project overview
+- `CONTRIBUTING.md` — Contributing guidelines
+- `CHANGELOG.md` — This file

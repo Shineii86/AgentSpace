@@ -64,7 +64,7 @@ Agents for drafting emails and summarizing meetings.
 | [MEETING-SUMMARIZER](communication/MEETING-SUMMARIZER.md) | Transform meeting notes into actionable records |
 
 ### 🐙 [GitHub](github/)
-Agents for GitHub-specific documentation, workflows, and community management.
+Agents for GitHub documentation, workflows, community, and project management.
 
 | Agent | Purpose |
 |-------|---------|
@@ -80,6 +80,16 @@ Agents for GitHub-specific documentation, workflows, and community management.
 | [SECURITY-POLICY](github/SECURITY-POLICY.md) | Generate SECURITY.md and security documentation |
 | [CODEOWNERS-GENERATOR](github/CODEOWNERS-GENERATOR.md) | Generate CODEOWNERS files for review assignment |
 | [DISCUSSION-WRITER](github/DISCUSSION-WRITER.md) | Generate GitHub Discussions posts for community |
+| [MIGRATION-GUIDE](github/MIGRATION-GUIDE.md) | Generate version migration guides with upgrade instructions |
+| [GITHUB-ACTIONS-AUDITOR](github/GITHUB-ACTIONS-AUDITOR.md) | Audit workflows for security, efficiency, best practices |
+| [REPO-SETUP](github/REPO-SETUP.md) | Bootstrap new repos with essential config files |
+| [LABEL-MANAGER](github/LABEL-MANAGER.md) | Design label taxonomies for issues and PRs |
+| [FUNDING-SETUP](github/FUNDING-SETUP.md) | Generate FUNDING.yml and monetization config |
+| [ISSUE-TRIAGER](github/ISSUE-TRIAGER.md) | Automatically categorize, prioritize, and route issues |
+| [REPO-HEALTH](github/REPO-HEALTH.md) | Score and assess repository health across dimensions |
+| [CONTRIBUTING-GUIDE](github/CONTRIBUTING-GUIDE.md) | Generate comprehensive contributing guidelines |
+| [DEPENDENCY-AUDITOR](github/DEPENDENCY-AUDITOR.md) | Audit dependencies for vulnerabilities and licenses |
+| [BADGE-GENERATOR](github/BADGE-GENERATOR.md) | Generate README badges for status, coverage, version |
 
 ## 📋 Agent Definition Format
 

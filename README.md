@@ -331,6 +331,26 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 </tr>
 <tr>
 <td><strong><a href="github/FUNDING-SETUP.md">FUNDING-SETUP</a></strong></td>
+<tr>
+<td><strong><a href=github/MARKDOWN-GUIDE.md>MARKDOWN-GUIDE</a></strong></td>
+<td>Generate GitHub Flavored Markdown cheatsheets, tutorials, and best practices guides.</td>
+</tr>
+<tr>
+<td><strong><a href=github/PROFILE-OPTIMIZER.md>PROFILE-OPTIMIZER</a></strong></td>
+<td>Generate optimized GitHub profile READMEs with stats widgets and tech stacks.</td>
+</tr>
+<tr>
+<td><strong><a href=github/API-REFERENCE.md>API-REFERENCE</a></strong></td>
+<td>Generate comprehensive API reference documentation with examples.</td>
+</tr>
+<tr>
+<td><strong><a href=github/ARCHITECTURE-DIAGRAM.md>ARCHITECTURE-DIAGRAM</a></strong></td>
+<td>Generate Mermaid diagrams for system architecture and data flows.</td>
+</tr>
+<tr>
+<td><strong><a href=github/OPEN-SOURCE-GUIDE.md>OPEN-SOURCE-GUIDE</a></strong></td>
+<td>Generate guides for open source maintainers, governance, and sustainability.</td>
+</tr>
 <td>Generate FUNDING.yml for GitHub Sponsors, Open Collective, Ko-fi, and other monetization platforms.</td>
 </tr>
 <tr>

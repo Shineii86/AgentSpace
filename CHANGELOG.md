@@ -4,24 +4,54 @@ All notable changes to this project will be documented in this file.
 
 Newest entries are added at the top.
 
+## [2026-05-06] — GitHub Category: 5 More Agents (Markdown, Profiles, APIs, Diagrams, OSS)
+
+### Added
+
+#### GitHub Agents (NEW)
+- `github/MARKDOWN-GUIDE.md` — Generate GitHub Flavored Markdown cheatsheets and guides
+- `github/PROFILE-OPTIMIZER.md` — Generate optimized GitHub profile READMEs with stats widgets
+- `github/API-REFERENCE.md` — Generate comprehensive API reference documentation
+- `github/ARCHITECTURE-DIAGRAM.md` — Generate Mermaid diagrams for system architecture and data flows
+- `github/OPEN-SOURCE-GUIDE.md` — Generate guides for open source maintainers and communities
+
+#### Documentation
+- `README.md` — Updated GitHub category with new agents and documentation sub-section
+
+---
+
+## [2026-05-06] — SVG Banners Added to README
+
+### Added
+- `assets/banners/hero.svg` — Main header with gradient glow effect and tagline
+- `assets/banners/evaluation.svg` — Orange/coral category banner
+- `assets/banners/development.svg` — Green/blue category banner
+- `assets/banners/content.svg` — Purple/pink category banner
+- `assets/banners/research.svg` — Blue/green category banner
+- `assets/banners/operations.svg` — Orange/gold category banner
+- `assets/banners/communication.svg` — Pink/purple category banner
+- `assets/banners/github.svg` — Gray/blue category banner
+
+### Changed
+- `README.md` — Integrated SVG banners above each category section
+
+---
+
 ## [2026-05-06] — GitHub Category Expansion: 10 More Agents
 
 ### Added
 
 #### GitHub Agents (NEW)
-- `github/MIGRATION-GUIDE.md` — Generate version migration guides with step-by-step upgrade instructions
-- `github/GITHUB-ACTIONS-AUDITOR.md` — Audit existing workflows for security, efficiency, best practices
-- `github/REPO-SETUP.md` — Bootstrap new repos with essential config files (.gitignore, .editorconfig, LICENSE, CI)
-- `github/LABEL-MANAGER.md` — Design label taxonomies for issues and PRs with colors and descriptions
-- `github/FUNDING-SETUP.md` — Generate FUNDING.yml and open source monetization config
-- `github/ISSUE-TRIAGER.md` — Automatically categorize, prioritize, and route GitHub issues
-- `github/REPO-HEALTH.md` — Score and assess repository health across documentation, code quality, security, community
-- `github/CONTRIBUTING-GUIDE.md` — Generate comprehensive contributing guidelines for open source projects
-- `github/DEPENDENCY-AUDITOR.md` — Audit dependencies for vulnerabilities, licenses, and staleness
-- `github/BADGE-GENERATOR.md` — Generate README badges for build status, coverage, version, and more
-
-#### Documentation
-- `README.md` — Updated GitHub category table with all 22 agents
+- `github/MIGRATION-GUIDE.md` — Version migration guides with upgrade instructions
+- `github/GITHUB-ACTIONS-AUDITOR.md` — Workflow security and efficiency audits
+- `github/REPO-SETUP.md` — Bootstrap new repos with essential config
+- `github/LABEL-MANAGER.md` — Label taxonomy design for issues/PRs
+- `github/FUNDING-SETUP.md` — FUNDING.yml and monetization config
+- `github/ISSUE-TRIAGER.md` — Automatic issue categorization and routing
+- `github/REPO-HEALTH.md` — Repository health scoring and assessment
+- `github/CONTRIBUTING-GUIDE.md` — Contributing guidelines generation
+- `github/DEPENDENCY-AUDITOR.md` — Dependency vulnerability and license audits
+- `github/BADGE-GENERATOR.md` — README badge generation
 
 ---
 
@@ -49,7 +79,7 @@ Newest entries are added at the top.
 - `github/DOCS-WRITER.md` — Generate technical documentation for codebases
 - `github/RELEASE-WRITER.md` — Create polished release notes from changes and commits
 - `github/PR-DESCRIPTION.md` — Generate clear, informative pull request descriptions
-- `github/ISSUE-TEMPLATE.md` — Create structured issue templates for bug reports, feature requests, etc.
+- `github/ISSUE-TEMPLATE.md` — Create structured issue templates
 
 ### Changed
 

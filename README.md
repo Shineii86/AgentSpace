@@ -64,7 +64,7 @@ Agents for drafting emails and summarizing meetings.
 | [MEETING-SUMMARIZER](communication/MEETING-SUMMARIZER.md) | Transform meeting notes into actionable records |
 
 ### 🐙 [GitHub](github/)
-Agents for GitHub-specific documentation and workflows.
+Agents for GitHub-specific documentation, workflows, and community management.
 
 | Agent | Purpose |
 |-------|---------|
@@ -74,6 +74,12 @@ Agents for GitHub-specific documentation and workflows.
 | [RELEASE-WRITER](github/RELEASE-WRITER.md) | Create polished release notes from changes |
 | [PR-DESCRIPTION](github/PR-DESCRIPTION.md) | Generate clear, informative PR descriptions |
 | [ISSUE-TEMPLATE](github/ISSUE-TEMPLATE.md) | Create structured issue templates |
+| [COMMIT-MESSAGE](github/COMMIT-MESSAGE.md) | Generate conventional commit messages from diffs |
+| [CHANGELOG-WRITER](github/CHANGELOG-WRITER.md) | Generate structured changelogs from commits and PRs |
+| [CI-CD-WRITER](github/CI-CD-WRITER.md) | Generate GitHub Actions workflows for CI/CD |
+| [SECURITY-POLICY](github/SECURITY-POLICY.md) | Generate SECURITY.md and security documentation |
+| [CODEOWNERS-GENERATOR](github/CODEOWNERS-GENERATOR.md) | Generate CODEOWNERS files for review assignment |
+| [DISCUSSION-WRITER](github/DISCUSSION-WRITER.md) | Generate GitHub Discussions posts for community |
 
 ## 📋 Agent Definition Format
 

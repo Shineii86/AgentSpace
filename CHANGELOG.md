@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 Newest entries are added at the top.
 
+## [2026-05-06] — Expanded GitHub Category with 6 More Agents
+
+### Added
+
+#### GitHub Agents (NEW)
+- `github/COMMIT-MESSAGE.md` — Generate conventional commit messages from diffs
+- `github/CHANGELOG-WRITER.md` — Generate structured changelogs from commits and PRs
+- `github/CI-CD-WRITER.md` — Generate GitHub Actions workflows for CI/CD
+- `github/SECURITY-POLICY.md` — Generate SECURITY.md and security documentation
+- `github/CODEOWNERS-GENERATOR.md` — Generate CODEOWNERS files for review assignment
+- `github/DISCUSSION-WRITER.md` — Generate GitHub Discussions posts for community
+
+#### Documentation
+- `README.md` — Updated GitHub category table with all 12 agents
+
+---
+
 ## [2026-05-06] — Added GitHub Category & Renamed All Files to UPPERCASE
 
 ### Added
@@ -135,5 +152,11 @@ AgentSpace/
     ├── DOCS-WRITER.md
     ├── RELEASE-WRITER.md
     ├── PR-DESCRIPTION.md
-    └── ISSUE-TEMPLATE.md
+    ├── ISSUE-TEMPLATE.md
+    ├── COMMIT-MESSAGE.md
+    ├── CHANGELOG-WRITER.md
+    ├── CI-CD-WRITER.md
+    ├── SECURITY-POLICY.md
+    ├── CODEOWNERS-GENERATOR.md
+    └── DISCUSSION-WRITER.md
 ```

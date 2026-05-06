@@ -2,7 +2,7 @@
 
 <img src="assets/banners/hero.svg" alt="AgentSpace" width="100%"/>
 
-**A curated library of 101 battle-tested AI agent definitions across 14 categories.**
+**A curated library of 100+ battle-tested AI agent definitions across 15+ categories.**
 **Copy-paste ready for any LLM — OpenAI, Claude, Gemini, Llama, and more.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)

@@ -86,26 +86,12 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ### 📊 Evaluation
 
-> *Agents for judging, comparing, and grading outputs.*
+*Agents for judging, comparing, and grading outputs.*
 
-<table>
-<tr>
-<td width="30%"><strong><a href="evaluation/ANALYZER.md">ANALYZER</a></strong></td>
-<td>Post-hoc analysis of blind comparison results. Examines why the winner won and generates actionable improvement suggestions for the loser.</td>
-</tr>
-<tr>
-<td><strong><a href="evaluation/COMPARATOR.md">COMPARATOR</a></strong></td>
-<td>Blind comparison of two outputs without bias. Uses structured rubrics (content + structure) to determine a winner based purely on quality.</td>
-</tr>
-<tr>
-<td><strong><a href="evaluation/GRADER.md">GRADER</a></strong></td>
-<td>Evaluate expectations against execution transcripts. Grades pass/fail with evidence, critiques weak evals, and surfaces hidden claims.</td>
-</tr>
-<tr>
-<td><strong><a href="evaluation/A-B-TESTER.md">A-B-TESTER</a></strong></td>
-<td>Design A/B tests with sample size calculation, metric selection, statistical analysis, and decision frameworks.</td>
-</tr>
-</table>
+- [**ANALYZER**](evaluation/ANALYZER.md) — Post-hoc analysis of blind comparison results. Examines why the winner won and generates actionable improvement suggestions for the loser.
+- [**COMPARATOR**](evaluation/COMPARATOR.md) — Blind comparison of two outputs without bias. Uses structured rubrics (content + structure) to determine a winner based purely on quality.
+- [**GRADER**](evaluation/GRADER.md) — Evaluate expectations against execution transcripts. Grades pass/fail with evidence, critiques weak evals, and surfaces hidden claims.
+- [**A-B-TESTER**](evaluation/A-B-TESTER.md) — Design A/B tests with sample size calculation, metric selection, statistical analysis, and decision frameworks.
 
 ---
 
@@ -115,34 +101,14 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ### 💻 Development
 
-> *Agents for the full software development lifecycle.*
+*Agents for the full software development lifecycle.*
 
-<table>
-<tr>
-<td width="30%"><strong><a href="development/CODER.md">CODER</a></strong></td>
-<td>Write clean, production-ready code from specifications. Handles design, implementation, testing, and self-review in one pass.</td>
-</tr>
-<tr>
-<td><strong><a href="development/REVIEWER.md">REVIEWER</a></strong></td>
-<td>Structured code reviews covering correctness, security, performance, maintainability, and style. Produces actionable feedback with severity levels.</td>
-</tr>
-<tr>
-<td><strong><a href="development/DEBUGGER.md">DEBUGGER</a></strong></td>
-<td>Systematic bug diagnosis following a methodology: understand → reproduce → analyze → hypothesize → test → fix → prevent.</td>
-</tr>
-<tr>
-<td><strong><a href="development/TESTER.md">TESTER</a></strong></td>
-<td>Generate comprehensive test suites covering happy paths, edge cases, error conditions, and security scenarios.</td>
-</tr>
-<tr>
-<td><strong><a href="development/SECURITY-AUDITOR.md">SECURITY-AUDITOR</a></strong></td>
-<td>Comprehensive security audits for codebases. Scans for injection, auth flaws, data exposure, and crypto issues with remediation guidance.</td>
-</tr>
-<tr>
-<td><strong><a href="development/ARCHITECTURE.md">ARCHITECTURE</a></strong></td>
-<td>Generate Architecture Decision Records (ADRs), design docs, and RFCs that capture technical decisions and their rationale.</td>
-</tr>
-</table>
+- [**CODER**](development/CODER.md) — Write clean, production-ready code from specifications. Handles design, implementation, testing, and self-review in one pass.
+- [**REVIEWER**](development/REVIEWER.md) — Structured code reviews covering correctness, security, performance, maintainability, and style. Produces actionable feedback with severity levels.
+- [**DEBUGGER**](development/DEBUGGER.md) — Systematic bug diagnosis following a methodology: understand → reproduce → analyze → hypothesize → test → fix → prevent.
+- [**TESTER**](development/TESTER.md) — Generate comprehensive test suites covering happy paths, edge cases, error conditions, and security scenarios.
+- [**SECURITY-AUDITOR**](development/SECURITY-AUDITOR.md) — Comprehensive security audits for codebases. Scans for injection, auth flaws, data exposure, and crypto issues with remediation guidance.
+- [**ARCHITECTURE**](development/ARCHITECTURE.md) — Generate Architecture Decision Records (ADRs), design docs, and RFCs that capture technical decisions and their rationale.
 
 ---
 
@@ -152,30 +118,13 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ### ✍️ Content
 
-> *Agents for creating, editing, and transforming written content.*
+*Agents for creating, editing, and transforming written content.*
 
-<table>
-<tr>
-<td width="30%"><strong><a href="content/WRITER.md">WRITER</a></strong></td>
-<td>Generate high-quality content tailored to audience, tone, and format. Supports blog posts, docs, tutorials, emails, and reports.</td>
-</tr>
-<tr>
-<td><strong><a href="content/EDITOR.md">EDITOR</a></strong></td>
-<td>Review and improve existing content at structural, line, and proofreading levels. Preserves the author's voice while improving clarity.</td>
-</tr>
-<tr>
-<td><strong><a href="content/SUMMARIZER.md">SUMMARIZER</a></strong></td>
-<td>Create concise, accurate summaries. Supports executive, technical, bullet-point, and brief formats with configurable compression.</td>
-</tr>
-<tr>
-<td><strong><a href="content/TRANSLATOR.md">TRANSLATOR</a></strong></td>
-<td>Translate content between languages with cultural adaptation. Handles idioms, technical terms, and preserves formatting.</td>
-</tr>
-<tr>
-<td><strong><a href="content/SOCIAL-MEDIA.md">SOCIAL-MEDIA</a></strong></td>
-<td>Generate platform-optimized social media posts for Twitter/X, LinkedIn, Reddit, and Discord with engagement strategies.</td>
-</tr>
-</table>
+- [**WRITER**](content/WRITER.md) — Generate high-quality content tailored to audience, tone, and format. Supports blog posts, docs, tutorials, emails, and reports.
+- [**EDITOR**](content/EDITOR.md) — Review and improve existing content at structural, line, and proofreading levels. Preserves the author's voice while improving clarity.
+- [**SUMMARIZER**](content/SUMMARIZER.md) — Create concise, accurate summaries. Supports executive, technical, bullet-point, and brief formats with configurable compression.
+- [**TRANSLATOR**](content/TRANSLATOR.md) — Translate content between languages with cultural adaptation. Handles idioms, technical terms, and preserves formatting.
+- [**SOCIAL-MEDIA**](content/SOCIAL-MEDIA.md) — Generate platform-optimized social media posts for Twitter/X, LinkedIn, Reddit, and Discord with engagement strategies.
 
 ---
 
@@ -185,26 +134,12 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ### 🔬 Research
 
-> *Agents for investigating topics, verifying claims, and analyzing data.*
+*Agents for investigating topics, verifying claims, and analyzing data.*
 
-<table>
-<tr>
-<td width="30%"><strong><a href="research/RESEARCHER.md">RESEARCHER</a></strong></td>
-<td>Conduct thorough research from multiple sources. Produces structured reports with executive summary, findings, analysis, and citations.</td>
-</tr>
-<tr>
-<td><strong><a href="research/FACT-CHECKER.md">FACT-CHECKER</a></strong></td>
-<td>Verify claims with a 7-level rating system (TRUE → FALSE). Extracts implicit claims, checks logical validity, and flags misleading statements.</td>
-</tr>
-<tr>
-<td><strong><a href="research/DATA-ANALYST.md">DATA-ANALYST</a></strong></td>
-<td>Analyze datasets with descriptive, diagnostic, predictive, and comparative methods. Identifies patterns, anomalies, and actionable insights.</td>
-</tr>
-<tr>
-<td><strong><a href="research/COMPETITIVE-ANALYSIS.md">COMPETITIVE-ANALYSIS</a></strong></td>
-<td>Analyze competitors with feature comparison, pricing, SWOT analysis, and market positioning to inform strategy.</td>
-</tr>
-</table>
+- [**RESEARCHER**](research/RESEARCHER.md) — Conduct thorough research from multiple sources. Produces structured reports with executive summary, findings, analysis, and citations.
+- [**FACT-CHECKER**](research/FACT-CHECKER.md) — Verify claims with a 7-level rating system (TRUE → FALSE). Extracts implicit claims, checks logical validity, and flags misleading statements.
+- [**DATA-ANALYST**](research/DATA-ANALYST.md) — Analyze datasets with descriptive, diagnostic, predictive, and comparative methods. Identifies patterns, anomalies, and actionable insights.
+- [**COMPETITIVE-ANALYSIS**](research/COMPETITIVE-ANALYSIS.md) — Analyze competitors with feature comparison, pricing, SWOT analysis, and market positioning to inform strategy.
 
 ---
 
@@ -214,26 +149,12 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ### ⚙️ Operations
 
-> *Agents for deploying, monitoring, and managing infrastructure.*
+*Agents for deploying, monitoring, and managing infrastructure.*
 
-<table>
-<tr>
-<td width="30%"><strong><a href="operations/DEPLOYER.md">DEPLOYER</a></strong></td>
-<td>Manage deployments with pre-flight checks, rolling/blue-green/canary strategies, post-deployment verification, and automatic rollback.</td>
-</tr>
-<tr>
-<td><strong><a href="operations/MONITOR.md">MONITOR</a></strong></td>
-<td>Track system health across availability, latency, errors, and resources. Detects anomalies and generates severity-rated alerts.</td>
-</tr>
-<tr>
-<td><strong><a href="operations/SCHEDULER.md">SCHEDULER</a></strong></td>
-<td>Plan task schedules with dependency graphs, critical path analysis, resource allocation, and risk assessment.</td>
-</tr>
-<tr>
-<td><strong><a href="operations/POSTMORTEM.md">POSTMORTEM</a></strong></td>
-<td>Generate blameless incident postmortems with timeline reconstruction, 5-Whys root cause analysis, and action items.</td>
-</tr>
-</table>
+- [**DEPLOYER**](operations/DEPLOYER.md) — Manage deployments with pre-flight checks, rolling/blue-green/canary strategies, post-deployment verification, and automatic rollback.
+- [**MONITOR**](operations/MONITOR.md) — Track system health across availability, latency, errors, and resources. Detects anomalies and generates severity-rated alerts.
+- [**SCHEDULER**](operations/SCHEDULER.md) — Plan task schedules with dependency graphs, critical path analysis, resource allocation, and risk assessment.
+- [**POSTMORTEM**](operations/POSTMORTEM.md) — Generate blameless incident postmortems with timeline reconstruction, 5-Whys root cause analysis, and action items.
 
 ---
 
@@ -243,18 +164,10 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ### 📨 Communication
 
-> *Agents for professional communication and meeting management.*
+*Agents for professional communication and meeting management.*
 
-<table>
-<tr>
-<td width="30%"><strong><a href="communication/EMAIL-DRAFTER.md">EMAIL-DRAFTER</a></strong></td>
-<td>Compose professional emails adapted to recipient, context, and goal. Supports follow-ups, requests, bad news, and introductions.</td>
-</tr>
-<tr>
-<td><strong><a href="communication/MEETING-SUMMARIZER.md">MEETING-SUMMARIZER</a></strong></td>
-<td>Transform raw meeting notes into structured records with decisions, action items, discussion summaries, and blockers.</td>
-</tr>
-</table>
+- [**EMAIL-DRAFTER**](communication/EMAIL-DRAFTER.md) — Compose professional emails adapted to recipient, context, and goal. Supports follow-ups, requests, bad news, and introductions.
+- [**MEETING-SUMMARIZER**](communication/MEETING-SUMMARIZER.md) — Transform raw meeting notes into structured records with decisions, action items, discussion summaries, and blockers.
 
 ---
 
@@ -264,143 +177,50 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ### 🐙 GitHub
 
-> *The largest category — 22 agents covering the complete GitHub ecosystem.*
+*The largest category — 28 agents covering the complete GitHub ecosystem.*
 
 #### 📝 Documentation & Content
 
-<table>
-<tr>
-<td width="30%"><strong><a href="github/README-WRITER.md">README-WRITER</a></strong></td>
-<td>Generate comprehensive README files with installation, usage, API reference, and contributing sections.</td>
-</tr>
-<tr>
-<td><strong><a href="github/WIKI-WRITER.md">WIKI-WRITER</a></strong></td>
-<td>Create structured wiki documentation with interconnected pages for architecture, guides, and references.</td>
-</tr>
-<tr>
-<td><strong><a href="github/DOCS-WRITER.md">DOCS-WRITER</a></strong></td>
-<td>Generate technical documentation including API references, tutorials, guides, and architecture docs.</td>
-</tr>
-<tr>
-<td><strong><a href="github/CONTRIBUTING-GUIDE.md">CONTRIBUTING-GUIDE</a></strong></td>
-<td>Create welcoming contributing guidelines with setup instructions, workflow, code standards, and PR process.</td>
-</tr>
-<tr>
-<td><strong><a href="github/MIGRATION-GUIDE.md">MIGRATION-GUIDE</a></strong></td>
-<td>Generate version migration guides with before/after code examples, automated tooling, and rollback instructions.</td>
-</tr>
-</table>
+- [**README-WRITER**](github/README-WRITER.md) — Generate comprehensive README files with installation, usage, API reference, and contributing sections.
+- [**WIKI-WRITER**](github/WIKI-WRITER.md) — Create structured wiki documentation with interconnected pages for architecture, guides, and references.
+- [**DOCS-WRITER**](github/DOCS-WRITER.md) — Generate technical documentation including API references, tutorials, guides, and architecture docs.
+- [**CONTRIBUTING-GUIDE**](github/CONTRIBUTING-GUIDE.md) — Create welcoming contributing guidelines with setup instructions, workflow, code standards, and PR process.
+- [**MIGRATION-GUIDE**](github/MIGRATION-GUIDE.md) — Generate version migration guides with before/after code examples, automated tooling, and rollback instructions.
 
 #### 🔄 Releases & Changelogs
 
-<table>
-<tr>
-<td width="30%"><strong><a href="github/RELEASE-WRITER.md">RELEASE-WRITER</a></strong></td>
-<td>Create polished release notes from commits and PRs. Categorizes changes, flags breaking changes, and credits contributors.</td>
-</tr>
-<tr>
-<td><strong><a href="github/CHANGELOG-WRITER.md">CHANGELOG-WRITER</a></strong></td>
-<td>Generate structured changelogs following Keep a Changelog format. Groups by Added/Changed/Fixed/Removed/Security.</td>
-</tr>
-<tr>
-<td><strong><a href="github/COMMIT-MESSAGE.md">COMMIT-MESSAGE</a></strong></td>
-<td>Generate conventional commit messages from diffs. Follows type(scope): description format with body and footer.</td>
-</tr>
-</table>
+- [**RELEASE-WRITER**](github/RELEASE-WRITER.md) — Create polished release notes from commits and PRs. Categorizes changes, flags breaking changes, and credits contributors.
+- [**CHANGELOG-WRITER**](github/CHANGELOG-WRITER.md) — Generate structured changelogs following Keep a Changelog format. Groups by Added/Changed/Fixed/Removed/Security.
+- [**COMMIT-MESSAGE**](github/COMMIT-MESSAGE.md) — Generate conventional commit messages from diffs. Follows type(scope): description format with body and footer.
 
 #### 🐛 Issues & PRs
 
-<table>
-<tr>
-<td width="30%"><strong><a href="github/PR-DESCRIPTION.md">PR-DESCRIPTION</a></strong></td>
-<td>Generate clear PR descriptions with summary, changes, testing instructions, and checklists.</td>
-</tr>
-<tr>
-<td><strong><a href="github/ISSUE-TEMPLATE.md">ISSUE-TEMPLATE</a></strong></td>
-<td>Create structured issue templates for bug reports, feature requests, security vulnerabilities, and questions.</td>
-</tr>
-<tr>
-<td><strong><a href="github/ISSUE-TRIAGER.md">ISSUE-TRIAGER</a></strong></td>
-<td>Automatically categorize, prioritize, and route issues. Checks completeness and suggests follow-up questions.</td>
-</tr>
-</table>
+- [**PR-DESCRIPTION**](github/PR-DESCRIPTION.md) — Generate clear PR descriptions with summary, changes, testing instructions, and checklists.
+- [**ISSUE-TEMPLATE**](github/ISSUE-TEMPLATE.md) — Create structured issue templates for bug reports, feature requests, security vulnerabilities, and questions.
+- [**ISSUE-TRIAGER**](github/ISSUE-TRIAGER.md) — Automatically categorize, prioritize, and route issues. Checks completeness and suggests follow-up questions.
 
 #### 🔧 CI/CD & Security
 
-<table>
-<tr>
-<td width="30%"><strong><a href="github/CI-CD-WRITER.md">CI-CD-WRITER</a></strong></td>
-<td>Generate GitHub Actions workflows for CI, CD, releases, and scheduled jobs. Includes caching, matrix builds, and security best practices.</td>
-</tr>
-<tr>
-<td><strong><a href="github/GITHUB-ACTIONS-AUDITOR.md">GITHUB-ACTIONS-AUDITOR</a></strong></td>
-<td>Audit existing workflows for security risks (unpinned actions, secret exposure), performance issues, and best practices.</td>
-</tr>
-<tr>
-<td><strong><a href="github/SECURITY-POLICY.md">SECURITY-POLICY</a></strong></td>
-<td>Generate SECURITY.md with reporting instructions, response timelines, disclosure policy, and safe harbor provisions.</td>
-</tr>
-<tr>
-<td><strong><a href="github/CODEOWNERS-GENERATOR.md">CODEOWNERS-GENERATOR</a></strong></td>
-<td>Generate CODEOWNERS files that automatically assign reviewers based on which files are changed.</td>
-</tr>
-<tr>
-<td><strong><a href="github/DEPENDENCY-AUDITOR.md">DEPENDENCY-AUDITOR</a></strong></td>
-<td>Audit dependencies for security vulnerabilities, license compliance, update status, and overall health.</td>
-</tr>
-</table>
+- [**CI-CD-WRITER**](github/CI-CD-WRITER.md) — Generate GitHub Actions workflows for CI, CD, releases, and scheduled jobs. Includes caching, matrix builds, and security best practices.
+- [**GITHUB-ACTIONS-AUDITOR**](github/GITHUB-ACTIONS-AUDITOR.md) — Audit existing workflows for security risks (unpinned actions, secret exposure), performance issues, and best practices.
+- [**SECURITY-POLICY**](github/SECURITY-POLICY.md) — Generate SECURITY.md with reporting instructions, response timelines, disclosure policy, and safe harbor provisions.
+- [**CODEOWNERS-GENERATOR**](github/CODEOWNERS-GENERATOR.md) — Generate CODEOWNERS files that automatically assign reviewers based on which files are changed.
+- [**DEPENDENCY-AUDITOR**](github/DEPENDENCY-AUDITOR.md) — Audit dependencies for security vulnerabilities, license compliance, update status, and overall health.
 
 #### 🏗️ Project Setup & Management
 
-<table>
-<tr>
-<td width="30%"><strong><a href="github/REPO-SETUP.md">REPO-SETUP</a></strong></td>
-<td>Bootstrap new repos with .gitignore, .editorconfig, LICENSE, CI workflows, issue templates, and Dependabot config.</td>
-</tr>
-<tr>
-<td><strong><a href="github/REPO-HEALTH.md">REPO-HEALTH</a></strong></td>
-<td>Score repository health across documentation, code quality, community, security, and maintenance dimensions.</td>
-</tr>
-<tr>
-<td><strong><a href="github/LABEL-MANAGER.md">LABEL-MANAGER</a></strong></td>
-<td>Design label taxonomies with consistent naming, meaningful colors, and clear descriptions for issues and PRs.</td>
-</tr>
-<tr>
-<td><strong><a href="github/BADGE-GENERATOR.md">BADGE-GENERATOR</a></strong></td>
-<td>Generate shields.io badges for build status, coverage, version, license, downloads, and community metrics.</td>
-</tr>
-<tr>
-<td><strong><a href="github/FUNDING-SETUP.md">FUNDING-SETUP</a></strong></td>
-<tr>
-<td><strong><a href=github/MARKDOWN-GUIDE.md>MARKDOWN-GUIDE</a></strong></td>
-<td>Generate GitHub Flavored Markdown cheatsheets, tutorials, and best practices guides.</td>
-</tr>
-<tr>
-<td><strong><a href=github/PROFILE-OPTIMIZER.md>PROFILE-OPTIMIZER</a></strong></td>
-<td>Generate optimized GitHub profile READMEs with stats widgets and tech stacks.</td>
-</tr>
-<tr>
-<td><strong><a href=github/API-REFERENCE.md>API-REFERENCE</a></strong></td>
-<td>Generate comprehensive API reference documentation with examples.</td>
-</tr>
-<tr>
-<td><strong><a href=github/ARCHITECTURE-DIAGRAM.md>ARCHITECTURE-DIAGRAM</a></strong></td>
-<td>Generate Mermaid diagrams for system architecture and data flows.</td>
-</tr>
-<tr>
-<td><strong><a href=github/OPEN-SOURCE-GUIDE.md>OPEN-SOURCE-GUIDE</a></strong></td>
-<td>Generate guides for open source maintainers, governance, and sustainability.</td>
-</tr>
-<td>Generate FUNDING.yml for GitHub Sponsors, Open Collective, Ko-fi, and other monetization platforms.</td>
-</tr>
-<tr>
-<td><strong><a href="github/DISCUSSION-WRITER.md">DISCUSSION-WRITER</a></strong></td>
-<td>Generate GitHub Discussions posts for announcements, proposals, Q&A, and community engagement.</td>
-</tr>
-</table>
-
----
-
+- [**REPO-SETUP**](github/REPO-SETUP.md) — Bootstrap new repos with .gitignore, .editorconfig, LICENSE, CI workflows, issue templates, and Dependabot config.
+- [**REPO-HEALTH**](github/REPO-HEALTH.md) — Score repository health across documentation, code quality, community, security, and maintenance dimensions.
+- [**LABEL-MANAGER**](github/LABEL-MANAGER.md) — Design label taxonomies with consistent naming, meaningful colors, and clear descriptions for issues and PRs.
+- [**BADGE-GENERATOR**](github/BADGE-GENERATOR.md) — Generate shields.io badges for build status, coverage, version, license, downloads, and community metrics.
+- [**FUNDING-SETUP**](github/FUNDING-SETUP.md) — Generate FUNDING.yml for GitHub Sponsors, Open Collective, Ko-fi, and other monetization platforms.
+- [**MARKDOWN-GUIDE**](github/MARKDOWN-GUIDE.md) — Generate GitHub Flavored Markdown cheatsheets, tutorials, and best practices guides.
+- [**PROFILE-OPTIMIZER**](github/PROFILE-OPTIMIZER.md) — Generate optimized GitHub profile READMEs with stats widgets and tech stacks.
+- [**API-REFERENCE**](github/API-REFERENCE.md) — Generate comprehensive API reference documentation with examples.
+- [**ARCHITECTURE-DIAGRAM**](github/ARCHITECTURE-DIAGRAM.md) — Generate Mermaid diagrams for system architecture and data flows.
+- [**OPEN-SOURCE-GUIDE**](github/OPEN-SOURCE-GUIDE.md) — Generate guides for open source maintainers, governance, and sustainability.
+- [**DISCUSSION-WRITER**](github/DISCUSSION-WRITER.md) — Generate GitHub Discussions posts for announcements, proposals, Q&A, and community engagement.
+- [**CODE-DOCUMENTATION-STANDARDS**](github/CODE-DOCUMENTATION-STANDARDS.md) — Reference template for writing well-documented, maintainable code with consistent conventions.
 
 ---
 
@@ -410,75 +230,31 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ### 🔌 API
 
-> *The complete API lifecycle — from design to deployment to monitoring.*
+*The complete API lifecycle — from design to deployment to monitoring.*
 
 #### 📐 Design & Build
 
-<table>
-<tr>
-<td width="30%"><strong><a href="api/API-DESIGNER.md">API-DESIGNER</a></strong></td>
-<td>Design REST, GraphQL, and gRPC API schemas with contracts, validation rules, and error formats.</td>
-</tr>
-<tr>
-<td><strong><a href="api/API-BUILDER.md">API-BUILDER</a></strong></td>
-<td>Generate production-ready API server code from specs. Routes, handlers, validation, error handling, and tests.</td>
-</tr>
-<tr>
-<td><strong><a href="api/API-CLIENT.md">API-CLIENT</a></strong></td>
-<td>Generate type-safe SDK/client libraries from API specs. TypeScript, Python, Go, Java, Ruby.</td>
-</tr>
-<tr>
-<td><strong><a href="api/API-MOCK.md">API-MOCK</a></strong></td>
-<td>Create mock API servers with realistic data, delays, error simulation, and stateful CRUD.</td>
-</tr>
-</table>
+- [**API-DESIGNER**](api/API-DESIGNER.md) — Design REST, GraphQL, and gRPC API schemas with contracts, validation rules, and error formats.
+- [**API-BUILDER**](api/API-BUILDER.md) — Generate production-ready API server code from specs. Routes, handlers, validation, error handling, and tests.
+- [**API-CLIENT**](api/API-CLIENT.md) — Generate type-safe SDK/client libraries from API specs. TypeScript, Python, Go, Java, Ruby.
+- [**API-MOCK**](api/API-MOCK.md) — Create mock API servers with realistic data, delays, error simulation, and stateful CRUD.
 
 #### 🕷️ Data & Scraping
 
-<table>
-<tr>
-<td width="30%"><strong><a href="api/API-SCRAPER.md">API-SCRAPER</a></strong></td>
-<td>Scrape websites, HTML tables, JSON-LD, and API docs to create structured, queryable APIs.</td>
-</tr>
-<tr>
-<td><strong><a href="api/API-TRANSFORMER.md">API-TRANSFORMER</a></strong></td>
-<td>Transform data between formats: REST↔GraphQL, SOAP↔REST, CSV↔JSON, flat↔nested.</td>
-</tr>
-<tr>
-<td><strong><a href="api/API-MIGRATION.md">API-MIGRATION</a></strong></td>
-<td>Migrate between API versions, formats, and protocols with compatibility layers and rollback plans.</td>
-</tr>
-</table>
+- [**API-SCRAPER**](api/API-SCRAPER.md) — Scrape websites, HTML tables, JSON-LD, and API docs to create structured, queryable APIs.
+- [**API-TRANSFORMER**](api/API-TRANSFORMER.md) — Transform data between formats: REST↔GraphQL, SOAP↔REST, CSV↔JSON, flat↔nested.
+- [**API-MIGRATION**](api/API-MIGRATION.md) — Migrate between API versions, formats, and protocols with compatibility layers and rollback plans.
 
 #### 🔧 Infrastructure
 
-<table>
-<tr>
-<td width="30%"><strong><a href="api/API-GATEWAY.md">API-GATEWAY</a></strong></td>
-<td>Design API gateway configs for routing, auth, rate limiting, and observability (Kong, Nginx, AWS).</td>
-</tr>
-<tr>
-<td><strong><a href="api/API-MONITOR.md">API-MONITOR</a></strong></td>
-<td>Design monitoring with SLIs, SLOs, dashboards, alerts, and health check scripts.</td>
-</tr>
-<tr>
-<td><strong><a href="api/API-SECURITY.md">API-SECURITY</a></strong></td>
-<td>Audit and harden API security against OWASP API Top 10. Auth, validation, rate limiting, headers.</td>
-</tr>
-</table>
+- [**API-GATEWAY**](api/API-GATEWAY.md) — Design API gateway configs for routing, auth, rate limiting, and observability (Kong, Nginx, AWS).
+- [**API-MONITOR**](api/API-MONITOR.md) — Design monitoring with SLIs, SLOs, dashboards, alerts, and health check scripts.
+- [**API-SECURITY**](api/API-SECURITY.md) — Audit and harden API security against OWASP API Top 10. Auth, validation, rate limiting, headers.
 
 #### 📋 Testing & Documentation
 
-<table>
-<tr>
-<td width="30%"><strong><a href="api/API-TESTER.md">API-TESTER</a></strong></td>
-<td>Generate comprehensive test suites: functional, contract, edge cases, auth, and error handling.</td>
-</tr>
-<tr>
-<td><strong><a href="api/API-DOCUMENTATION.md">API-DOCUMENTATION</a></strong></td>
-<td>Generate interactive API docs with Redoc, Swagger, or custom platforms. Working examples included.</td>
-</tr>
-</table>
+- [**API-TESTER**](api/API-TESTER.md) — Generate comprehensive test suites: functional, contract, edge cases, auth, and error handling.
+- [**API-DOCUMENTATION**](api/API-DOCUMENTATION.md) — Generate interactive API docs with Redoc, Swagger, or custom platforms. Working examples included.
 
 ---
 

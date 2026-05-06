@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentSpace — Battle-Tested AI Agent Definitions</title>
+  <meta name="description" content="A curated library of 101 battle-tested AI agent definitions across 14 categories. Copy-paste ready for any LLM.">
+  <meta name="keywords" content="ai-agents, llm, prompt-engineering, agent-definitions, system-prompts, openai, claude, gemini">
+  <meta property="og:title" content="AgentSpace — AI Agent Definitions">
+  <meta property="og:description" content="101 battle-tested agent definitions across 14 categories. Copy-paste ready for any LLM.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #020617;
+      --bg2: #0f172a;
+      --card: rgba(15,23,42,0.7);
+      --card-border: rgba(255,255,255,0.06);
+      --text: #f1f5f9;
+      --text2: #94a3b8;
+      --text3: #64748b;
+      --accent1: #6366f1;
+      --accent2: #ec4899;
+      --accent3: #f59e0b;
+      --gradient: linear-gradient(135deg, #6366f1, #ec4899, #f59e0b);
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* Grid bg */
+    .grid-bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+
+    /* Nebula */
+    .nebula {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 600px 400px at 20% 20%, rgba(99,102,241,0.08), transparent),
+        radial-gradient(ellipse 500px 500px at 80% 60%, rgba(236,72,153,0.06), transparent),
+        radial-gradient(ellipse 400px 300px at 50% 80%, rgba(245,158,11,0.04), transparent);
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    /* Nav */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(2,6,23,0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--card-border);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo { font-weight: 800; font-size: 20px; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { color: var(--text2); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-github {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 16px; border-radius: 8px;
+      background: var(--card); border: 1px solid var(--card-border);
+      color: var(--text2); font-size: 13px; font-weight: 500;
+      transition: all 0.2s;
+    }
+    .nav-github:hover { border-color: var(--accent1); color: var(--text); }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 120px 0 80px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px; border-radius: 100px;
+      background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2);
+      color: var(--accent1); font-size: 13px; font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--text2);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    .hero-stats {
+      display: flex; justify-content: center; gap: 48px;
+      margin-bottom: 40px;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat-num {
+      font-size: 36px; font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-stat-label { font-size: 13px; color: var(--text3); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+    .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 12px;
+      font-size: 15px; font-weight: 600;
+      transition: all 0.2s; cursor: pointer; border: none;
+    }
+    .btn-primary {
+      background: var(--gradient); color: white;
+      box-shadow: 0 4px 20px rgba(99,102,241,0.3);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.4); }
+    .btn-secondary {
+      background: var(--card); color: var(--text);
+      border: 1px solid var(--card-border);
+    }
+    .btn-secondary:hover { border-color: var(--accent1); }
+
+    /* Section */
+    section { padding: 80px 0; }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-header h2 {
+      font-size: 36px; font-weight: 800; margin-bottom: 12px;
+    }
+    .section-header p { color: var(--text2); font-size: 16px; max-width: 500px; margin: 0 auto; }
+
+    /* Category grid */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+    }
+    .cat-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: all 0.3s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .cat-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 4px; height: 100%;
+      border-radius: 2px;
+    }
+    .cat-card:hover {
+      border-color: rgba(255,255,255,0.12);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .cat-card-header {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 16px;
+    }
+    .cat-emoji { font-size: 28px; }
+    .cat-info h3 { font-size: 18px; font-weight: 700; }
+    .cat-info span { font-size: 12px; color: var(--text3); font-weight: 500; }
+    .cat-desc { color: var(--text2); font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
+    .cat-agents { display: flex; flex-direction: column; gap: 8px; }
+    .cat-agent {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 12px; border-radius: 8px;
+      background: rgba(255,255,255,0.02);
+      font-size: 13px; color: var(--text2);
+      transition: all 0.2s;
+    }
+    .cat-agent:hover { background: rgba(255,255,255,0.05); color: var(--text); }
+    .cat-agent-name { font-weight: 600; color: var(--text); min-width: 160px; }
+    .cat-agent-desc { flex: 1; }
+    .cat-agent-arrow { color: var(--text3); font-size: 16px; margin-left: auto; opacity: 0; transition: opacity 0.2s; }
+    .cat-agent:hover .cat-agent-arrow { opacity: 1; }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .feature-card:hover { border-color: rgba(255,255,255,0.1); transform: translateY(-2px); }
+    .feature-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; font-size: 24px;
+    }
+    .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: var(--text2); line-height: 1.5; }
+
+    /* Format section */
+    .format-box {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 40px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .format-box pre {
+      background: rgba(0,0,0,0.3);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text2);
+    }
+    .format-box pre .hl { color: var(--accent1); }
+    .format-box pre .cm { color: var(--text3); }
+
+    /* Loading */
+    .loading {
+      text-align: center; padding: 80px 0;
+      color: var(--text3);
+    }
+    .loading .spinner {
+      width: 40px; height: 40px;
+      border: 3px solid var(--card-border);
+      border-top-color: var(--accent1);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 48px 0;
+      margin-top: 40px;
+    }
+    .footer-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 24px;
+    }
+    .footer-left { display: flex; align-items: center; gap: 12px; }
+    .footer-logo { font-weight: 800; font-size: 18px; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .footer-copy { font-size: 13px; color: var(--text3); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: var(--text3); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-right { font-size: 12px; color: var(--text3); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { padding: 80px 0 60px; }
+      .hero-stats { gap: 24px; }
+      .hero-stat-num { font-size: 28px; }
+      .cat-grid { grid-template-columns: 1fr; }
+      .cat-agent { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .cat-agent-name { min-width: auto; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="nebula"></div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">⚡ AgentSpace</a>
+      <div class="nav-links">
+        <a href="#categories">Categories</a>
+        <a href="#features">Features</a>
+        <a href="#format">Format</a>
+        <a href="https://github.com/Shineii86/AgentSpace/blob/main/CONTRIBUTING.md">Contribute</a>
+      </div>
+      <a href="https://github.com/Shineii86/AgentSpace" class="nav-github" target="_blank">
+        <span class="material-icons-outlined" style="font-size:18px">code</span>
+        GitHub
+      </a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">✨ Open Source &amp; Free Forever</div>
+      <h1>AgentSpace</h1>
+      <p>A curated library of battle-tested AI agent definitions. Copy-paste ready for any LLM — OpenAI, Claude, Gemini, Llama, and more.</p>
+      <div class="hero-stats" id="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num" id="stat-agents">—</div><div class="hero-stat-label">Agents</div></div>
+        <div class="hero-stat"><div class="hero-stat-num" id="stat-categories">—</div><div class="hero-stat-label">Categories</div></div>
+        <div class="hero-stat"><div class="hero-stat-num" id="stat-stars">—</div><div class="hero-stat-label">GitHub Stars</div></div>
+      </div>
+      <div class="hero-actions">
+        <a href="#categories" class="btn btn-primary"><span class="material-icons-outlined" style="font-size:20px">explore</span> Browse Agents</a>
+        <a href="https://github.com/Shineii86/AgentSpace" class="btn btn-secondary" target="_blank"><span class="material-icons-outlined" style="font-size:20px">star</span> Star on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="categories">
+    <div class="container">
+      <div class="section-header">
+        <h2>Agent Categories</h2>
+        <p>14 categories covering the full software development lifecycle</p>
+      </div>
+      <div id="cat-grid" class="cat-grid">
+        <div class="loading"><div class="spinner"></div><p>Loading agents from GitHub...</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why AgentSpace?</h2>
+        <p>Structured prompts that actually work</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:rgba(99,102,241,0.1);color:#6366f1">📋</div>
+          <h3>Copy &amp; Paste</h3>
+          <p>Drop any agent definition directly into your LLM system prompt. No configuration needed.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background:rgba(236,72,153,0.1);color:#ec4899">🔧</div>
+          <h3>Customizable</h3>
+          <p>Every agent is a starting point. Modify the process, add steps, or combine agents into workflows.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background:rgba(245,158,11,0.1);color:#f59e0b">🧩</div>
+          <h3>Composable</h3>
+          <p>Chain multiple agents together. The output format of one feeds the input of another.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background:rgba(52,211,153,0.1);color:#34d399">📚</div>
+          <h3>Consistent Structure</h3>
+          <p>Role → Inputs → Process → Output Format → Guidelines. Same pattern, every agent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="format">
+    <div class="container">
+      <div class="section-header">
+        <h2>Agent Definition Format</h2>
+        <p>Every agent follows this 6-section structure</p>
+      </div>
+      <div class="format-box">
+        <pre><span class="cm"># Agent Name</span>
+<span class="cm">One-line description of what the agent does.</span>
+
+<span class="hl">## Role</span>
+What the agent is responsible for and its core behavior.
+
+<span class="hl">## Inputs</span>
+Parameters the agent receives (names, types, descriptions).
+
+<span class="hl">## Process</span>
+Step-by-step methodology the agent follows.
+
+<span class="hl">## Output Format</span>
+JSON or Markdown template showing the expected output.
+
+<span class="hl">## Guidelines</span>
+Do's and don'ts, best practices, and edge cases.</pre>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span class="footer-logo">⚡ AgentSpace</span>
+          <span class="footer-copy">© 2026 Shineii86. MIT License.</span>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/Shineii86/AgentSpace" target="_blank">GitHub</a>
+          <a href="https://github.com/Shineii86/AgentSpace/issues" target="_blank">Issues</a>
+          <a href="https://github.com/Shineii86/AgentSpace/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a>
+          <a href="https://github.com/Shineii86/AgentSpace/blob/main/LICENSE" target="_blank">License</a>
+        </div>
+        <div class="footer-right">
+          Auto-synced from <a href="https://github.com/Shineii86/AgentSpace" style="color:var(--accent1)">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const REPO = 'Shineii86/AgentSpace';
+    const API = 'https://api.github.com';
+
+    const CATEGORY_META = {
+      'evaluation':            { emoji: '📊', name: 'Evaluation',            color: '#f0883e', desc: 'Judge, compare, grade, and experiment' },
+      'development':           { emoji: '💻', name: 'Development',           color: '#3fb950', desc: 'Write, review, debug, test, audit, and architect' },
+      'content':               { emoji: '✍️', name: 'Content',               color: '#bc8cff', desc: 'Create, edit, summarize, translate, and socialize' },
+      'research':              { emoji: '🔬', name: 'Research',              color: '#58a6ff', desc: 'Investigate, verify, analyze, and compete' },
+      'operations':            { emoji: '⚙️', name: 'Operations',            color: '#f0883e', desc: 'Deploy, monitor, schedule, and postmortem' },
+      'communication':         { emoji: '📨', name: 'Communication',         color: '#f778ba', desc: 'Draft emails and summarize meetings' },
+      'github':                { emoji: '🐙', name: 'GitHub',                color: '#8b949e', desc: 'Full GitHub ecosystem coverage' },
+      'api':                   { emoji: '🔌', name: 'API',                   color: '#3fb950', desc: 'Design, build, scrape, test, and document APIs' },
+      'web-frontend':          { emoji: '🌐', name: 'Web & Frontend',        color: '#6366f1', desc: 'CSS, React, accessibility, performance, responsive design' },
+      'backend':               { emoji: '🗄️', name: 'Backend',               color: '#059669', desc: 'API servers, databases, auth, microservices, caching' },
+      'systems':               { emoji: '🖥️', name: 'Systems',               color: '#dc2626', desc: 'Shell, Linux, networking, containers, systemd, logs' },
+      'data-query':            { emoji: '📊', name: 'Data & Query',          color: '#d97706', desc: 'SQL, ETL, data modeling, GraphQL, time series, search' },
+      'scripting-automation':  { emoji: '⚙️', name: 'Scripting & Automation', color: '#7c3aed', desc: 'Task runners, CI/CD, workflows, cron, CLI, templates' },
+      'config-formats':        { emoji: '📝', name: 'Config / Markup / Data', color: '#0891b2', desc: 'YAML, JSON, TOML, Markdown, env config, XML/HTML' },
+    };
+
+    async function fetchJSON(url) {
+      const r = await fetch(url);
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.json();
+    }
+
+    async function getRepoStats() {
+      const repo = await fetchJSON(`${API}/repos/${REPO}`);
+      return { stars: repo.stargazers_count, forks: repo.forks_count };
+    }
+
+    async function getCategories() {
+      const tree = await fetchJSON(`${API}/repos/${REPO}/git/trees/main?recursive=1`);
+      const cats = {};
+      for (const item of tree.tree) {
+        if (item.type !== 'blob' || !item.path.endsWith('.md')) continue;
+        const parts = item.path.split('/');
+        if (parts.length !== 2) continue;
+        const dir = parts[0];
+        const file = parts[1];
+        if (['README.md','CHANGELOG.md','CONTRIBUTING.md'].includes(file)) continue;
+        if (!CATEGORY_META[dir]) continue;
+        if (!cats[dir]) cats[dir] = [];
+        const name = file.replace('.md','');
+        cats[dir].push({ name, path: item.path });
+      }
+      return cats;
+    }
+
+    async function getAgentDesc(path) {
+      try {
+        const data = await fetchJSON(`${API}/repos/${REPO}/contents/${path}`);
+        const content = atob(data.content);
+        // Extract first non-empty, non-heading line
+        const lines = content.split('\n');
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (trimmed && !trimmed.startsWith('#') && !trimmed.startsWith('```')) {
+            return trimmed.replace(/^>\s*/, '').substring(0, 120);
+          }
+        }
+        return '';
+      } catch { return ''; }
+    }
+
+    function renderCategories(cats) {
+      const grid = document.getElementById('cat-grid');
+      grid.innerHTML = '';
+
+      const sortedCats = Object.keys(CATEGORY_META).filter(k => cats[k]);
+
+      for (const dir of sortedCats) {
+        const meta = CATEGORY_META[dir];
+        const agents = cats[dir];
+        const card = document.createElement('div');
+        card.className = 'cat-card';
+        card.style.setProperty('--cat-color', meta.color);
+        card.querySelector?.('::before')?.style?.setProperty('background', meta.color);
+
+        card.innerHTML = `
+          <style>.cat-card[data-dir="${dir}"]::before { background: ${meta.color}; }</style>
+          <div class="cat-card-header">
+            <span class="cat-emoji">${meta.emoji}</span>
+            <div class="cat-info">
+              <h3>${meta.name}</h3>
+              <span>${agents.length} agent${agents.length > 1 ? 's' : ''}</span>
+            </div>
+          </div>
+          <div class="cat-desc">${meta.desc}</div>
+          <div class="cat-agents">
+            ${agents.map(a => `
+              <a href="https://github.com/${REPO}/blob/main/${a.path}" target="_blank" class="cat-agent">
+                <span class="cat-agent-name">${a.name}</span>
+                <span class="cat-agent-arrow material-icons-outlined">arrow_forward</span>
+              </a>
+            `).join('')}
+          </div>
+        `;
+        card.dataset.dir = dir;
+        grid.appendChild(card);
+      }
+    }
+
+    async function init() {
+      try {
+        const [stats, cats] = await Promise.all([getRepoStats(), getCategories()]);
+
+        // Update hero stats
+        const totalAgents = Object.values(cats).reduce((s, a) => s + a.length, 0);
+        document.getElementById('stat-agents').textContent = totalAgents;
+        document.getElementById('stat-categories').textContent = Object.keys(cats).length;
+        document.getElementById('stat-stars').textContent = stats.stars || '⭐';
+
+        renderCategories(cats);
+      } catch (err) {
+        console.error('Failed to load:', err);
+        document.getElementById('cat-grid').innerHTML =
+          '<div class="loading"><p>Failed to load from GitHub API. Please refresh.</p></div>';
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

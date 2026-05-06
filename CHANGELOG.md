@@ -7,18 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Newest entries are added at the top.
 
-## [1.9.2] - 2026-05-06
+## [1.10.0] - 2026-05-06
 
 ### Changed
 
-#### SVG Banners — Upgrade with Advanced Effects
-All 6 new category banners upgraded with hero-quality visual effects:
-- Added twinkling starfield (6 stars with staggered animation timing)
-- Added expanding ring animations (2 rings per banner, staggered)
-- Added orbiting particles around floating dots (forward + reverse orbits)
-- Added radial gradient nebula clouds (dual nebula per banner)
-- Added glow filter on animated dots (feGaussianBlur + feMerge)
-- Banner size: ~3.4KB → ~5.9KB (richer visuals, still lightweight)
+#### Complete SVG Banner Redesign — All 15 Banners
+
+**Hero Banner (`assets/banners/hero.svg`)**
+- New deep space background (#020617 dark / #f8fafc light)
+- Grid pattern overlay with subtle lines
+- Neural network constellation (12 nodes, 15 connection lines)
+- Animated dashed connections with moving stroke-dashoffset
+- Floating particles + orbiting particles on each node
+- Staggered ring expand animations
+- 18 twinkling stars with varied timing
+- Gradient title (#6366f1 → #ec4899 → #f59e0b) with shimmer
+- Tag pills: 101 Agents, 14 Categories, MIT License, Any LLM Ready
+
+**All 14 Category Banners**
+- Unified design system matching hero aesthetic
+- Geometric constellation (5 nodes, 7 lines, 2 dashed) in right area
+- Animated floating + orbiting particles on constellation nodes
+- 6 twinkling stars with staggered animation
+- Radial nebula gradient clouds (dual per banner)
+- Glow filter (feGaussianBlur + feMerge) on animated dots
+- Card: deep space glassmorphism (#020617 / #f8fafc)
+- New per-category accent colors
 
 ---
 

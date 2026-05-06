@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Newest entries are added at the top.
 
+## [1.13.0] - 2026-05-06
+
+### Changed
+
+#### Brutalist Website Redesign (`index.html`)
+- Complete rewrite matching Fragment API reference design language
+- Warm light theme: `#f5f0e8` background, `#1a1a1a` text, `#ffcc00` accent, `#e63b2e` secondary, `#0055ff` tertiary
+- Space Grotesk for all headlines (black weight, uppercase, tight tracking)
+- Inter for body text
+- Thick 4px borders on all cards, nav, footer, sections
+- Hard drop shadows (`4px 4px 0 #1a1a1a` / `8px 8px 0 #1a1a1a`)
+- Active state: `translateY(1px) translateX(1px)` with shadow removal
+- Hero: massive 96px uppercase headline with drop-shadow accent text
+- Hero description with left accent border and rotated highlight span
+- Feature cards with decorative glow circles that scale on hover
+- Code block with terminal chrome (red/yellow/blue dots), yellow shadow
+- CTA section with rotated card that straightens on hover
+- Stats bar with border-separated counters
+- Footer: dark `#1a1a1a` background, yellow logo, red hover links
+- Fixed nav with bold uppercase links, active bottom-border highlight
+- Mobile menu with left-border accent on open
+- All SVG icons, zero emojis
+- All contributors under @Shineii86
+
+---
+
 ## [1.12.0] - 2026-05-06
 
 ### Changed

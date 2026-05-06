@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Newest entries are added at the top.
 
+## [1.14.0] - 2026-05-06
+
+### Added
+
+#### New Category: Frameworks (`frameworks/`) — 13 New Agents
+- `NEXTJS.md` — Build production-grade Next.js applications with App Router, server components, and full-stack capabilities
+- `REACT.md` — Build modern React applications with hooks, concurrent features, and component architecture
+- `VUE.md` — Build modern Vue.js applications with Composition API, reactivity system, and composables
+- `NUXT.md` — Build full-stack Nuxt applications with server routes, auto-imports, and hybrid rendering
+- `ANGULAR.md` — Build enterprise-grade Angular applications with signals, standalone components, and DI
+- `SVELTE.md` — Build fast, lightweight web applications with Svelte's compile-time reactivity and runes
+- `SVELTEKIT.md` — Build full-stack SvelteKit applications with SSR, form actions, and edge deployment
+- `REMIX.md` — Build resilient web applications with Remix's web-standard approach and nested routing
+- `GATSBY.md` — Build fast, SEO-optimized static sites with Gatsby's GraphQL data layer
+- `ASTRO.md` — Build fast, content-focused websites with Astro's island architecture
+- `EXPRESS.md` — Build robust Node.js APIs and web servers with Express.js middleware architecture
+- `VITE.md` — Configure and optimize Vite-based build pipelines for fast development and production bundles
+- `WEBPACK.md` — Configure and optimize Webpack build pipelines for complex applications
+
+#### Website Updates (`index.html`)
+- Added Frameworks category card with 13 agents
+- Updated agent count: 101 → 114
+- Updated category count: 14 → 15
+- Updated meta descriptions and CTA section
+
+---
+
 ## [1.13.0] - 2026-05-06
 
 ### Changed

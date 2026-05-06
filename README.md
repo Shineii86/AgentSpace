@@ -2,12 +2,12 @@
 
 <img src="assets/banners/hero.svg" alt="AgentSpace" width="100%"/>
 
-**A curated library of 100+ battle-tested AI agent definitions across 15+ categories.**
+**A curated library of 114 battle-tested AI agent definitions across 15 categories.**
 **Copy-paste ready for any LLM — OpenAI, Claude, Gemini, Llama, and more.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
-[![Agents: 101](https://img.shields.io/badge/Agents-101-brightgreen.svg?style=flat-square)](#-categories)
-[![Categories: 14](https://img.shields.io/badge/Categories-14-orange.svg?style=flat-square)](#-categories)
+[![Agents: 114](https://img.shields.io/badge/Agents-114-brightgreen.svg?style=flat-square)](#-categories)
+[![Categories: 14](https://img.shields.io/badge/Categories-15-orange.svg?style=flat-square)](#-categories)
 [![GitHub Stars](https://img.shields.io/github/stars/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/network/members)
 [![GitHub Issues](https://img.shields.io/github/issues/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/issues)

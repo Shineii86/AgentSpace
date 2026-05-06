@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Newest entries are added at the top.
 
+## [1.17.0] - 2026-05-06
+
+### Added
+
+#### UI/UX Upgrades (`index.html`)
+- Scroll progress bar at top — yellow bar with glow, tracks page scroll position
+- Back to top button — appears after 400px scroll, smooth scroll to top
+- Smart navbar — hides on scroll down, reappears on scroll up, adds shadow when scrolled
+- Scroll reveal animations via IntersectionObserver — fade-up, fade-left, fade-right, scale-in
+- Staggered children animation — category cards and feature cards animate in sequence
+- Animated counters — stats count up with easeOutCubic easing when scrolled into view
+- Button ripple effect — click ripple on all buttons
+- Loading skeleton cards — shimmer placeholders while GitHub API loads categories
+- Typing cursor in code block — blinking cursor at end of format example
+- Active nav highlighting — tracks current section on scroll, highlights matching nav link
+- Glow float animation — hero background glorbients slowly drift
+- Card hover lift — category/feature cards lift 4px with larger shadow on hover
+- Code window hover — lifts and grows shadow on hover
+- Section title underline animation — yellow bar grows from left on scroll reveal
+- Highlight span hover — rotates to 0deg and scales on hover
+- Cubic-bezier easing — smooth spring-like motion on all reveal transitions
+
+---
+
 ## [1.16.0] - 2026-05-06
 
 ### Removed

@@ -36,6 +36,7 @@
       --outline-variant: #d0cbc3;
       --shadow: 4px 4px 0px 0px #1a1a1a;
       --shadow-lg: 8px 8px 0px 0px #1a1a1a;
+      --shadow-xl: 12px 12px 0px 0px #1a1a1a;
       --border: 4px solid #1a1a1a;
       --border-thin: 2px solid #1a1a1a;
       --radius: 0.25rem;
@@ -52,12 +53,18 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      selection-background: var(--primary-container);
-      selection-color: var(--on-primary-container);
     }
     ::selection { background: var(--primary-container); color: var(--on-primary-container); }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; height: auto; }
+
+    /* === Scroll Progress Bar === */
+    .scroll-progress {
+      position: fixed; top: 0; left: 0; width: 0%; height: 4px;
+      background: var(--primary-container); z-index: 200;
+      transition: width 50ms linear;
+      box-shadow: 0 0 8px rgba(255,204,0,0.5);
+    }
 
     /* === SVG Icons === */
     .icon { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
@@ -67,15 +74,16 @@
 
     /* === Navigation === */
     nav {
-      position: fixed; top: 0; width: 100%; z-index: 50;
+      position: fixed; top: 0; width: 100%; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
       padding: 12px 16px; background: var(--bg);
       border-bottom: var(--border);
+      transition: transform 300ms ease, box-shadow 300ms ease;
     }
+    nav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    nav.hidden { transform: translateY(-100%); }
     @media (min-width: 768px) { nav { padding: 16px 32px; } }
-    .nav-brand {
-      display: flex; align-items: center; gap: 32px;
-    }
+    .nav-brand { display: flex; align-items: center; gap: 32px; }
     .nav-logo {
       font-family: var(--font-headline);
       font-size: 24px; font-weight: 900; font-style: italic;
@@ -92,22 +100,16 @@
       border-bottom: 4px solid transparent;
       padding-bottom: 4px;
       transition: all var(--transition);
+      position: relative;
     }
-    .nav-link:hover {
-      color: var(--text);
-      background: var(--primary-container);
-    }
-    .nav-link.active {
-      color: var(--text);
-      border-bottom-color: var(--primary-container);
-    }
+    .nav-link:hover { color: var(--text); background: var(--primary-container); }
+    .nav-link.active { color: var(--text); border-bottom-color: var(--primary-container); }
     .nav-mobile-btn {
       display: flex; align-items: center; justify-content: center;
       padding: 6px; border: var(--border);
       background: var(--primary-container); color: var(--on-primary-container);
       box-shadow: 2px 2px 0px 0px #1a1a1a;
-      cursor: pointer;
-      transition: all var(--transition);
+      cursor: pointer; transition: all var(--transition);
     }
     .nav-mobile-btn:active { transform: translateY(1px) translateX(1px); box-shadow: none; }
     @media (min-width: 768px) { .nav-mobile-btn { display: none; } }
@@ -130,6 +132,38 @@
     }
     .mobile-menu a:hover { border-left-color: var(--primary-container); color: var(--text); }
 
+    /* === Scroll Reveal === */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left {
+      opacity: 0; transform: translateX(-40px);
+      transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+      opacity: 0; transform: translateX(40px);
+      transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .reveal-scale {
+      opacity: 0; transform: scale(0.9);
+      transition: opacity 500ms cubic-bezier(0.16, 1, 0.3, 1), transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+    /* Stagger children */
+    .stagger > * { opacity: 0; transform: translateY(20px); transition: opacity 400ms ease, transform 400ms ease; }
+    .stagger.visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+    .stagger.visible > *:nth-child(2) { transition-delay: 80ms; opacity: 1; transform: translateY(0); }
+    .stagger.visible > *:nth-child(3) { transition-delay: 160ms; opacity: 1; transform: translateY(0); }
+    .stagger.visible > *:nth-child(4) { transition-delay: 240ms; opacity: 1; transform: translateY(0); }
+    .stagger.visible > *:nth-child(5) { transition-delay: 320ms; opacity: 1; transform: translateY(0); }
+    .stagger.visible > *:nth-child(6) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
+    .stagger.visible > *:nth-child(n+7) { transition-delay: 480ms; opacity: 1; transform: translateY(0); }
+
     /* === Hero === */
     header {
       padding-top: 112px; padding-bottom: 64px;
@@ -147,7 +181,7 @@
       width: 192px; height: 192px;
       background: var(--primary-container); border: var(--border);
       border-radius: 50%; filter: blur(80px); opacity: 0.15;
-      z-index: -1;
+      z-index: -1; animation: glowFloat 8s ease-in-out infinite;
     }
     @media (min-width: 768px) { .hero-glow-1 { width: 256px; height: 256px; } }
     .hero-glow-2 {
@@ -155,9 +189,14 @@
       width: 256px; height: 256px;
       background: var(--secondary); border: var(--border);
       border-radius: 50%; filter: blur(80px); opacity: 0.08;
-      z-index: -1;
+      z-index: -1; animation: glowFloat 10s ease-in-out infinite 2s;
     }
     @media (min-width: 768px) { .hero-glow-2 { width: 384px; height: 384px; } }
+    @keyframes glowFloat {
+      0%, 100% { transform: translate(0, 0); }
+      33% { transform: translate(10px, -15px); }
+      66% { transform: translate(-8px, 10px); }
+    }
     .hero-content { max-width: 896px; margin-top: 48px; }
     @media (min-width: 768px) { .hero-content { margin-top: 0; } }
     .hero h1 {
@@ -173,6 +212,7 @@
     .hero h1 .accent {
       color: var(--tertiary);
       filter: drop-shadow(3px 3px 0 #1a1a1a);
+      display: inline-block;
     }
     @media (min-width: 768px) { .hero h1 .accent { filter: drop-shadow(4px 4px 0 #1a1a1a); } }
     .hero-desc {
@@ -187,16 +227,15 @@
     }
     .hero-desc .highlight {
       background: var(--primary-container);
-      font-weight: 700;
-      padding: 2px 6px;
+      font-weight: 700; padding: 2px 6px;
       border: var(--border-thin);
-      display: inline-block;
-      transform: rotate(-2deg);
+      display: inline-block; transform: rotate(-2deg);
       line-height: 1;
+      transition: transform 200ms ease;
     }
+    .hero-desc .highlight:hover { transform: rotate(0deg) scale(1.05); }
     .hero-actions {
-      display: flex; flex-direction: column; gap: 16px;
-      width: 100%;
+      display: flex; flex-direction: column; gap: 16px; width: 100%;
     }
     @media (min-width: 640px) { .hero-actions { flex-direction: row; } }
     .btn {
@@ -207,6 +246,7 @@
       cursor: pointer; font-size: 16px;
       transition: all var(--transition);
       text-align: center; width: 100%;
+      position: relative; overflow: hidden;
     }
     @media (min-width: 640px) { .btn { width: auto; } }
     @media (min-width: 768px) { .btn { padding: 20px 40px; font-size: 18px; } }
@@ -215,12 +255,21 @@
       background: var(--primary); color: var(--on-primary);
       box-shadow: var(--shadow);
     }
-    .btn-primary:hover { background: var(--primary-container); color: var(--on-primary-container); }
+    .btn-primary:hover { background: var(--primary-container); color: var(--on-primary-container); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
     .btn-secondary {
       background: var(--surface); color: var(--primary);
       box-shadow: var(--shadow);
     }
-    .btn-secondary:hover { background: var(--bg-dim); }
+    .btn-secondary:hover { background: var(--bg-dim); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+
+    /* Button ripple */
+    .btn .ripple {
+      position: absolute; border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      transform: scale(0); animation: ripple 600ms ease-out;
+      pointer-events: none;
+    }
+    @keyframes ripple { to { transform: scale(4); opacity: 0; } }
 
     .hero-meta {
       display: flex; flex-direction: column; gap: 12px;
@@ -229,15 +278,10 @@
       text-transform: uppercase; letter-spacing: 0.06em;
       color: var(--text-muted);
     }
-    @media (min-width: 640px) {
-      .hero-meta { flex-direction: row; align-items: center; gap: 16px; }
-    }
+    @media (min-width: 640px) { .hero-meta { flex-direction: row; align-items: center; gap: 16px; } }
     @media (min-width: 768px) { .hero-meta { margin-top: 64px; font-size: 14px; } }
     .hero-meta-item { display: flex; align-items: center; gap: 8px; }
-    .hero-meta-dot {
-      display: none; width: 8px; height: 8px;
-      background: var(--primary); border-radius: 50%;
-    }
+    .hero-meta-dot { display: none; width: 8px; height: 8px; background: var(--primary); border-radius: 50%; }
     @media (min-width: 640px) { .hero-meta-dot { display: block; } }
     .hero-meta svg { width: 20px; height: 20px; }
     @media (min-width: 768px) { .hero-meta svg { width: 24px; height: 24px; } }
@@ -255,6 +299,7 @@
       font-family: var(--font-headline);
       font-weight: 900; font-size: 40px;
       letter-spacing: -0.03em; color: var(--text);
+      min-width: 60px;
     }
     @media (min-width: 768px) { .stat-num { font-size: 56px; } }
     .stat-label {
@@ -265,17 +310,14 @@
     }
 
     /* === Sections === */
-    .section {
-      padding: 64px 16px;
-    }
+    .section { padding: 64px 16px; }
     @media (min-width: 768px) { .section { padding: 96px 32px; } }
     .section-inner { max-width: 1280px; margin: 0 auto; }
     .section-title {
       font-family: var(--font-headline);
       font-weight: 900; font-size: 36px;
       text-transform: uppercase; letter-spacing: -0.04em;
-      margin-bottom: 40px; position: relative;
-      display: inline-block;
+      margin-bottom: 40px; position: relative; display: inline-block;
     }
     @media (min-width: 768px) { .section-title { font-size: 60px; margin-bottom: 64px; } }
     .section-title::after {
@@ -283,35 +325,32 @@
       bottom: -16px; left: 0; width: 100%;
       height: 8px; background: var(--primary-container);
       border: var(--border-thin);
+      transform-origin: left;
+      transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .section-title-underline { display: block; }
+    .section-title.reveal.visible::after { animation: lineGrow 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    @keyframes lineGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
     /* === Category Cards === */
-    .cat-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
+    .cat-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
     @media (min-width: 768px) { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
     .cat-card {
       border: var(--border); background: var(--surface);
       padding: 32px; box-shadow: var(--shadow);
-      transition: box-shadow var(--transition);
+      transition: box-shadow 200ms ease, transform 200ms ease;
       position: relative; overflow: hidden;
     }
-    .cat-card:hover { box-shadow: var(--shadow-lg); }
+    .cat-card:hover { box-shadow: var(--shadow-xl); transform: translateY(-4px); }
     .cat-card-glow {
       position: absolute; right: -48px; top: -48px;
       width: 128px; height: 128px;
       border: var(--border); border-radius: 50%;
-      transition: transform 500ms; z-index: 0;
+      transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 0;
     }
-    .cat-card:hover .cat-card-glow { transform: scale(1.5); }
+    .cat-card:hover .cat-card-glow { transform: scale(1.8); }
     .cat-card-inner { position: relative; z-index: 1; }
-    .cat-card-icon {
-      font-size: 48px; margin-bottom: 24px;
-      display: block; line-height: 1;
-    }
+    .cat-card-icon { font-size: 48px; margin-bottom: 24px; display: block; line-height: 1; }
     .cat-card-icon svg { width: 48px; height: 48px; }
     .cat-card h3 {
       font-family: var(--font-headline);
@@ -319,22 +358,19 @@
       text-transform: uppercase; letter-spacing: -0.02em;
       margin-bottom: 12px;
     }
-    .cat-card-desc {
-      font-size: 18px; color: var(--text-muted);
-      margin-bottom: 24px;
-    }
+    .cat-card-desc { font-size: 18px; color: var(--text-muted); margin-bottom: 24px; }
     .cat-agents { display: flex; flex-direction: column; gap: 8px; }
     .cat-agent {
       display: flex; align-items: center; gap: 12px;
       padding: 10px 16px; border: 2px solid var(--outline-variant);
       background: var(--bg-bright);
       font-size: 14px; color: var(--text-muted);
-      transition: all var(--transition);
+      transition: all 150ms ease;
     }
     .cat-agent:hover {
       border-color: var(--primary);
       background: var(--primary-container);
-      color: var(--text);
+      color: var(--text); transform: translateX(4px);
     }
     .cat-agent-name {
       font-family: var(--font-headline);
@@ -343,29 +379,29 @@
     }
     .cat-agent-desc { flex: 1; font-size: 12px; line-height: 1.4; }
     .cat-agent-arrow {
-      opacity: 0; transition: all var(--transition);
-      transform: translateX(-4px);
+      opacity: 0; transition: all 150ms ease;
+      transform: translateX(-8px);
     }
     .cat-agent:hover .cat-agent-arrow { opacity: 1; transform: translateX(0); }
 
     /* === Features === */
-    .features-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
+    .features-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
     @media (min-width: 768px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
     .feature-card {
       border: var(--border); background: var(--surface);
       padding: 32px; box-shadow: var(--shadow);
-      transition: box-shadow var(--transition);
+      transition: box-shadow 200ms ease, transform 200ms ease;
       position: relative; overflow: hidden;
     }
-    .feature-card:hover { box-shadow: var(--shadow-lg); }
-    .feature-card-icon {
-      font-size: 48px; margin-bottom: 24px;
-      display: block; line-height: 1;
+    .feature-card:hover { box-shadow: var(--shadow-xl); transform: translateY(-4px); }
+    .feature-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(135deg, transparent 60%, rgba(255,204,0,0.05));
+      opacity: 0; transition: opacity 300ms;
     }
+    .feature-card:hover::before { opacity: 1; }
+    .feature-card-icon { font-size: 48px; margin-bottom: 24px; display: block; line-height: 1; }
     .feature-card-icon svg { width: 48px; height: 48px; }
     .feature-card h3 {
       font-family: var(--font-headline);
@@ -373,15 +409,10 @@
       text-transform: uppercase; letter-spacing: -0.02em;
       margin-bottom: 16px;
     }
-    .feature-card p {
-      font-size: 18px; color: var(--text-muted);
-    }
+    .feature-card p { font-size: 18px; color: var(--text-muted); }
 
-    /* === Format Section (Code Block) === */
-    .format-section {
-      border-top: var(--border); background: var(--primary);
-      color: var(--on-primary);
-    }
+    /* === Format Section === */
+    .format-section { border-top: var(--border); background: var(--primary); color: var(--on-primary); }
     .format-grid {
       display: grid; grid-template-columns: 1fr;
       gap: 40px; align-items: center;
@@ -402,9 +433,10 @@
     .code-window {
       border: var(--border); background: #0d0d0d;
       padding: 16px; box-shadow: 8px 8px 0px 0px var(--primary-container);
-      position: relative; overflow: hidden;
-      max-width: 100%;
+      position: relative; overflow: hidden; max-width: 100%;
+      transition: box-shadow 300ms ease, transform 300ms ease;
     }
+    .code-window:hover { box-shadow: 12px 12px 0px 0px var(--primary-container); transform: translateY(-4px); }
     @media (min-width: 768px) { .code-window { padding: 24px; } }
     .code-titlebar {
       position: absolute; top: 0; left: 0; width: 100%;
@@ -430,20 +462,26 @@
     .code-num { color: #a8c6ff; }
     .code-comment { color: var(--bg-variant); opacity: 0.5; }
 
-    /* === CTA Section === */
-    .cta-section {
-      background: var(--bg-variant);
-      border-top: var(--border);
+    /* Typing cursor */
+    .typing-cursor {
+      display: inline-block; width: 2px; height: 1.2em;
+      background: var(--primary-container);
+      margin-left: 2px; vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
     }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* === CTA === */
+    .cta-section { background: var(--bg-variant); border-top: var(--border); }
     .cta-box {
       max-width: 896px; margin: 0 auto;
       text-align: center;
       border: var(--border); background: var(--primary-container);
       padding: 32px; box-shadow: var(--shadow);
       transform: rotate(-1deg);
-      transition: transform 300ms;
+      transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease;
     }
-    .cta-box:hover { transform: rotate(0deg); }
+    .cta-box:hover { transform: rotate(0deg); box-shadow: var(--shadow-xl); }
     @media (min-width: 768px) { .cta-box { padding: 48px; } }
     .cta-box h2 {
       font-family: var(--font-headline);
@@ -458,11 +496,22 @@
     }
     @media (min-width: 768px) { .cta-box p { font-size: 24px; } }
 
-    /* === Loading === */
-    .loading {
-      text-align: center; padding: 80px 0;
-      color: var(--text-muted);
+    /* === Loading Skeleton === */
+    .skeleton { background: var(--outline-variant); border-radius: 4px; animation: shimmer 1.5s infinite; }
+    @keyframes shimmer {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
     }
+    .skeleton-card {
+      border: var(--border); background: var(--surface);
+      padding: 32px; box-shadow: var(--shadow);
+    }
+    .skeleton-icon { width: 48px; height: 48px; border-radius: 8px; margin-bottom: 24px; }
+    .skeleton-title { height: 28px; width: 60%; margin-bottom: 12px; }
+    .skeleton-desc { height: 18px; width: 90%; margin-bottom: 24px; }
+    .skeleton-agent { height: 36px; width: 100%; margin-bottom: 8px; }
+    .loading { text-align: center; padding: 80px 0; color: var(--text-muted); }
     .spinner {
       width: 36px; height: 36px;
       border: 4px solid var(--outline-variant);
@@ -472,6 +521,24 @@
       margin: 0 auto 16px;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* === Back to Top === */
+    .back-to-top {
+      position: fixed; bottom: 32px; right: 32px;
+      width: 48px; height: 48px; z-index: 90;
+      border: var(--border); background: var(--primary-container);
+      color: var(--on-primary-container);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transform: translateY(16px);
+      transition: opacity 300ms ease, transform 300ms ease, background 150ms ease;
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .back-to-top:hover { background: var(--primary); color: var(--on-primary); box-shadow: var(--shadow-lg); }
+    .back-to-top:active { transform: translateY(1px) translateX(1px); box-shadow: none; }
+    .back-to-top svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2.5; }
 
     /* === Footer === */
     footer {
@@ -490,23 +557,23 @@
       text-transform: uppercase; color: var(--primary-container);
       margin-bottom: 8px;
     }
-    .footer-copy {
-      font-size: 14px; font-weight: 500; color: #f5f0e8;
-    }
+    .footer-copy { font-size: 14px; font-weight: 500; color: #f5f0e8; }
     .footer-copy a { color: var(--secondary); }
     .footer-copy a:hover { opacity: 0.8; }
     .footer-links {
       display: flex; flex-wrap: wrap; justify-content: center;
-      gap: 24px; font-weight: 500; font-size: 14px;
-      color: #9ca3af;
+      gap: 24px; font-weight: 500; font-size: 14px; color: #9ca3af;
     }
     .footer-links a { transition: color var(--transition); }
     .footer-links a:hover { color: var(--secondary); }
   </style>
 </head>
 <body>
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
   <!-- Navigation -->
-  <nav>
+  <nav id="navbar">
     <div class="nav-brand">
       <a class="nav-logo" href="#">AgentSpace</a>
       <div class="nav-links" id="desktop-nav">
@@ -564,17 +631,17 @@
   </header>
 
   <!-- Stats -->
-  <div class="stats-bar">
+  <div class="stats-bar reveal" id="stats-bar">
     <div class="stat">
-      <div class="stat-num" id="stat-agents">&mdash;</div>
+      <div class="stat-num" id="stat-agents" data-target="0">&mdash;</div>
       <div class="stat-label">Agents</div>
     </div>
     <div class="stat">
-      <div class="stat-num" id="stat-categories">&mdash;</div>
+      <div class="stat-num" id="stat-categories" data-target="0">&mdash;</div>
       <div class="stat-label">Categories</div>
     </div>
     <div class="stat">
-      <div class="stat-num" id="stat-stars">&mdash;</div>
+      <div class="stat-num" id="stat-stars" data-target="0">&mdash;</div>
       <div class="stat-label">GitHub Stars</div>
     </div>
   </div>
@@ -582,9 +649,12 @@
   <!-- Categories -->
   <section class="section" id="categories" style="background: var(--bg-bright); border-bottom: var(--border);">
     <div class="section-inner">
-      <h2 class="section-title">Categories<span class="section-title-underline"></span></h2>
-      <div id="cat-grid" class="cat-grid">
-        <div class="loading"><div class="spinner"></div><p>Loading agents from GitHub...</p></div>
+      <h2 class="section-title reveal">Categories<span class="section-title-underline"></span></h2>
+      <div id="cat-grid" class="cat-grid stagger">
+        <div class="skeleton-card"><div class="skeleton skeleton-icon"></div><div class="skeleton skeleton-title"></div><div class="skeleton skeleton-desc"></div><div class="skeleton skeleton-agent"></div><div class="skeleton skeleton-agent"></div><div class="skeleton skeleton-agent"></div></div>
+        <div class="skeleton-card"><div class="skeleton skeleton-icon"></div><div class="skeleton skeleton-title"></div><div class="skeleton skeleton-desc"></div><div class="skeleton skeleton-agent"></div><div class="skeleton skeleton-agent"></div></div>
+        <div class="skeleton-card"><div class="skeleton skeleton-icon"></div><div class="skeleton skeleton-title"></div><div class="skeleton skeleton-desc"></div><div class="skeleton skeleton-agent"></div><div class="skeleton skeleton-agent"></div><div class="skeleton skeleton-agent"></div></div>
+        <div class="skeleton-card"><div class="skeleton skeleton-icon"></div><div class="skeleton skeleton-title"></div><div class="skeleton skeleton-desc"></div><div class="skeleton skeleton-agent"></div><div class="skeleton skeleton-agent"></div></div>
       </div>
     </div>
   </section>
@@ -592,8 +662,8 @@
   <!-- Features -->
   <section class="section" id="features">
     <div class="section-inner">
-      <h2 class="section-title">Why AgentSpace<span class="section-title-underline"></span></h2>
-      <div class="features-grid">
+      <h2 class="section-title reveal">Why AgentSpace<span class="section-title-underline"></span></h2>
+      <div class="features-grid stagger">
         <div class="feature-card">
           <div class="feature-card-icon" style="color: var(--primary)">
             <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
@@ -626,11 +696,11 @@
     </div>
   </section>
 
-  <!-- Agent Definition Format (Code Block) -->
+  <!-- Format -->
   <section class="section format-section" id="format">
     <div class="section-inner">
       <div class="format-grid">
-        <div class="format-text">
+        <div class="format-text reveal-left">
           <h2>Agent Definition Format</h2>
           <p>Every agent follows this 6-section structure. Consistent, composable, and ready for any LLM.</p>
           <a href="https://github.com/Shineii86/AgentSpace" class="btn btn-primary" target="_blank" rel="noopener">
@@ -638,7 +708,7 @@
             <svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           </a>
         </div>
-        <div class="code-window">
+        <div class="code-window reveal-right">
           <div class="code-titlebar">
             <div class="code-dot code-dot-red"></div>
             <div class="code-dot code-dot-yellow"></div>
@@ -660,7 +730,7 @@ Step-by-step methodology the agent follows.
 JSON or Markdown template showing the expected output.
 
 <span class="code-kw">## Guidelines</span>
-Do's and don'ts, best practices, and edge cases.</code></pre>
+Do's and don'ts, best practices, and edge cases.<span class="typing-cursor"></span></code></pre>
         </div>
       </div>
     </div>
@@ -669,7 +739,7 @@ Do's and don'ts, best practices, and edge cases.</code></pre>
   <!-- CTA -->
   <section class="section cta-section" id="cta">
     <div class="section-inner">
-      <div class="cta-box">
+      <div class="cta-box reveal-scale">
         <h2>Ready to Build?</h2>
         <p>Explore 114 agent definitions across 15 categories. Fork, customize, and ship faster.</p>
         <div class="hero-actions" style="justify-content: center;">
@@ -701,87 +771,160 @@ Do's and don'ts, best practices, and edge cases.</code></pre>
     </div>
   </footer>
 
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
   <script>
     const REPO = 'Shineii86/AgentSpace';
     const API = 'https://api.github.com';
 
-    /* Category metadata with inline SVG icons */
-    const CATEGORY_META = {
-      'evaluation': {
-        name: 'Evaluation', color: '#f0883e',
-        desc: 'Judge, compare, grade, and experiment',
-        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
-      },
-      'development': {
-        name: 'Development', color: '#3fb950',
-        desc: 'Write, review, debug, test, audit, and architect',
-        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>'
-      },
-      'content': {
-        name: 'Content', color: '#bc8cff',
-        desc: 'Create, edit, summarize, translate, and socialize',
-        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>'
-      },
-      'research': {
-        name: 'Research', color: '#58a6ff',
-        desc: 'Investigate, verify, analyze, and compete',
-        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>'
-      },
-      'operations': {
-        name: 'Operations', color: '#f0883e',
-        desc: 'Deploy, monitor, schedule, and postmortem',
-        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>'
-      },
-      'communication': {
-        name: 'Communication', color: '#f778ba',
-        desc: 'Draft emails and summarize meetings',
-        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>'
-      },
-      'github': {
-        name: 'GitHub', color: '#8b949e',
-        desc: 'Full GitHub ecosystem coverage',
-        icon: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>'
-      },
-      'api': {
-        name: 'API', color: '#3fb950',
-        desc: 'Design, build, scrape, test, and document APIs',
-        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>'
-      },
-      'web-frontend': {
-        name: 'Web & Frontend', color: '#6366f1',
-        desc: 'CSS, React, accessibility, performance, responsive design',
-        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>'
-      },
-      'backend': {
-        name: 'Backend', color: '#059669',
-        desc: 'API servers, databases, auth, microservices, caching',
-        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>'
-      },
-      'systems': {
-        name: 'Systems', color: '#dc2626',
-        desc: 'Shell, Linux, networking, containers, systemd, logs',
-        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>'
-      },
-      'data-query': {
-        name: 'Data & Query', color: '#d97706',
-        desc: 'SQL, ETL, data modeling, GraphQL, time series, search',
-        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>'
-      },
-      'scripting-automation': {
-        name: 'Scripting & Automation', color: '#7c3aed',
-        desc: 'Task runners, CI/CD, workflows, cron, CLI, templates',
-        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>'
-      },
-      'config-formats': {
-        name: 'Config / Markup / Data', color: '#0891b2',
-        desc: 'YAML, JSON, TOML, Markdown, env config, XML/HTML',
-        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>'
-      },
-      'frameworks': {
-        name: 'Frameworks', color: '#e11d48',
-        desc: 'Next.js, React, Vue, Angular, Svelte, Astro, Express, Vite, Webpack',
-        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>'
+    /* ============================
+       Scroll Progress Bar
+    ============================ */
+    const progressBar = document.getElementById('scroll-progress');
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = progress + '%';
+    }
+
+    /* ============================
+       Smart Hide/Show Navbar
+    ============================ */
+    const navbar = document.getElementById('navbar');
+    let lastScrollY = 0;
+    let ticking = false;
+    function handleNavScroll() {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 80) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
       }
+      if (currentScroll > lastScrollY && currentScroll > 200) {
+        navbar.classList.add('hidden');
+      } else {
+        navbar.classList.remove('hidden');
+      }
+      lastScrollY = currentScroll;
+    }
+
+    /* ============================
+       Back to Top Button
+    ============================ */
+    const backToTop = document.getElementById('back-to-top');
+    function handleBackToTop() {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    }
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ============================
+       Scroll Reveal (IntersectionObserver)
+    ============================ */
+    function setupReveal() {
+      const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      revealElements.forEach(el => observer.observe(el));
+    }
+
+    /* ============================
+       Animated Counter
+    ============================ */
+    function animateCounter(el, target, duration = 1200) {
+      const start = 0;
+      const startTime = performance.now();
+      function step(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+        const current = Math.round(start + (target - start) * eased);
+        el.textContent = current;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    /* Trigger counters when stats bar is visible */
+    function setupCounters() {
+      const statsBar = document.getElementById('stats-bar');
+      let counted = false;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !counted) {
+            counted = true;
+            const agentsEl = document.getElementById('stat-agents');
+            const catsEl = document.getElementById('stat-categories');
+            const starsEl = document.getElementById('stat-stars');
+            animateCounter(agentsEl, parseInt(agentsEl.dataset.target) || 0);
+            animateCounter(catsEl, parseInt(catsEl.dataset.target) || 0, 800);
+            animateCounter(starsEl, parseInt(starsEl.dataset.target) || 0, 1500);
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(statsBar);
+    }
+
+    /* ============================
+       Button Ripple Effect
+    ============================ */
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple';
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+        ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+      });
+    });
+
+    /* ============================
+       Unified Scroll Handler
+    ============================ */
+    function onScroll() {
+      updateProgress();
+      handleNavScroll();
+      handleBackToTop();
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    /* ============================
+       Category Metadata
+    ============================ */
+    const CATEGORY_META = {
+      'evaluation': { name: 'Evaluation', color: '#f0883e', desc: 'Judge, compare, grade, and experiment', icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>' },
+      'development': { name: 'Development', color: '#3fb950', desc: 'Write, review, debug, test, audit, and architect', icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>' },
+      'content': { name: 'Content', color: '#bc8cff', desc: 'Create, edit, summarize, translate, and socialize', icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>' },
+      'research': { name: 'Research', color: '#58a6ff', desc: 'Investigate, verify, analyze, and compete', icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>' },
+      'operations': { name: 'Operations', color: '#f0883e', desc: 'Deploy, monitor, schedule, and postmortem', icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>' },
+      'communication': { name: 'Communication', color: '#f778ba', desc: 'Draft emails and summarize meetings', icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>' },
+      'github': { name: 'GitHub', color: '#8b949e', desc: 'Full GitHub ecosystem coverage', icon: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>' },
+      'api': { name: 'API', color: '#3fb950', desc: 'Design, build, scrape, test, and document APIs', icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>' },
+      'web-frontend': { name: 'Web & Frontend', color: '#6366f1', desc: 'CSS, React, accessibility, performance, responsive design', icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>' },
+      'backend': { name: 'Backend', color: '#059669', desc: 'API servers, databases, auth, microservices, caching', icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>' },
+      'systems': { name: 'Systems', color: '#dc2626', desc: 'Shell, Linux, networking, containers, systemd, logs', icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>' },
+      'data-query': { name: 'Data & Query', color: '#d97706', desc: 'SQL, ETL, data modeling, GraphQL, time series, search', icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>' },
+      'scripting-automation': { name: 'Scripting & Automation', color: '#7c3aed', desc: 'Task runners, CI/CD, workflows, cron, CLI, templates', icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>' },
+      'config-formats': { name: 'Config / Markup / Data', color: '#0891b2', desc: 'YAML, JSON, TOML, Markdown, env config, XML/HTML', icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>' },
+      'frameworks': { name: 'Frameworks', color: '#e11d48', desc: 'Next.js, React, Vue, Angular, Svelte, Astro, Express, Vite, Webpack', icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>' }
     };
 
     async function fetchJSON(url) {
@@ -816,7 +959,6 @@ Do's and don'ts, best practices, and edge cases.</code></pre>
       const grid = document.getElementById('cat-grid');
       grid.innerHTML = '';
       const sortedCats = Object.keys(CATEGORY_META).filter(k => cats[k]);
-
       for (const dir of sortedCats) {
         const meta = CATEGORY_META[dir];
         const agents = cats[dir];
@@ -840,6 +982,8 @@ Do's and don'ts, best practices, and edge cases.</code></pre>
         `;
         grid.appendChild(card);
       }
+      /* Trigger stagger animation after render */
+      requestAnimationFrame(() => grid.classList.add('visible'));
     }
 
     /* Mobile menu */
@@ -861,28 +1005,40 @@ Do's and don'ts, best practices, and edge cases.</code></pre>
       });
     }
 
-    /* Nav active state */
+    /* Nav active state on scroll */
+    const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-    const mobileLinks = document.querySelectorAll('.mobile-menu a');
-    function setActiveNav(hash) {
-      navLinks.forEach(l => {
-        if (l.getAttribute('href') === hash) {
-          l.classList.add('active');
-        } else {
-          l.classList.remove('active');
-        }
+    function updateActiveNav() {
+      let current = '';
+      sections.forEach(section => {
+        const top = section.offsetTop - 200;
+        if (window.scrollY >= top) current = section.getAttribute('id');
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
       });
     }
-    navLinks.forEach(l => l.addEventListener('click', () => setActiveNav(l.getAttribute('href'))));
-    mobileLinks.forEach(l => l.addEventListener('click', () => setActiveNav(l.getAttribute('href'))));
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
 
+    /* ============================
+       Init
+    ============================ */
     async function init() {
+      setupReveal();
+      setupCounters();
       try {
         const [stats, cats] = await Promise.all([getRepoStats(), getCategories()]);
         const totalAgents = Object.values(cats).reduce((s, a) => s + a.length, 0);
-        document.getElementById('stat-agents').textContent = totalAgents;
-        document.getElementById('stat-categories').textContent = Object.keys(cats).length;
-        document.getElementById('stat-stars').textContent = stats.stars || '0';
+        const agentsEl = document.getElementById('stat-agents');
+        const catsEl = document.getElementById('stat-categories');
+        const starsEl = document.getElementById('stat-stars');
+        agentsEl.dataset.target = totalAgents;
+        agentsEl.textContent = '0';
+        catsEl.dataset.target = Object.keys(cats).length;
+        catsEl.textContent = '0';
+        starsEl.dataset.target = stats.stars || 0;
+        starsEl.textContent = '0';
         renderCategories(cats);
       } catch (err) {
         console.error('Failed to load:', err);
@@ -890,7 +1046,6 @@ Do's and don'ts, best practices, and edge cases.</code></pre>
           '<div class="loading"><p>Failed to load from GitHub API. Please refresh.</p></div>';
       }
     }
-
     init();
   </script>
 </body>

@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Newest entries are added at the top.
 
+## [1.16.0] - 2026-05-06
+
+### Removed
+
+#### Category Banner SVGs
+- Removed all 15 category banner SVGs from `assets/banners/` (api, backend, communication, config-formats, content, data-query, development, evaluation, frameworks, github, operations, research, scripting-automation, systems, web-frontend)
+- Kept `hero.svg` intact
+- Removed all `<img>` banner references from README.md category sections
+
+---
+
 ## [1.15.0] - 2026-05-06
 
 ### Fixed

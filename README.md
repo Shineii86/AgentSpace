@@ -88,10 +88,6 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ---
 
-<div align="center">
-<img src="assets/banners/evaluation.svg" alt="Evaluation" width="100%"/>
-</div>
-
 ### 📊 Evaluation
 
 *Agents for judging, comparing, and grading outputs.*
@@ -102,10 +98,6 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 - [**A-B-TESTER**](evaluation/A-B-TESTER.md) — Design A/B tests with sample size calculation, metric selection, statistical analysis, and decision frameworks.
 
 ---
-
-<div align="center">
-<img src="assets/banners/development.svg" alt="Development" width="100%"/>
-</div>
 
 ### 💻 Development
 
@@ -120,10 +112,6 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ---
 
-<div align="center">
-<img src="assets/banners/content.svg" alt="Content" width="100%"/>
-</div>
-
 ### ✍️ Content
 
 *Agents for creating, editing, and transforming written content.*
@@ -136,10 +124,6 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ---
 
-<div align="center">
-<img src="assets/banners/research.svg" alt="Research" width="100%"/>
-</div>
-
 ### 🔬 Research
 
 *Agents for investigating topics, verifying claims, and analyzing data.*
@@ -150,10 +134,6 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 - [**COMPETITIVE-ANALYSIS**](research/COMPETITIVE-ANALYSIS.md) — Analyze competitors with feature comparison, pricing, SWOT analysis, and market positioning to inform strategy.
 
 ---
-
-<div align="center">
-<img src="assets/banners/operations.svg" alt="Operations" width="100%"/>
-</div>
 
 ### ⚙️ Operations
 
@@ -166,10 +146,6 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ---
 
-<div align="center">
-<img src="assets/banners/communication.svg" alt="Communication" width="100%"/>
-</div>
-
 ### 📨 Communication
 
 *Agents for professional communication and meeting management.*
@@ -178,10 +154,6 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 - [**MEETING-SUMMARIZER**](communication/MEETING-SUMMARIZER.md) — Transform raw meeting notes into structured records with decisions, action items, discussion summaries, and blockers.
 
 ---
-
-<div align="center">
-<img src="assets/banners/github.svg" alt="GitHub" width="100%"/>
-</div>
 
 ### 🐙 GitHub
 
@@ -232,10 +204,6 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ---
 
-<div align="center">
-<img src="assets/banners/api.svg" alt="API" width="100%"/>
-</div>
-
 ### 🔌 API
 
 *The complete API lifecycle — from design to deployment to monitoring.*
@@ -266,10 +234,6 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ---
 
-<div align="center">
-<img src="assets/banners/web-frontend.svg" alt="Web & Frontend" width="100%"/>
-</div>
-
 ### 🌐 Web & Frontend
 
 *Agents for building modern web interfaces — from CSS architecture to design systems.*
@@ -282,10 +246,6 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 - [**DESIGN-SYSTEM-BUILDER**](web-frontend/DESIGN-SYSTEM-BUILDER.md) — Build and maintain scalable design systems with tokens, components, documentation, and governance.
 
 ---
-
-<div align="center">
-<img src="assets/banners/backend.svg" alt="Backend" width="100%"/>
-</div>
 
 ### 🗄️ Backend
 
@@ -300,10 +260,6 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ---
 
-<div align="center">
-<img src="assets/banners/systems.svg" alt="Systems" width="100%"/>
-</div>
-
 ### 🖥️ Systems
 
 *Agents for system administration, infrastructure, and DevOps — from shell scripts to containers.*
@@ -316,10 +272,6 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 - [**LOG-ANALYZER**](systems/LOG-ANALYZER.md) — Analyze system, application, and security logs. Pattern detection, anomaly identification, root cause analysis.
 
 ---
-
-<div align="center">
-<img src="assets/banners/data-query.svg" alt="Data & Query" width="100%"/>
-</div>
 
 ### 📊 Data & Query
 
@@ -334,10 +286,6 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ---
 
-<div align="center">
-<img src="assets/banners/scripting-automation.svg" alt="Scripting & Automation" width="100%"/>
-</div>
-
 ### ⚙️ Scripting & Automation
 
 *Agents for automating workflows, CI/CD pipelines, and developer productivity tooling.*
@@ -351,9 +299,7 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ---
 
-<div align="center">
-<img src="assets/banners/config-formats.svg" alt="Config / Markup / Data Formats" width="100%"/>
-</div>
+
 
 ### 📝 Config / Markup / Data Formats
 
@@ -367,10 +313,6 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 - [**XML-HTML-SPECIALIST**](config-formats/XML-HTML-SPECIALIST.md) — Write and validate XML/HTML. Schema design (XSD/DTD), XSLT transforms, semantic HTML5 markup.
 
 ---
-
-<div align="center">
-<img src="assets/banners/frameworks.svg" alt="Frameworks" width="100%"/>
-</div>
 
 ### Frameworks
 

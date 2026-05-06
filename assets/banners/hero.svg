@@ -1,275 +1,184 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640">
   <defs>
     <style>
       @media (prefers-color-scheme: light) {
-        .bg { fill: #f0f2f5; }
-        .sub { fill: #656d76; }
-        .node-fill { fill: rgba(88,166,255,0.12); stroke: rgba(88,166,255,0.4); }
-        .node-fill2 { fill: rgba(188,140,255,0.12); stroke: rgba(188,140,255,0.4); }
-        .node-fill3 { fill: rgba(247,120,186,0.12); stroke: rgba(247,120,186,0.4); }
-        .conn { stroke: rgba(88,166,255,0.15); }
-        .conn2 { stroke: rgba(188,140,255,0.12); }
-        .star { fill: rgba(0,0,0,0.15); }
-        .ring { fill:none; stroke:rgba(88,166,255,0.15); }
+        .h-bg { fill: #f8fafc; }
+        .h-title { fill: #0f172a; }
+        .h-sub { fill: #475569; }
+        .h-grid { stroke: rgba(0,0,0,0.03); }
+        .h-node { fill: rgba(99,102,241,0.1); stroke: rgba(99,102,241,0.3); }
+        .h-node2 { fill: rgba(236,72,153,0.1); stroke: rgba(236,72,153,0.3); }
+        .h-line { stroke: rgba(99,102,241,0.08); }
+        .h-particle { fill: rgba(99,102,241,0.4); }
+        .h-particle2 { fill: rgba(236,72,153,0.4); }
+        .h-tag-bg { fill: rgba(0,0,0,0.04); stroke: rgba(0,0,0,0.08); }
+        .h-tag-text { fill: #334155; }
+        .h-glow { opacity: 0.05; }
+        .h-star { fill: rgba(0,0,0,0.15); }
       }
       @media (prefers-color-scheme: dark) {
-        .bg { fill: #0a0e17; }
-        .sub { fill: #8b949e; }
-        .node-fill { fill: rgba(88,166,255,0.08); stroke: rgba(88,166,255,0.5); }
-        .node-fill2 { fill: rgba(188,140,255,0.08); stroke: rgba(188,140,255,0.5); }
-        .node-fill3 { fill: rgba(247,120,186,0.08); stroke: rgba(247,120,186,0.5); }
-        .conn { stroke: rgba(88,166,255,0.12); }
-        .conn2 { stroke: rgba(188,140,255,0.08); }
-        .star { fill: rgba(255,255,255,0.5); }
-        .ring { fill:none; stroke:rgba(88,166,255,0.1); }
+        .h-bg { fill: #020617; }
+        .h-title { fill: #f1f5f9; }
+        .h-sub { fill: #94a3b8; }
+        .h-grid { stroke: rgba(255,255,255,0.03); }
+        .h-node { fill: rgba(99,102,241,0.15); stroke: rgba(99,102,241,0.6); }
+        .h-node2 { fill: rgba(236,72,153,0.15); stroke: rgba(236,72,153,0.6); }
+        .h-line { stroke: rgba(99,102,241,0.1); }
+        .h-particle { fill: rgba(99,102,241,0.7); }
+        .h-particle2 { fill: rgba(236,72,153,0.7); }
+        .h-tag-bg { fill: rgba(255,255,255,0.05); stroke: rgba(255,255,255,0.1); }
+        .h-tag-text { fill: #cbd5e1; }
+        .h-glow { opacity: 0.12; }
+        .h-star { fill: rgba(255,255,255,0.6); }
       }
-
-      /* Stars twinkle */
-      .tw1 { animation: twinkle 2s ease-in-out infinite; }
-      .tw2 { animation: twinkle 3s ease-in-out infinite 0.5s; }
-      .tw3 { animation: twinkle 2.5s ease-in-out infinite 1s; }
-      .tw4 { animation: twinkle 4s ease-in-out infinite 0.3s; }
-      .tw5 { animation: twinkle 3.5s ease-in-out infinite 1.5s; }
-      .tw6 { animation: twinkle 2s ease-in-out infinite 0.8s; }
-      .tw7 { animation: twinkle 3s ease-in-out infinite 2s; }
-      .tw8 { animation: twinkle 2.5s ease-in-out infinite 0.2s; }
-      @keyframes twinkle { 0%,100%{opacity:0.2} 50%{opacity:1} }
-
-      /* Nodes orbit */
-      .orb1 { animation: orbit1 20s linear infinite; }
-      .orb2 { animation: orbit2 25s linear infinite; }
-      .orb3 { animation: orbit3 18s linear infinite; }
-      .orb4 { animation: orbit4 22s linear infinite; }
-      .orb5 { animation: orbit5 28s linear infinite; }
-      .orb6 { animation: orbit6 15s linear infinite; }
-      @keyframes orbit1 { 0%{transform:rotate(0deg) translateX(40px) rotate(0deg)} 100%{transform:rotate(360deg) translateX(40px) rotate(-360deg)} }
-      @keyframes orbit2 { 0%{transform:rotate(0deg) translateX(30px) rotate(0deg)} 100%{transform:rotate(-360deg) translateX(30px) rotate(360deg)} }
-      @keyframes orbit3 { 0%{transform:rotate(0deg) translateX(50px) rotate(0deg)} 100%{transform:rotate(360deg) translateX(50px) rotate(-360deg)} }
-      @keyframes orbit4 { 0%{transform:rotate(0deg) translateX(35px) rotate(0deg)} 100%{transform:rotate(-360deg) translateX(35px) rotate(360deg)} }
-      @keyframes orbit5 { 0%{transform:rotate(0deg) translateX(45px) rotate(0deg)} 100%{transform:rotate(360deg) translateX(45px) rotate(-360deg)} }
-      @keyframes orbit6 { 0%{transform:rotate(0deg) translateX(25px) rotate(0deg)} 100%{transform:rotate(-360deg) translateX(25px) rotate(360deg)} }
-
-      /* Pulse nodes */
-      .pulse1 { animation: npulse 3s ease-in-out infinite; }
-      .pulse2 { animation: npulse 4s ease-in-out infinite 1s; }
-      .pulse3 { animation: npulse 3.5s ease-in-out infinite 0.5s; }
-      @keyframes npulse { 0%,100%{r:6;opacity:0.6} 50%{r:9;opacity:1} }
-
-      /* Ring expand */
-      .ring1 { animation: rexpand 6s ease-out infinite; }
-      .ring2 { animation: rexpand 6s ease-out infinite 2s; }
-      .ring3 { animation: rexpand 6s ease-out infinite 4s; }
-      @keyframes rexpand { 0%{r:0;opacity:0.3;stroke-width:2} 100%{r:200;opacity:0;stroke-width:0.5} }
-
-      /* Title wave */
-      .w0 { animation: wave 3s ease-in-out infinite 0s; }
-      .w1 { animation: wave 3s ease-in-out infinite 0.12s; }
-      .w2 { animation: wave 3s ease-in-out infinite 0.24s; }
-      .w3 { animation: wave 3s ease-in-out infinite 0.36s; }
-      .w4 { animation: wave 3s ease-in-out infinite 0.48s; }
-      .w5 { animation: wave 3s ease-in-out infinite 0.6s; }
-      .w6 { animation: wave 3s ease-in-out infinite 0.72s; }
-      .w7 { animation: wave 3s ease-in-out infinite 0.84s; }
-      .w8 { animation: wave 3s ease-in-out infinite 0.96s; }
-      .w9 { animation: wave 3s ease-in-out infinite 1.08s; }
-      @keyframes wave { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-
+      .t1 { animation: tw 2.5s ease-in-out infinite; }
+      .t2 { animation: tw 3s ease-in-out infinite 0.4s; }
+      .t3 { animation: tw 2s ease-in-out infinite 1s; }
+      .t4 { animation: tw 3.5s ease-in-out infinite 0.8s; }
+      .t5 { animation: tw 2.8s ease-in-out infinite 1.5s; }
+      .t6 { animation: tw 3.2s ease-in-out infinite 0.2s; }
+      .t7 { animation: tw 2.3s ease-in-out infinite 2s; }
+      .t8 { animation: tw 3.8s ease-in-out infinite 0.6s; }
+      @keyframes tw { 0%,100%{opacity:0.2} 50%{opacity:1} }
+      .float1 { animation: f1 6s ease-in-out infinite; }
+      .float2 { animation: f2 8s ease-in-out infinite; }
+      .float3 { animation: f3 7s ease-in-out infinite; }
+      @keyframes f1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+      @keyframes f2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+      @keyframes f3 { 0%,100%{transform:translateX(0)} 50%{transform:translateX(5px)} }
+      .dash { stroke-dasharray: 6 4; animation: dashmove 2s linear infinite; }
+      @keyframes dashmove { 0%{stroke-dashoffset:0} 100%{stroke-dashoffset:-20} }
+      .shimmer { animation: shim 4s ease-in-out infinite; }
+      @keyframes shim { 0%{opacity:0.3} 50%{opacity:1} 100%{opacity:0.3} }
       .cursor { animation: blink 1s step-end infinite; }
       @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-      .shimmer { animation: shimmer 4s ease-in-out infinite; }
-      @keyframes shimmer { 0%{opacity:0.3} 50%{opacity:0.8} 100%{opacity:0.3} }
-
-      /* Connection lines pulse */
-      .conn-pulse { animation: cpulse 4s ease-in-out infinite; }
-      @keyframes cpulse { 0%,100%{opacity:0.06} 50%{opacity:0.2} }
+      .pulse-ring { animation: pring 4s ease-out infinite; }
+      .pulse-ring2 { animation: pring 4s ease-out infinite 2s; }
+      @keyframes pring { 0%{r:0;opacity:0.3;stroke-width:2} 100%{r:150;opacity:0;stroke-width:0.5} }
+      .orb { animation: orb 15s linear infinite; }
+      .orb2 { animation: orb-rev 20s linear infinite; }
+      @keyframes orb { 0%{transform:rotate(0deg) translateX(25px) rotate(0deg)} 100%{transform:rotate(360deg) translateX(25px) rotate(-360deg)} }
+      @keyframes orb-rev { 0%{transform:rotate(0deg) translateX(18px) rotate(0deg)} 100%{transform:rotate(-360deg) translateX(18px) rotate(360deg)} }
     </style>
-
-    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#58a6ff"/>
-      <stop offset="30%" stop-color="#bc8cff"/>
-      <stop offset="70%" stop-color="#f778ba"/>
-      <stop offset="100%" stop-color="#f0883e"/>
+    <linearGradient id="hg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="50%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
     </linearGradient>
-    <radialGradient id="nebula1" cx="20%" cy="30%">
-      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    <linearGradient id="hg2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <radialGradient id="hn1" cx="25%" cy="35%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="nebula2" cx="80%" cy="70%">
-      <stop offset="0%" stop-color="#bc8cff" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#bc8cff" stop-opacity="0"/>
+    <radialGradient id="hn2" cx="75%" cy="65%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="nebula3" cx="50%" cy="50%">
-      <stop offset="0%" stop-color="#f778ba" stop-opacity="0.06"/>
-      <stop offset="100%" stop-color="#f778ba" stop-opacity="0"/>
+    <radialGradient id="hn3" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
     </radialGradient>
-    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <clipPath id="c1"><rect width="1280" height="720" rx="16"/></clipPath>
+    <filter id="hglow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <clipPath id="hc"><rect width="1280" height="640" rx="16"/></clipPath>
   </defs>
-
-  <g clip-path="url(#c1)">
-    <!-- Deep space background -->
-    <rect width="1280" height="720" class="bg"/>
-
-    <!-- Nebula clouds -->
-    <rect width="1280" height="720" fill="url(#nebula1)"/>
-    <rect width="1280" height="720" fill="url(#nebula2)"/>
-    <rect width="1280" height="720" fill="url(#nebula3)"/>
-
-    <!-- Starfield -->
-    <circle cx="45" cy="30" r="1" class="star tw1"/>
-    <circle cx="120" cy="90" r="1.5" class="star tw2"/>
-    <circle cx="250" cy="45" r="1" class="star tw3"/>
-    <circle cx="380" cy="20" r="0.8" class="star tw4"/>
-    <circle cx="510" cy="80" r="1.2" class="star tw5"/>
-    <circle cx="640" cy="35" r="1" class="star tw6"/>
-    <circle cx="770" cy="70" r="1.5" class="star tw7"/>
-    <circle cx="890" cy="25" r="0.8" class="star tw8"/>
-    <circle cx="1020" cy="55" r="1" class="star tw1"/>
-    <circle cx="1150" cy="40" r="1.3" class="star tw3"/>
-    <circle cx="80" cy="200" r="0.8" class="star tw5"/>
-    <circle cx="200" cy="650" r="1" class="star tw2"/>
-    <circle cx="350" cy="580" r="1.5" class="star tw6"/>
-    <circle cx="480" cy="660" r="0.8" class="star tw4"/>
-    <circle cx="620" cy="690" r="1.2" class="star tw7"/>
-    <circle cx="760" cy="640" r="1" class="star tw1"/>
-    <circle cx="900" cy="680" r="1.5" class="star tw8"/>
-    <circle cx="1050" cy="660" r="0.8" class="star tw3"/>
-    <circle cx="1180" cy="690" r="1" class="star tw5"/>
-    <circle cx="60" cy="450" r="1.2" class="star tw2"/>
-    <circle cx="1220" cy="300" r="1" class="star tw6"/>
-    <circle cx="1100" cy="180" r="0.8" class="star tw4"/>
-    <circle cx="180" cy="380" r="1.3" class="star tw7"/>
-    <circle cx="950" cy="400" r="1" class="star tw1"/>
-
-    <!-- Neural network: connection lines -->
-    <g stroke-width="1" class="conn conn-pulse">
-      <line x1="150" y1="200" x2="320" y2="320"/>
-      <line x1="320" y1="320" x2="250" y2="500"/>
-      <line x1="320" y1="320" x2="500" y2="250"/>
-      <line x1="500" y1="250" x2="640" y2="360"/>
-      <line x1="640" y1="360" x2="500" y2="520"/>
-      <line x1="640" y1="360" x2="820" y2="280"/>
-      <line x1="820" y1="280" x2="1000" y2="380"/>
-      <line x1="1000" y1="380" x2="1100" y2="250"/>
-      <line x1="1000" y1="380" x2="1050" y2="530"/>
-      <line x1="250" y1="500" x2="450" y2="580"/>
-      <line x1="500" y1="520" x2="700" y2="580"/>
-      <line x1="700" y1="580" x2="900" y2="520"/>
-      <line x1="900" y1="520" x2="1050" y2="530"/>
-      <line x1="150" y1="200" x2="350" y2="150"/>
-      <line x1="350" y1="150" x2="550" y2="180"/>
-      <line x1="550" y1="180" x2="750" y2="150"/>
-      <line x1="750" y1="150" x2="950" y2="200"/>
-      <line x1="950" y1="200" x2="1100" y2="250"/>
+  <g clip-path="url(#hc)">
+    <rect width="1280" height="640" class="h-bg"/>
+    <rect width="1280" height="640" fill="url(#hn1)"/>
+    <rect width="1280" height="640" fill="url(#hn2)"/>
+    <rect width="1280" height="640" fill="url(#hn3)"/>
+    <g class="h-grid" stroke-width="1">
+      <line x1="0" y1="80" x2="1280" y2="80"/><line x1="0" y1="160" x2="1280" y2="160"/>
+      <line x1="0" y1="240" x2="1280" y2="240"/><line x1="0" y1="320" x2="1280" y2="320"/>
+      <line x1="0" y1="400" x2="1280" y2="400"/><line x1="0" y1="480" x2="1280" y2="480"/>
+      <line x1="0" y1="560" x2="1280" y2="560"/>
+      <line x1="160" y1="0" x2="160" y2="640"/><line x1="320" y1="0" x2="320" y2="640"/>
+      <line x1="480" y1="0" x2="480" y2="640"/><line x1="640" y1="0" x2="640" y2="640"/>
+      <line x1="800" y1="0" x2="800" y2="640"/><line x1="960" y1="0" x2="960" y2="640"/>
+      <line x1="1120" y1="0" x2="1120" y2="640"/>
     </g>
-
-    <!-- Secondary connections -->
-    <g stroke-width="0.5" class="conn2 conn-pulse">
-      <line x1="150" y1="200" x2="500" y2="250"/>
-      <line x1="320" y1="320" x2="640" y2="360"/>
-      <line x1="820" y1="280" x2="1050" y2="530"/>
-      <line x1="250" y1="500" x2="700" y2="580"/>
-      <line x1="500" y1="520" x2="900" y2="520"/>
+    <circle cx="80" cy="50" r="1" class="h-star t1"/><circle cx="200" cy="120" r="1.5" class="h-star t2"/>
+    <circle cx="350" cy="30" r="1" class="h-star t3"/><circle cx="500" cy="90" r="0.8" class="h-star t4"/>
+    <circle cx="650" cy="45" r="1.2" class="h-star t5"/><circle cx="800" cy="70" r="1" class="h-star t6"/>
+    <circle cx="950" cy="25" r="0.8" class="h-star t7"/><circle cx="1100" cy="55" r="1" class="h-star t8"/>
+    <circle cx="1200" cy="40" r="1.3" class="h-star t1"/><circle cx="120" cy="580" r="0.8" class="h-star t3"/>
+    <circle cx="300" cy="600" r="1" class="h-star t5"/><circle cx="480" cy="570" r="1.5" class="h-star t2"/>
+    <circle cx="700" cy="610" r="0.8" class="h-star t4"/><circle cx="900" cy="590" r="1.2" class="h-star t6"/>
+    <circle cx="1050" cy="600" r="1" class="h-star t8"/><circle cx="1180" cy="580" r="0.8" class="h-star t7"/>
+    <g class="h-line" stroke-width="1">
+      <line x1="200" y1="200" x2="400" y2="300"/>
+      <line x1="400" y1="300" x2="350" y2="480"/>
+      <line x1="400" y1="300" x2="640" y2="250"/>
+      <line x1="640" y1="250" x2="880" y2="350"/>
+      <line x1="880" y1="350" x2="1050" y2="250"/>
+      <line x1="880" y1="350" x2="950" y2="500"/>
+      <line x1="350" y1="480" x2="550" y2="530"/>
+      <line x1="550" y1="530" x2="750" y2="500"/>
+      <line x1="750" y1="500" x2="950" y2="500"/>
+      <line x1="200" y1="200" x2="450" y2="150"/>
+      <line x1="450" y1="150" x2="700" y2="180"/>
+      <line x1="700" y1="180" x2="1050" y2="250"/>
     </g>
-
-    <!-- Expanding rings at node positions -->
-    <circle cx="320" cy="320" r="0" class="ring ring1" stroke-width="1.5"/>
-    <circle cx="640" cy="360" r="0" class="ring ring2" stroke-width="1.5"/>
-    <circle cx="1000" cy="380" r="0" class="ring ring3" stroke-width="1.5"/>
-
-    <!-- Neural nodes with orbiting particles -->
+    <g class="h-line dash" stroke-width="0.5">
+      <line x1="200" y1="200" x2="640" y2="250"/>
+      <line x1="400" y1="300" x2="880" y2="350"/>
+      <line x1="350" y1="480" x2="750" y2="500"/>
+    </g>
+    <circle cx="640" cy="300" r="0" class="h-node" stroke-width="1.5" stroke-dasharray="4 2">
+      <animate attributeName="r" values="0;120;0" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0;0.3" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="300" r="0" class="h-node" stroke-width="1" stroke-dasharray="3 3">
+      <animate attributeName="r" values="0;80;0" dur="6s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="0.2;0;0.2" dur="6s" repeatCount="indefinite" begin="1s"/>
+    </circle>
     <g>
-      <circle cx="150" cy="200" r="8" class="node-fill" stroke-width="1.5" filter="url(#glow)"/>
-      <circle cx="150" cy="200" r="3" fill="#58a6ff" class="orb1 pulse1"/>
-
-      <circle cx="320" cy="320" r="10" class="node-fill" stroke-width="1.5" filter="url(#glow)"/>
-      <circle cx="320" cy="320" r="3" fill="#58a6ff" class="orb2 pulse2"/>
-
-      <circle cx="250" cy="500" r="7" class="node-fill2" stroke-width="1.5" filter="url(#glow)"/>
-      <circle cx="250" cy="500" r="2.5" fill="#bc8cff" class="orb3 pulse3"/>
-
-      <circle cx="500" cy="250" r="8" class="node-fill2" stroke-width="1.5" filter="url(#glow)"/>
-      <circle cx="500" cy="250" r="3" fill="#bc8cff" class="orb4 pulse1"/>
-
-      <circle cx="640" cy="360" r="12" class="node-fill" stroke-width="2" filter="url(#glow)"/>
-      <circle cx="640" cy="360" r="4" fill="#58a6ff" class="orb5 pulse2"/>
-
-      <circle cx="500" cy="520" r="7" class="node-fill3" stroke-width="1.5" filter="url(#glow)"/>
-      <circle cx="500" cy="520" r="2.5" fill="#f778ba" class="orb6 pulse3"/>
-
-      <circle cx="820" cy="280" r="9" class="node-fill" stroke-width="1.5" filter="url(#glow)"/>
-      <circle cx="820" cy="280" r="3" fill="#58a6ff" class="orb1 pulse1"/>
-
-      <circle cx="1000" cy="380" r="10" class="node-fill2" stroke-width="1.5" filter="url(#glow)"/>
-      <circle cx="1000" cy="380" r="3.5" fill="#bc8cff" class="orb2 pulse2"/>
-
-      <circle cx="1100" cy="250" r="7" class="node-fill3" stroke-width="1.5" filter="url(#glow)"/>
-      <circle cx="1100" cy="250" r="2.5" fill="#f778ba" class="orb3 pulse3"/>
-
-      <circle cx="1050" cy="530" r="8" class="node-fill" stroke-width="1.5" filter="url(#glow)"/>
-      <circle cx="1050" cy="530" r="3" fill="#58a6ff" class="orb4 pulse1"/>
-
-      <circle cx="450" cy="580" r="6" class="node-fill3" stroke-width="1" filter="url(#glow)"/>
-      <circle cx="450" cy="580" r="2" fill="#f778ba" class="orb5 pulse2"/>
-
-      <circle cx="700" cy="580" r="6" class="node-fill2" stroke-width="1" filter="url(#glow)"/>
-      <circle cx="700" cy="580" r="2" fill="#bc8cff" class="orb6 pulse3"/>
-
-      <circle cx="900" cy="520" r="7" class="node-fill" stroke-width="1.5" filter="url(#glow)"/>
-      <circle cx="900" cy="520" r="2.5" fill="#58a6ff" class="orb1 pulse1"/>
-
-      <circle cx="350" cy="150" r="6" class="node-fill2" stroke-width="1" filter="url(#glow)"/>
-      <circle cx="350" cy="150" r="2" fill="#bc8cff" class="orb2 pulse2"/>
-
-      <circle cx="550" cy="180" r="5" class="node-fill3" stroke-width="1" filter="url(#glow)"/>
-      <circle cx="550" cy="180" r="2" fill="#f778ba" class="orb3 pulse3"/>
-
-      <circle cx="750" cy="150" r="6" class="node-fill" stroke-width="1" filter="url(#glow)"/>
-      <circle cx="750" cy="150" r="2" fill="#58a6ff" class="orb4 pulse1"/>
-
-      <circle cx="950" cy="200" r="7" class="node-fill2" stroke-width="1.5" filter="url(#glow)"/>
-      <circle cx="950" cy="200" r="2.5" fill="#bc8cff" class="orb5 pulse2"/>
+      <circle cx="200" cy="200" r="10" class="h-node" stroke-width="2" filter="url(#hglow)"/>
+      <circle cx="200" cy="200" r="3" class="h-particle float1"/>
+      <circle cx="200" cy="200" r="2" class="h-particle orb"/>
+      <circle cx="400" cy="300" r="12" class="h-node" stroke-width="2" filter="url(#hglow)"/>
+      <circle cx="400" cy="300" r="4" class="h-particle float2"/>
+      <circle cx="400" cy="300" r="2.5" class="h-particle orb2"/>
+      <circle cx="350" cy="480" r="8" class="h-node2" stroke-width="1.5" filter="url(#hglow)"/>
+      <circle cx="350" cy="480" r="2.5" class="h-particle2 float3"/>
+      <circle cx="350" cy="480" r="1.5" class="h-particle2 orb"/>
+      <circle cx="640" cy="250" r="14" class="h-node" stroke-width="2" filter="url(#hglow)"/>
+      <circle cx="640" cy="250" r="4.5" class="h-particle float1"/>
+      <circle cx="640" cy="250" r="3" class="h-particle orb2"/>
+      <circle cx="880" cy="350" r="11" class="h-node2" stroke-width="2" filter="url(#hglow)"/>
+      <circle cx="880" cy="350" r="3.5" class="h-particle2 float2"/>
+      <circle cx="880" cy="350" r="2" class="h-particle2 orb"/>
+      <circle cx="1050" cy="250" r="9" class="h-node" stroke-width="1.5" filter="url(#hglow)"/>
+      <circle cx="1050" cy="250" r="3" class="h-particle float3"/>
+      <circle cx="1050" cy="250" r="2" class="h-particle orb2"/>
+      <circle cx="950" cy="500" r="10" class="h-node2" stroke-width="1.5" filter="url(#hglow)"/>
+      <circle cx="950" cy="500" r="3" class="h-particle2 float1"/>
+      <circle cx="550" cy="530" r="7" class="h-node" stroke-width="1" filter="url(#hglow)"/>
+      <circle cx="550" cy="530" r="2" class="h-particle float2"/>
+      <circle cx="750" cy="500" r="8" class="h-node" stroke-width="1" filter="url(#hglow)"/>
+      <circle cx="750" cy="500" r="2.5" class="h-particle float3"/>
+      <circle cx="450" cy="150" r="7" class="h-node2" stroke-width="1" filter="url(#hglow)"/>
+      <circle cx="450" cy="150" r="2" class="h-particle2 orb"/>
+      <circle cx="700" cy="180" r="8" class="h-node" stroke-width="1" filter="url(#hglow)"/>
+      <circle cx="700" cy="180" r="2.5" class="h-particle orb2"/>
     </g>
-
-    <!-- Title with wave animation -->
-    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
-      <tspan class="w0" x="255" y="410">A</tspan>
+    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="96" text-anchor="middle">
+      <tspan x="640" y="310" fill="url(#hg1)">AgentSpace</tspan>
     </text>
-    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
-      <tspan class="w1" x="350" y="410">g</tspan>
-    </text>
-    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
-      <tspan class="w2" x="438" y="410">e</tspan>
-    </text>
-    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
-      <tspan class="w3" x="520" y="410">n</tspan>
-    </text>
-    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
-      <tspan class="w4" x="612" y="410">t</tspan>
-    </text>
-    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
-      <tspan class="w5" x="675" y="410">S</tspan>
-    </text>
-    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
-      <tspan class="w6" x="770" y="410">p</tspan>
-    </text>
-    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
-      <tspan class="w7" x="860" y="410">a</tspan>
-    </text>
-    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
-      <tspan class="w8" x="946" y="410">c</tspan>
-    </text>
-    <text font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="900" font-size="140" fill="url(#g1)">
-      <tspan class="w9" x="1028" y="410">e</tspan>
-    </text>
-
-    <!-- Accent line -->
-    <rect x="250" y="435" width="830" height="3" rx="1.5" fill="url(#g1)" class="shimmer"/>
-
-    <!-- Subtitle -->
-    <text x="640" y="490" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',Helvetica,Arial,sans-serif" font-weight="400" font-size="26" class="sub">Battle-tested agent definitions for the AI era</text>
-
-    <!-- Blinking cursor -->
-    <rect x="1060" y="340" width="4" height="70" rx="2" fill="url(#g1)" class="cursor"/>
+    <rect x="340" y="330" width="600" height="3" rx="1.5" fill="url(#hg1)" class="shimmer"/>
+    <text x="640" y="380" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',Helvetica,Arial,sans-serif" font-weight="400" font-size="22" class="h-sub">Battle-tested agent definitions for the AI era</text>
+    <g>
+      <rect x="390" y="420" width="110" height="32" rx="16" class="h-tag-bg" stroke-width="1"/>
+      <text x="445" y="441" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',sans-serif" font-size="13" font-weight="600" class="h-tag-text">101 Agents</text>
+      <rect x="510" y="420" width="120" height="32" rx="16" class="h-tag-bg" stroke-width="1"/>
+      <text x="570" y="441" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',sans-serif" font-size="13" font-weight="600" class="h-tag-text">14 Categories</text>
+      <rect x="640" y="420" width="100" height="32" rx="16" class="h-tag-bg" stroke-width="1"/>
+      <text x="690" y="441" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',sans-serif" font-size="13" font-weight="600" class="h-tag-text">MIT License</text>
+      <rect x="750" y="420" width="120" height="32" rx="16" class="h-tag-bg" stroke-width="1"/>
+      <text x="810" y="441" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',sans-serif" font-size="13" font-weight="600" class="h-tag-text">Any LLM Ready</text>
+    </g>
+    <rect x="540" y="500" width="200" height="4" rx="2" fill="url(#hg1)" class="shimmer" opacity="0.5"/>
   </g>
 </svg>

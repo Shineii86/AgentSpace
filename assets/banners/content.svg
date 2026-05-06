@@ -2,77 +2,105 @@
   <defs>
     <style>
       @media (prefers-color-scheme: light) {
-        .cat-bg { fill: #f6f8fa; }
-        .cat-card { fill: rgba(255,255,255,0.85); stroke: rgba(0,0,0,0.08); }
-        .cat-title { fill: #1f2328; }
-        .cat-sub { fill: #656d76; }
-        .cat-badge { fill: rgba(0,0,0,0.04); stroke: rgba(0,0,0,0.1); }
-        .cat-badge-text { fill: #1f2328; }
-        .cat-sep { stroke: rgba(0,0,0,0.08); }
-        .cat-glow { opacity: 0.1; }
-        .cat-dot { opacity: 0.2; }
+        .b-bg { fill: #f8fafc; }
+        .b-card { fill: rgba(255,255,255,0.9); stroke: rgba(0,0,0,0.06); }
+        .b-title { fill: #0f172a; }
+        .b-sub { fill: #64748b; }
+        .b-badge { fill: rgba(0,0,0,0.03); stroke: rgba(0,0,0,0.08); }
+        .b-badge-t { fill: #1e293b; }
+        .b-sep { stroke: rgba(0,0,0,0.06); }
+        .b-glow { opacity: 0.06; }
+        .b-dot { opacity: 0.15; }
+        .b-star { fill: rgba(0,0,0,0.1); }
+        .b-line { stroke: rgba(0,0,0,0.04); }
+        .b-neb { stop-opacity: 0.04; }
       }
       @media (prefers-color-scheme: dark) {
-        .cat-bg { fill: #0d1117; }
-        .cat-card { fill: rgba(22,27,34,0.6); stroke: rgba(255,255,255,0.06); }
-        .cat-title { fill: #f0f6fc; }
-        .cat-sub { fill: #8b949e; }
-        .cat-badge { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.08); }
-        .cat-badge-text { fill: #c9d1d9; }
-        .cat-sep { stroke: rgba(255,255,255,0.06); }
-        .cat-glow { opacity: 0.2; }
-        .cat-dot { opacity: 0.35; }
+        .b-bg { fill: #020617; }
+        .b-card { fill: rgba(15,23,42,0.7); stroke: rgba(255,255,255,0.05); }
+        .b-title { fill: #f1f5f9; }
+        .b-sub { fill: #94a3b8; }
+        .b-badge { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.08); }
+        .b-badge-t { fill: #e2e8f0; }
+        .b-sep { stroke: rgba(255,255,255,0.06); }
+        .b-glow { opacity: 0.12; }
+        .b-dot { opacity: 0.4; }
+        .b-star { fill: rgba(255,255,255,0.5); }
+        .b-line { stroke: rgba(255,255,255,0.04); }
+        .b-neb { stop-opacity: 0.08; }
       }
-      .cat-pulse1 { animation: cpulse 4s ease-in-out infinite; }
-      .cat-pulse2 { animation: cpulse 5s ease-in-out infinite 1.5s; }
-      .cat-shimmer { animation: cshimmer 3s ease-in-out infinite; }
-      @keyframes cpulse { 0%,100%{opacity:0.15;r:3} 50%{opacity:0.45;r:5} }
-      @keyframes cshimmer { 0%{opacity:0.4} 50%{opacity:1} 100%{opacity:0.4} }
+      .b-p1 { animation: bp 4s ease-in-out infinite; }
+      .b-p2 { animation: bp 5s ease-in-out infinite 1.5s; }
+      .b-shim { animation: bshim 3s ease-in-out infinite; }
+      .s1 { animation: st 2s ease-in-out infinite; }
+      .s2 { animation: st 2.8s ease-in-out infinite 0.5s; }
+      .s3 { animation: st 3.2s ease-in-out infinite 1s; }
+      .s4 { animation: st 2.4s ease-in-out infinite 0.3s; }
+      .s5 { animation: st 3s ease-in-out infinite 1.5s; }
+      .s6 { animation: st 2.6s ease-in-out infinite 0.8s; }
+      .bf1 { animation: bfl 6s ease-in-out infinite; }
+      .bf2 { animation: bfl 7s ease-in-out infinite; }
+      .bdash { stroke-dasharray: 4 3; animation: bdm 2s linear infinite; }
+      @keyframes bp { 0%,100%{opacity:0.15;r:3} 50%{opacity:0.5;r:5} }
+      @keyframes bshim { 0%{opacity:0.3} 50%{opacity:0.8} 100%{opacity:0.3} }
+      @keyframes st { 0%,100%{opacity:0.15} 50%{opacity:0.7} }
+      @keyframes bfl { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+      @keyframes bdm { 0%{stroke-dashoffset:0} 100%{stroke-dashoffset:-14} }
     </style>
-
-    <linearGradient id="content-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="content-acc" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#bc8cff"/>
       <stop offset="100%" stop-color="#f778ba"/>
     </linearGradient>
-    <clipPath id="content-clip"><rect width="1200" height="100" rx="10"/></clipPath>
-    <filter id="content-blur"><feGaussianBlur stdDeviation="15"/></filter>
+    <radialGradient id="content-n1" cx="15%" cy="50%">
+      <stop offset="0%" stop-color="#bc8cff" class="b-neb"/>
+      <stop offset="100%" stop-color="#bc8cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="content-n2" cx="85%" cy="50%">
+      <stop offset="0%" stop-color="#f778ba" class="b-neb"/>
+      <stop offset="100%" stop-color="#f778ba" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="content-cl"><rect width="1200" height="100" rx="10"/></clipPath>
+    <filter id="content-bl"><feGaussianBlur stdDeviation="15"/></filter>
+    <filter id="content-gw"><feGaussianBlur stdDeviation="2" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
-
-  <g clip-path="url(#content-clip)">
-    <!-- Background -->
-    <rect width="1200" height="100" class="cat-bg"/>
-
-    <!-- Ambient glow -->
-    <circle cx="100" cy="50" r="100" fill="#bc8cff" class="cat-glow" filter="url(#content-blur)"/>
-    <circle cx="1100" cy="50" r="80" fill="#f778ba" class="cat-glow" filter="url(#content-blur)"/>
-
-    <!-- Card -->
-    <rect x="12" y="8" width="1176" height="84" rx="10" class="cat-card" stroke-width="1"/>
-
-    <!-- Left accent bar -->
-    <rect x="12" y="8" width="5" height="84" rx="2.5" fill="url(#content-accent)"/>
-
-    <!-- Floating dots -->
-    <circle cx="1140" cy="25" r="3" fill="#bc8cff" class="cat-dot cat-pulse1"/>
-    <circle cx="1160" cy="65" r="2.5" fill="#f778ba" class="cat-dot cat-pulse2"/>
-
-    <!-- Emoji -->
+  <g clip-path="url(#{id}-cl)">
+    <rect width="1200" height="100" class="b-bg"/>
+    <rect width="1200" height="100" fill="url(#{id}-n1)"/>
+    <rect width="1200" height="100" fill="url(#{id}-n2)"/>
+    <circle cx="80" cy="50" r="80" fill="#bc8cff" class="b-glow" filter="url(#{id}-bl)"/>
+    <circle cx="1120" cy="50" r="60" fill="#f778ba" class="b-glow" filter="url(#{id}-bl)"/>
+    <g class="b-line" stroke-width="0.5">
+      <line x1="900" y1="20" x2="1000" y2="40"/>
+      <line x1="1000" y1="40" x2="950" y2="80"/>
+      <line x1="950" y1="80" x2="1100" y2="60"/>
+      <line x1="1100" y1="60" x2="1050" y2="25"/>
+      <line x1="1050" y1="25" x2="900" y2="20"/>
+    </g>
+    <g class="b-line bdash" stroke-width="0.5">
+      <line x1="920" y1="30" x2="1080" y2="55"/>
+      <line x1="980" y1="70" x2="1060" y2="30"/>
+    </g>
+    <circle cx="1080" cy="30" r="0.8" class="b-star s1"/>
+    <circle cx="1120" cy="70" r="0.6" class="b-star s2"/>
+    <circle cx="1160" cy="45" r="0.5" class="b-star s3"/>
+    <circle cx="1050" cy="80" r="0.7" class="b-star s4"/>
+    <circle cx="1140" cy="15" r="0.5" class="b-star s5"/>
+    <circle cx="1170" cy="85" r="0.6" class="b-star s6"/>
+    <circle cx="900" cy="20" r="4" fill="#bc8cff" class="b-dot b-p1" filter="url(#{id}-gw)"/>
+    <circle cx="900" cy="20" r="2" fill="#bc8cff" class="bf1"/>
+    <circle cx="1000" cy="40" r="3" fill="#f778ba" class="b-dot b-p2" filter="url(#{id}-gw)"/>
+    <circle cx="1000" cy="40" r="1.5" fill="#f778ba" class="bf2"/>
+    <circle cx="950" cy="80" r="3.5" fill="#bc8cff" class="b-dot b-p1" filter="url(#{id}-gw)"/>
+    <circle cx="1100" cy="60" r="2.5" fill="#f778ba" class="b-dot b-p2" filter="url(#{id}-gw)"/>
+    <circle cx="1050" cy="25" r="3" fill="#bc8cff" class="b-dot b-p1" filter="url(#{id}-gw)"/>
+    <rect x="12" y="8" width="1176" height="84" rx="10" class="b-card" stroke-width="1"/>
+    <rect x="12" y="8" width="5" height="84" rx="2.5" fill="url(#{id}-acc)"/>
     <text x="40" y="62" font-family="'SF Pro Display','Segoe UI',sans-serif" font-size="32">✍️</text>
-
-    <!-- Title -->
-    <text x="90" y="58" font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="700" font-size="28" class="cat-title">Content</text>
-
-    <!-- Separator -->
-    <line x1="222" y1="25" x2="222" y2="75" class="cat-sep" stroke-width="1"/>
-
-    <!-- Agent count badge -->
-    <rect x="237" y="32" width="88" height="28" rx="14" class="cat-badge" stroke-width="1"/>
-    <text x="281" y="51" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',sans-serif" font-size="12" font-weight="600" class="cat-badge-text">5 agents</text>
-
-    <!-- Description -->
-    <text x="345" y="52" font-family="'SF Pro Text','Segoe UI',Helvetica,Arial,sans-serif" font-size="15" class="cat-sub">Write · Edit · Summarize · Translate · Social</text>
-
-    <!-- Bottom accent line -->
-    <rect x="12" y="89" width="1176" height="3" rx="1.5" fill="url(#content-accent)" opacity="0.4" class="cat-shimmer"/>
+    <text x="90" y="58" font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="700" font-size="28" class="b-title">Content</text>
+    <line x1="209" y1="25" x2="209" y2="75" class="b-sep" stroke-width="1"/>
+    <rect x="224" y="32" width="96" height="28" rx="14" class="b-badge" stroke-width="1"/>
+    <text x="272" y="51" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',sans-serif" font-size="12" font-weight="600" class="b-badge-t">5 agents</text>
+    <text x="338" y="52" font-family="'SF Pro Text','Segoe UI',Helvetica,Arial,sans-serif" font-size="15" class="b-sub">Write · Edit · Summarize · Translate · Social</text>
+    <rect x="12" y="89" width="1176" height="3" rx="1.5" fill="url(#{id}-acc)" opacity="0.35" class="b-shim"/>
   </g>
 </svg>

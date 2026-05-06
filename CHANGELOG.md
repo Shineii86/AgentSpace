@@ -7,6 +7,74 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Newest entries are added at the top.
 
+## [1.9.0] - 2026-05-06
+
+### Added
+
+#### New Categories (6 new categories, 36 new agents)
+
+**🌐 Web & Frontend** (`web-frontend/`)
+- `CSS-ARCHITECT.md` — Design scalable CSS architectures (BEM, ITCSS, utility-first, design tokens, theming)
+- `REACT-ENGINEER.md` — Build production-grade React applications with hooks, server components, TypeScript
+- `ACCESSIBILITY-AUDITOR.md` — Audit web interfaces for WCAG 2.2 AA/AAA compliance
+- `PERFORMANCE-OPTIMIZER.md` — Diagnose and fix Core Web Vitals (LCP, INP, CLS)
+- `RESPONSIVE-DESIGNER.md` — Design fluid responsive layouts with CSS Grid, Flexbox, container queries
+- `DESIGN-SYSTEM-BUILDER.md` — Build scalable design systems with tokens, components, documentation
+
+**🗄️ Backend** (`backend/`)
+- `API-SERVER-BUILDER.md` — Build production-ready API servers with clean architecture and observability
+- `DATABASE-ENGINEER.md` — Design schemas, optimize queries, write migrations for SQL/NoSQL
+- `AUTH-ARCHITECT.md` — Design auth systems (OAuth 2.0, JWT, RBAC/ABAC, MFA, SSO)
+- `MICROSERVICE-ARCHITECT.md` — Design microservice architectures with bounded contexts and resilience
+- `CACHING-STRATEGIST.md` — Design multi-layer caching strategies (browser, CDN, app, database)
+- `MIDDLEWARE-DESIGNER.md` — Design reusable middleware pipelines for cross-cutting concerns
+
+**🖥️ Systems** (`systems/`)
+- `SHELL-SCRIPTER.md` — Write robust, portable shell scripts with proper error handling and safety
+- `LINUX-ADMIN.md` — Manage Linux systems: packages, services, users, networking, security hardening
+- `NETWORK-ENGINEER.md` — Design and troubleshoot network infrastructure (DNS, LB, firewalls, VPNs)
+- `CONTAINER-SPECIALIST.md` — Build optimized Docker images, manage orchestration and security
+- `SYSTEMD-ENGINEER.md` — Design systemd services, timers, socket activation, resource controls
+- `LOG-ANALYZER.md` — Analyze system/application/security logs with pattern detection and root cause analysis
+
+**📊 Data & Query** (`data-query/`)
+- `SQL-ENGINEER.md` — Write optimized SQL queries, analyze execution plans, design schemas
+- `ETL-DESIGNER.md` — Design ETL/ELT data pipelines with quality checks and monitoring
+- `DATA-MODELER.md` — Design conceptual, logical, and physical data models (ERDs, normalization)
+- `GRAPHQL-ARCHITECT.md` — Design GraphQL schemas, resolvers, federation, pagination, authorization
+- `TIME-SERIES-ANALYST.md` — Analyze temporal data, design time-series storage, detect anomalies
+- `SEARCH-ENGINEER.md` — Design full-text search with Elasticsearch/OpenSearch, autocomplete, relevance tuning
+
+**⚙️ Scripting & Automation** (`scripting-automation/`)
+- `TASK-RUNNER.md` — Design task automation with Make, Just, Taskfile (dependency tracking, parallel execution)
+- `CI-CD-ENGINEER.md` — Design CI/CD pipelines with testing, deployment strategies, caching, rollback
+- `WORKFLOW-AUTOMATOR.md` — Automate workflows and integrations with webhooks, error handling, monitoring
+- `CRON-SCHEDULER.md` — Design reliable scheduled tasks (timezone handling, idempotency, overlap prevention)
+- `CLI-BUILDER.md` — Build user-friendly CLI tools with argument parsing, help systems, progress indicators
+- `TEMPLATE-ENGINE.md` — Design code generation, scaffolding, and template systems
+
+**📝 Config / Markup / Data Formats** (`config-formats/`)
+- `YAML-SPECIALIST.md` — Write and validate YAML for Kubernetes, Docker Compose, CI/CD, Ansible, Helm
+- `JSON-ARCHITECT.md` — Design JSON structures, JSON Schema definitions, jq transformations
+- `TOML-EXPERT.md` — Write TOML configs for Cargo, pyproject.toml, modern CLI tools
+- `MARKDOWN-ENGINEER.md` — Write structured Markdown with Mermaid diagrams, tables, cross-references
+- `ENV-CONFIG-MANAGER.md` — Design environment configs, .env files, secret management, feature flags
+- `XML-HTML-SPECIALIST.md` — Write and validate XML/HTML, schema design (XSD/DTD), XSLT transforms
+
+#### Banners
+- `assets/banners/web-frontend.svg` — Indigo/purple gradient theme
+- `assets/banners/backend.svg` — Green/emerald gradient theme
+- `assets/banners/systems.svg` — Red/rose gradient theme
+- `assets/banners/data-query.svg` — Amber/gold gradient theme
+- `assets/banners/scripting-automation.svg` — Purple/violet gradient theme
+- `assets/banners/config-formats.svg` — Cyan/teal gradient theme
+
+#### Documentation
+- `README.md` — Updated agent count (65 → 101), category count (8 → 14), added 6 new category sections with full agent tables
+- `assets/banners/` — 6 new category banners with animated particles and glassmorphism cards
+
+---
+
 ## [1.8.0] - 2026-05-06
 
 ### Changed

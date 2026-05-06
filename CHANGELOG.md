@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Newest entries are added at the top.
 
+## [1.11.0] - 2026-05-06
+
+### Added
+
+#### Auto-Synced Website (`index.html`)
+- Dark glassmorphism design matching hero banner aesthetic
+- Auto-fetches all agents from GitHub API on page load — zero manual updates
+- Hero section with live stats (agent count, category count, GitHub stars)
+- 14 category cards with accent-colored left bars and agent listings
+- Grid background + nebula glow effects
+- Sticky navbar with blur backdrop
+- Agent definition format section with syntax highlighting
+- Feature cards (Copy & Paste, Customizable, Composable, Consistent Structure)
+- Footer with copyright, links, and "Auto-synced from GitHub" indicator
+- Responsive design (mobile-friendly)
+- GitHub Pages enabled at https://shineii86.github.io/AgentSpace/
+
+---
+
 ## [1.10.0] - 2026-05-06
 
 ### Changed

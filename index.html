@@ -6,143 +6,181 @@
   <title>AgentSpace — Battle-Tested AI Agent Definitions</title>
   <meta name="description" content="A curated library of 101 battle-tested AI agent definitions across 14 categories. Copy-paste ready for any LLM.">
   <meta name="keywords" content="ai-agents, llm, prompt-engineering, agent-definitions, system-prompts, openai, claude, gemini">
+  <meta name="author" content="Shineii86">
   <meta property="og:title" content="AgentSpace — AI Agent Definitions">
   <meta property="og:description" content="101 battle-tested agent definitions across 14 categories. Copy-paste ready for any LLM.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shineii86.github.io/AgentSpace/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --bg: #020617;
       --bg2: #0f172a;
-      --card: rgba(15,23,42,0.7);
-      --card-border: rgba(255,255,255,0.06);
+      --bg3: #1e293b;
+      --card: rgba(15, 23, 42, 0.6);
+      --card-hover: rgba(15, 23, 42, 0.8);
+      --card-border: rgba(255, 255, 255, 0.06);
+      --card-border-hover: rgba(255, 255, 255, 0.12);
       --text: #f1f5f9;
       --text2: #94a3b8;
       --text3: #64748b;
-      --accent1: #6366f1;
+      --accent: #6366f1;
       --accent2: #ec4899;
       --accent3: #f59e0b;
       --gradient: linear-gradient(135deg, #6366f1, #ec4899, #f59e0b);
+      --gradient-subtle: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(236,72,153,0.15), rgba(245,158,11,0.15));
       --radius: 16px;
       --radius-sm: 10px;
+      --radius-xs: 6px;
+      --shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+      --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.3);
+      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; }
 
-    /* Grid bg */
-    .grid-bg {
+    /* === Background === */
+    .bg-grid {
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
       background-image:
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 80px 80px;
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      background-size: 64px 64px;
     }
-
-    /* Nebula */
-    .nebula {
+    .bg-nebula {
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
       background:
-        radial-gradient(ellipse 600px 400px at 20% 20%, rgba(99,102,241,0.08), transparent),
-        radial-gradient(ellipse 500px 500px at 80% 60%, rgba(236,72,153,0.06), transparent),
-        radial-gradient(ellipse 400px 300px at 50% 80%, rgba(245,158,11,0.04), transparent);
+        radial-gradient(ellipse 800px 500px at 15% 10%, rgba(99,102,241,0.07), transparent),
+        radial-gradient(ellipse 600px 600px at 85% 50%, rgba(236,72,153,0.05), transparent),
+        radial-gradient(ellipse 500px 400px at 40% 90%, rgba(245,158,11,0.04), transparent);
     }
 
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
-    /* Nav */
+    /* === SVG Icon System === */
+    .icon { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .icon-sm { width: 16px; height: 16px; }
+    .icon-lg { width: 24px; height: 24px; }
+    .icon-xl { width: 32px; height: 32px; }
+    .icon-filled { fill: currentColor; stroke: none; }
+
+    /* === Navigation === */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(2,6,23,0.8);
-      backdrop-filter: blur(20px);
+      background: rgba(2, 6, 23, 0.85);
+      backdrop-filter: blur(24px) saturate(1.2);
+      -webkit-backdrop-filter: blur(24px) saturate(1.2);
       border-bottom: 1px solid var(--card-border);
-      padding: 0 24px;
     }
     .nav-inner {
       max-width: 1200px; margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
-      height: 64px;
+      height: 64px; padding: 0 24px;
     }
-    .nav-logo { font-weight: 800; font-size: 20px; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 800; font-size: 18px;
+    }
+    .nav-logo-icon {
+      width: 28px; height: 28px; border-radius: 8px;
+      background: var(--gradient);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo-icon svg { width: 16px; height: 16px; fill: white; }
+    .nav-logo-text { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .nav-links { display: flex; gap: 32px; }
-    .nav-links a { color: var(--text2); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a {
+      color: var(--text2); font-size: 14px; font-weight: 500;
+      transition: color var(--transition); position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+      background: var(--gradient); border-radius: 1px; transition: width var(--transition);
+    }
     .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
     .nav-github {
-      display: flex; align-items: center; gap: 8px;
-      padding: 8px 16px; border-radius: 8px;
+      display: flex; align-items: center; gap: 6px;
+      padding: 8px 14px; border-radius: 8px;
       background: var(--card); border: 1px solid var(--card-border);
       color: var(--text2); font-size: 13px; font-weight: 500;
-      transition: all 0.2s;
+      transition: all var(--transition);
     }
-    .nav-github:hover { border-color: var(--accent1); color: var(--text); }
+    .nav-github:hover { border-color: var(--accent); color: var(--text); }
+    .nav-mobile-btn {
+      display: none; background: none; border: none; color: var(--text2); cursor: pointer; padding: 8px;
+    }
 
-    /* Hero */
+    /* === Hero === */
     .hero {
       text-align: center;
-      padding: 120px 0 80px;
+      padding: 100px 0 80px;
+      position: relative;
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 6px 16px; border-radius: 100px;
-      background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2);
-      color: var(--accent1); font-size: 13px; font-weight: 600;
-      margin-bottom: 24px;
+      background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.15);
+      color: var(--accent); font-size: 13px; font-weight: 600;
+      margin-bottom: 28px;
     }
+    .hero-badge svg { width: 14px; height: 14px; fill: var(--accent); }
     .hero h1 {
-      font-size: clamp(40px, 6vw, 72px);
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 20px;
+      font-size: clamp(44px, 7vw, 80px);
+      font-weight: 900; line-height: 1.05; margin-bottom: 20px;
       background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .hero p {
-      font-size: 18px;
-      color: var(--text2);
-      max-width: 600px;
-      margin: 0 auto 40px;
+    .hero-sub {
+      font-size: 18px; color: var(--text2); max-width: 620px; margin: 0 auto 48px; line-height: 1.7;
     }
     .hero-stats {
-      display: flex; justify-content: center; gap: 48px;
-      margin-bottom: 40px;
+      display: flex; justify-content: center; gap: 56px; margin-bottom: 48px;
     }
     .hero-stat { text-align: center; }
     .hero-stat-num {
-      font-size: 36px; font-weight: 800;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 40px; font-weight: 800;
+      background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .hero-stat-label { font-size: 13px; color: var(--text3); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+    .hero-stat-label {
+      font-size: 12px; color: var(--text3); text-transform: uppercase;
+      letter-spacing: 1.5px; margin-top: 4px; font-weight: 600;
+    }
     .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 14px 28px; border-radius: 12px;
-      font-size: 15px; font-weight: 600;
-      transition: all 0.2s; cursor: pointer; border: none;
+      font-size: 15px; font-weight: 600; font-family: inherit;
+      transition: all var(--transition); cursor: pointer; border: none;
     }
     .btn-primary {
       background: var(--gradient); color: white;
-      box-shadow: 0 4px 20px rgba(99,102,241,0.3);
+      box-shadow: 0 4px 20px rgba(99,102,241,0.25);
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(99,102,241,0.35); }
     .btn-secondary {
       background: var(--card); color: var(--text);
       border: 1px solid var(--card-border);
     }
-    .btn-secondary:hover { border-color: var(--accent1); }
+    .btn-secondary:hover { border-color: var(--accent); transform: translateY(-2px); }
 
-    /* Section */
+    /* === Section === */
     section { padding: 80px 0; }
     .section-header { text-align: center; margin-bottom: 56px; }
     .section-header h2 {
@@ -150,10 +188,10 @@
     }
     .section-header p { color: var(--text2); font-size: 16px; max-width: 500px; margin: 0 auto; }
 
-    /* Category grid */
+    /* === Category Grid === */
     .cat-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
       gap: 20px;
     }
     .cat-card {
@@ -161,45 +199,49 @@
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
       padding: 28px;
-      transition: all 0.3s;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
+      transition: all var(--transition);
+      position: relative; overflow: hidden;
     }
     .cat-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0;
-      width: 4px; height: 100%;
-      border-radius: 2px;
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 3px; height: 100%; border-radius: 0 2px 2px 0;
     }
     .cat-card:hover {
-      border-color: rgba(255,255,255,0.12);
+      background: var(--card-hover);
+      border-color: var(--card-border-hover);
       transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      box-shadow: var(--shadow-lg);
     }
     .cat-card-header {
-      display: flex; align-items: center; gap: 14px;
-      margin-bottom: 16px;
+      display: flex; align-items: center; gap: 14px; margin-bottom: 14px;
     }
-    .cat-emoji { font-size: 28px; }
-    .cat-info h3 { font-size: 18px; font-weight: 700; }
+    .cat-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .cat-icon svg { width: 20px; height: 20px; }
+    .cat-info h3 { font-size: 17px; font-weight: 700; }
     .cat-info span { font-size: 12px; color: var(--text3); font-weight: 500; }
-    .cat-desc { color: var(--text2); font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
-    .cat-agents { display: flex; flex-direction: column; gap: 8px; }
+    .cat-desc { color: var(--text2); font-size: 14px; margin-bottom: 18px; line-height: 1.5; }
+    .cat-agents { display: flex; flex-direction: column; gap: 6px; }
     .cat-agent {
       display: flex; align-items: center; gap: 10px;
-      padding: 8px 12px; border-radius: 8px;
-      background: rgba(255,255,255,0.02);
+      padding: 8px 12px; border-radius: var(--radius-xs);
+      background: rgba(255,255,255,0.015);
       font-size: 13px; color: var(--text2);
-      transition: all 0.2s;
+      transition: all var(--transition);
     }
-    .cat-agent:hover { background: rgba(255,255,255,0.05); color: var(--text); }
-    .cat-agent-name { font-weight: 600; color: var(--text); min-width: 160px; }
-    .cat-agent-desc { flex: 1; }
-    .cat-agent-arrow { color: var(--text3); font-size: 16px; margin-left: auto; opacity: 0; transition: opacity 0.2s; }
-    .cat-agent:hover .cat-agent-arrow { opacity: 1; }
+    .cat-agent:hover { background: rgba(255,255,255,0.04); color: var(--text); }
+    .cat-agent-name { font-weight: 600; color: var(--text); min-width: 180px; font-size: 13px; }
+    .cat-agent-desc { flex: 1; font-size: 12px; line-height: 1.4; }
+    .cat-agent-arrow {
+      color: var(--text3); opacity: 0; transition: all var(--transition);
+      transform: translateX(-4px);
+    }
+    .cat-agent:hover .cat-agent-arrow { opacity: 1; transform: translateX(0); }
 
-    /* Features */
+    /* === Features === */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -210,122 +252,208 @@
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
       padding: 32px;
-      text-align: center;
-      transition: all 0.3s;
+      transition: all var(--transition);
     }
-    .feature-card:hover { border-color: rgba(255,255,255,0.1); transform: translateY(-2px); }
+    .feature-card:hover { border-color: var(--card-border-hover); transform: translateY(-3px); }
     .feature-icon {
-      width: 56px; height: 56px; border-radius: 14px;
+      width: 48px; height: 48px; border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 20px; font-size: 24px;
+      margin-bottom: 20px;
     }
+    .feature-icon svg { width: 24px; height: 24px; }
     .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-    .feature-card p { font-size: 14px; color: var(--text2); line-height: 1.5; }
+    .feature-card p { font-size: 14px; color: var(--text2); line-height: 1.6; }
 
-    /* Format section */
+    /* === Format Section === */
     .format-box {
       background: var(--card);
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
       padding: 40px;
-      max-width: 700px;
-      margin: 0 auto;
+      max-width: 720px; margin: 0 auto;
     }
     .format-box pre {
       background: rgba(0,0,0,0.3);
       border-radius: var(--radius-sm);
-      padding: 24px;
+      padding: 28px;
       overflow-x: auto;
-      font-size: 13px;
-      line-height: 1.7;
+      font-size: 13px; line-height: 1.8;
       color: var(--text2);
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
     }
-    .format-box pre .hl { color: var(--accent1); }
-    .format-box pre .cm { color: var(--text3); }
+    .hl { color: var(--accent); }
+    .cm { color: var(--text3); font-style: italic; }
 
-    /* Loading */
-    .loading {
-      text-align: center; padding: 80px 0;
-      color: var(--text3);
+    /* === Usage Section === */
+    .usage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
     }
-    .loading .spinner {
-      width: 40px; height: 40px;
+    .usage-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: all var(--transition);
+    }
+    .usage-card:hover { border-color: var(--card-border-hover); }
+    .usage-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+    .usage-card p { font-size: 14px; color: var(--text2); line-height: 1.6; }
+
+    /* === CTA === */
+    .cta-section {
+      text-align: center; padding: 80px 0;
+    }
+    .cta-box {
+      background: var(--gradient-subtle);
+      border: 1px solid rgba(99,102,241,0.15);
+      border-radius: 24px;
+      padding: 64px 40px;
+      max-width: 700px; margin: 0 auto;
+    }
+    .cta-box h2 { font-size: 32px; font-weight: 800; margin-bottom: 16px; }
+    .cta-box p { color: var(--text2); margin-bottom: 32px; font-size: 16px; }
+
+    /* === Loading === */
+    .loading {
+      text-align: center; padding: 80px 0; color: var(--text3);
+    }
+    .spinner {
+      width: 36px; height: 36px;
       border: 3px solid var(--card-border);
-      border-top-color: var(--accent1);
+      border-top-color: var(--accent);
       border-radius: 50%;
-      animation: spin 0.8s linear infinite;
+      animation: spin 0.7s linear infinite;
       margin: 0 auto 16px;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* Footer */
+    /* === Footer === */
     footer {
       border-top: 1px solid var(--card-border);
-      padding: 48px 0;
-      margin-top: 40px;
+      padding: 56px 0 40px; margin-top: 40px;
+      position: relative; z-index: 1;
     }
-    .footer-inner {
+    .footer-top {
+      display: flex; justify-content: space-between;
+      flex-wrap: wrap; gap: 40px; margin-bottom: 40px;
+    }
+    .footer-brand { max-width: 320px; }
+    .footer-brand-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 800; font-size: 18px; margin-bottom: 12px;
+    }
+    .footer-brand-logo span {
+      background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .footer-brand p { font-size: 14px; color: var(--text3); line-height: 1.6; }
+    .footer-col h4 {
+      font-size: 13px; font-weight: 700; color: var(--text);
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a {
+      font-size: 14px; color: var(--text3); transition: color var(--transition);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .footer-col a:hover { color: var(--text); }
+    .footer-bottom {
       display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 24px;
+      flex-wrap: wrap; gap: 16px;
+      padding-top: 24px; border-top: 1px solid var(--card-border);
     }
-    .footer-left { display: flex; align-items: center; gap: 12px; }
-    .footer-logo { font-weight: 800; font-size: 18px; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .footer-copy { font-size: 13px; color: var(--text3); }
-    .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 13px; color: var(--text3); transition: color 0.2s; }
-    .footer-links a:hover { color: var(--text); }
-    .footer-right { font-size: 12px; color: var(--text3); }
+    .footer-copy a { color: var(--accent); transition: opacity var(--transition); }
+    .footer-copy a:hover { opacity: 0.8; }
+    .footer-sync {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12px; color: var(--text3);
+    }
+    .footer-sync .pulse {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #22c55e; animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-    /* Responsive */
+    /* === Responsive === */
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .hero { padding: 80px 0 60px; }
-      .hero-stats { gap: 24px; }
-      .hero-stat-num { font-size: 28px; }
+      .nav-mobile-btn { display: block; }
+      .hero { padding: 72px 0 56px; }
+      .hero-stats { gap: 28px; }
+      .hero-stat-num { font-size: 30px; }
       .cat-grid { grid-template-columns: 1fr; }
       .cat-agent { flex-direction: column; align-items: flex-start; gap: 4px; }
       .cat-agent-name { min-width: auto; }
-      .footer-inner { flex-direction: column; text-align: center; }
+      .cat-agent-desc { font-size: 11px; }
+      .footer-top { flex-direction: column; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      section { padding: 56px 0; }
     }
   </style>
 </head>
 <body>
-  <div class="grid-bg"></div>
-  <div class="nebula"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-nebula"></div>
 
+  <!-- Navigation -->
   <nav>
     <div class="nav-inner">
-      <a href="#" class="nav-logo">⚡ AgentSpace</a>
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <span class="nav-logo-text">AgentSpace</span>
+      </a>
       <div class="nav-links">
         <a href="#categories">Categories</a>
         <a href="#features">Features</a>
         <a href="#format">Format</a>
-        <a href="https://github.com/Shineii86/AgentSpace/blob/main/CONTRIBUTING.md">Contribute</a>
+        <a href="#usage">Usage</a>
+        <a href="https://github.com/Shineii86/AgentSpace/blob/main/CONTRIBUTING.md" target="_blank">Contribute</a>
       </div>
-      <a href="https://github.com/Shineii86/AgentSpace" class="nav-github" target="_blank">
-        <span class="material-icons-outlined" style="font-size:18px">code</span>
-        GitHub
-      </a>
+      <div class="nav-actions">
+        <a href="https://github.com/Shineii86/AgentSpace" class="nav-github" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <button class="nav-mobile-btn" aria-label="Menu">
+          <svg class="icon-lg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
     </div>
   </nav>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <div class="hero-badge">✨ Open Source &amp; Free Forever</div>
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Open Source & Free Forever
+      </div>
       <h1>AgentSpace</h1>
-      <p>A curated library of battle-tested AI agent definitions. Copy-paste ready for any LLM — OpenAI, Claude, Gemini, Llama, and more.</p>
+      <p class="hero-sub">A curated library of battle-tested AI agent definitions. Copy-paste ready for any LLM — OpenAI, Claude, Gemini, Llama, and more.</p>
       <div class="hero-stats" id="hero-stats">
-        <div class="hero-stat"><div class="hero-stat-num" id="stat-agents">—</div><div class="hero-stat-label">Agents</div></div>
-        <div class="hero-stat"><div class="hero-stat-num" id="stat-categories">—</div><div class="hero-stat-label">Categories</div></div>
-        <div class="hero-stat"><div class="hero-stat-num" id="stat-stars">—</div><div class="hero-stat-label">GitHub Stars</div></div>
+        <div class="hero-stat"><div class="hero-stat-num" id="stat-agents">&mdash;</div><div class="hero-stat-label">Agents</div></div>
+        <div class="hero-stat"><div class="hero-stat-num" id="stat-categories">&mdash;</div><div class="hero-stat-label">Categories</div></div>
+        <div class="hero-stat"><div class="hero-stat-num" id="stat-stars">&mdash;</div><div class="hero-stat-label">GitHub Stars</div></div>
       </div>
       <div class="hero-actions">
-        <a href="#categories" class="btn btn-primary"><span class="material-icons-outlined" style="font-size:20px">explore</span> Browse Agents</a>
-        <a href="https://github.com/Shineii86/AgentSpace" class="btn btn-secondary" target="_blank"><span class="material-icons-outlined" style="font-size:20px">star</span> Star on GitHub</a>
+        <a href="#categories" class="btn btn-primary">
+          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          Browse Agents
+        </a>
+        <a href="https://github.com/Shineii86/AgentSpace" class="btn btn-secondary" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Star on GitHub
+        </a>
       </div>
     </div>
   </section>
 
+  <!-- Categories -->
   <section id="categories">
     <div class="container">
       <div class="section-header">
@@ -338,6 +466,7 @@
     </div>
   </section>
 
+  <!-- Features -->
   <section id="features">
     <div class="container">
       <div class="section-header">
@@ -346,29 +475,38 @@
       </div>
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon" style="background:rgba(99,102,241,0.1);color:#6366f1">📋</div>
-          <h3>Copy &amp; Paste</h3>
+          <div class="feature-icon" style="background:rgba(99,102,241,0.1);color:#6366f1">
+            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </div>
+          <h3>Copy & Paste</h3>
           <p>Drop any agent definition directly into your LLM system prompt. No configuration needed.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon" style="background:rgba(236,72,153,0.1);color:#ec4899">🔧</div>
+          <div class="feature-icon" style="background:rgba(236,72,153,0.1);color:#ec4899">
+            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
           <h3>Customizable</h3>
           <p>Every agent is a starting point. Modify the process, add steps, or combine agents into workflows.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon" style="background:rgba(245,158,11,0.1);color:#f59e0b">🧩</div>
+          <div class="feature-icon" style="background:rgba(245,158,11,0.1);color:#f59e0b">
+            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
           <h3>Composable</h3>
           <p>Chain multiple agents together. The output format of one feeds the input of another.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon" style="background:rgba(52,211,153,0.1);color:#34d399">📚</div>
+          <div class="feature-icon" style="background:rgba(52,211,153,0.1);color:#34d399">
+            <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          </div>
           <h3>Consistent Structure</h3>
-          <p>Role → Inputs → Process → Output Format → Guidelines. Same pattern, every agent.</p>
+          <p>Role, Inputs, Process, Output Format, Guidelines. Same pattern, every agent, every time.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Agent Definition Format -->
   <section id="format">
     <div class="container">
       <div class="section-header">
@@ -397,50 +535,232 @@ Do's and don'ts, best practices, and edge cases.</pre>
     </div>
   </section>
 
+  <!-- Usage -->
+  <section id="usage">
+    <div class="container">
+      <div class="section-header">
+        <h2>How to Use</h2>
+        <p>Get started in minutes with any LLM platform</p>
+      </div>
+      <div class="usage-grid">
+        <div class="usage-card">
+          <h3>
+            <svg class="icon" style="color:var(--accent)" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            With Any LLM
+          </h3>
+          <p>Copy the agent definition into your system prompt. Works with OpenAI, Claude, Gemini, Llama, Mistral, and any other LLM that supports system instructions.</p>
+        </div>
+        <div class="usage-card">
+          <h3>
+            <svg class="icon" style="color:#ec4899" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+            With OpenClaw
+          </h3>
+          <p>Load agent definitions as skill prompts. Point your agent at the definition file and provide the required inputs for seamless integration.</p>
+        </div>
+        <div class="usage-card">
+          <h3>
+            <svg class="icon" style="color:#f59e0b" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            As Templates
+          </h3>
+          <p>Each agent is a starting point. Customize the process, add domain-specific steps, or combine multiple agents into complex workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to Build?</h2>
+        <p>Explore 101 agent definitions across 14 categories. Fork, customize, and ship faster.</p>
+        <div class="hero-actions">
+          <a href="https://github.com/Shineii86/AgentSpace" class="btn btn-primary" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+          <a href="https://github.com/Shineii86/AgentSpace/blob/main/CONTRIBUTING.md" class="btn btn-secondary" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+            Contribute
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-left">
-          <span class="footer-logo">⚡ AgentSpace</span>
-          <span class="footer-copy">© 2026 Shineii86. MIT License.</span>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-logo">
+            <div class="nav-logo-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="white"/></svg>
+            </div>
+            <span>AgentSpace</span>
+          </div>
+          <p>A curated library of 101 battle-tested AI agent definitions across 14 categories. Copy-paste ready for any LLM.</p>
         </div>
-        <div class="footer-links">
-          <a href="https://github.com/Shineii86/AgentSpace" target="_blank">GitHub</a>
-          <a href="https://github.com/Shineii86/AgentSpace/issues" target="_blank">Issues</a>
-          <a href="https://github.com/Shineii86/AgentSpace/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a>
-          <a href="https://github.com/Shineii86/AgentSpace/blob/main/LICENSE" target="_blank">License</a>
+        <div class="footer-col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="https://github.com/Shineii86/AgentSpace" target="_blank" rel="noopener">
+              <svg class="icon-sm" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+              Repository
+            </a></li>
+            <li><a href="https://github.com/Shineii86/AgentSpace/issues" target="_blank" rel="noopener">
+              <svg class="icon-sm" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Issues
+            </a></li>
+            <li><a href="https://github.com/Shineii86/AgentSpace/blob/main/LICENSE" target="_blank" rel="noopener">
+              <svg class="icon-sm" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              License (MIT)
+            </a></li>
+          </ul>
         </div>
-        <div class="footer-right">
-          Auto-synced from <a href="https://github.com/Shineii86/AgentSpace" style="color:var(--accent1)">GitHub</a>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://github.com/Shineii86/AgentSpace/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">
+              <svg class="icon-sm" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+              Contributing
+            </a></li>
+            <li><a href="https://github.com/Shineii86/AgentSpace/blob/main/CHANGELOG.md" target="_blank" rel="noopener">
+              <svg class="icon-sm" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Changelog
+            </a></li>
+            <li><a href="https://github.com/Shineii86" target="_blank" rel="noopener">
+              <svg class="icon-sm" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              @Shineii86
+            </a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#format">
+              <svg class="icon-sm" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+              Agent Format
+            </a></li>
+            <li><a href="#categories">
+              <svg class="icon-sm" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              All Categories
+            </a></li>
+            <li><a href="https://shineii86.github.io/AgentSpace/" target="_blank" rel="noopener">
+              <svg class="icon-sm" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+              Website
+            </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 <a href="https://github.com/Shineii86" target="_blank" rel="noopener">Shineii86</a>. All rights reserved. Licensed under the <a href="https://github.com/Shineii86/AgentSpace/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>.
+        </div>
+        <div class="footer-sync">
+          <span class="pulse"></span>
+          Auto-synced from GitHub
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- Site Scripts -->
   <script>
     const REPO = 'Shineii86/AgentSpace';
     const API = 'https://api.github.com';
 
+    /* Category metadata — SVG icons inline, colors, descriptions */
     const CATEGORY_META = {
-      'evaluation':            { emoji: '📊', name: 'Evaluation',            color: '#f0883e', desc: 'Judge, compare, grade, and experiment' },
-      'development':           { emoji: '💻', name: 'Development',           color: '#3fb950', desc: 'Write, review, debug, test, audit, and architect' },
-      'content':               { emoji: '✍️', name: 'Content',               color: '#bc8cff', desc: 'Create, edit, summarize, translate, and socialize' },
-      'research':              { emoji: '🔬', name: 'Research',              color: '#58a6ff', desc: 'Investigate, verify, analyze, and compete' },
-      'operations':            { emoji: '⚙️', name: 'Operations',            color: '#f0883e', desc: 'Deploy, monitor, schedule, and postmortem' },
-      'communication':         { emoji: '📨', name: 'Communication',         color: '#f778ba', desc: 'Draft emails and summarize meetings' },
-      'github':                { emoji: '🐙', name: 'GitHub',                color: '#8b949e', desc: 'Full GitHub ecosystem coverage' },
-      'api':                   { emoji: '🔌', name: 'API',                   color: '#3fb950', desc: 'Design, build, scrape, test, and document APIs' },
-      'web-frontend':          { emoji: '🌐', name: 'Web & Frontend',        color: '#6366f1', desc: 'CSS, React, accessibility, performance, responsive design' },
-      'backend':               { emoji: '🗄️', name: 'Backend',               color: '#059669', desc: 'API servers, databases, auth, microservices, caching' },
-      'systems':               { emoji: '🖥️', name: 'Systems',               color: '#dc2626', desc: 'Shell, Linux, networking, containers, systemd, logs' },
-      'data-query':            { emoji: '📊', name: 'Data & Query',          color: '#d97706', desc: 'SQL, ETL, data modeling, GraphQL, time series, search' },
-      'scripting-automation':  { emoji: '⚙️', name: 'Scripting & Automation', color: '#7c3aed', desc: 'Task runners, CI/CD, workflows, cron, CLI, templates' },
-      'config-formats':        { emoji: '📝', name: 'Config / Markup / Data', color: '#0891b2', desc: 'YAML, JSON, TOML, Markdown, env config, XML/HTML' },
+      'evaluation': {
+        name: 'Evaluation',
+        color: '#f0883e',
+        desc: 'Judge, compare, grade, and experiment',
+        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
+      },
+      'development': {
+        name: 'Development',
+        color: '#3fb950',
+        desc: 'Write, review, debug, test, audit, and architect',
+        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>'
+      },
+      'content': {
+        name: 'Content',
+        color: '#bc8cff',
+        desc: 'Create, edit, summarize, translate, and socialize',
+        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>'
+      },
+      'research': {
+        name: 'Research',
+        color: '#58a6ff',
+        desc: 'Investigate, verify, analyze, and compete',
+        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>'
+      },
+      'operations': {
+        name: 'Operations',
+        color: '#f0883e',
+        desc: 'Deploy, monitor, schedule, and postmortem',
+        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>'
+      },
+      'communication': {
+        name: 'Communication',
+        color: '#f778ba',
+        desc: 'Draft emails and summarize meetings',
+        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>'
+      },
+      'github': {
+        name: 'GitHub',
+        color: '#8b949e',
+        desc: 'Full GitHub ecosystem coverage',
+        icon: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>'
+      },
+      'api': {
+        name: 'API',
+        color: '#3fb950',
+        desc: 'Design, build, scrape, test, and document APIs',
+        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>'
+      },
+      'web-frontend': {
+        name: 'Web & Frontend',
+        color: '#6366f1',
+        desc: 'CSS, React, accessibility, performance, responsive design',
+        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>'
+      },
+      'backend': {
+        name: 'Backend',
+        color: '#059669',
+        desc: 'API servers, databases, auth, microservices, caching',
+        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>'
+      },
+      'systems': {
+        name: 'Systems',
+        color: '#dc2626',
+        desc: 'Shell, Linux, networking, containers, systemd, logs',
+        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>'
+      },
+      'data-query': {
+        name: 'Data & Query',
+        color: '#d97706',
+        desc: 'SQL, ETL, data modeling, GraphQL, time series, search',
+        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>'
+      },
+      'scripting-automation': {
+        name: 'Scripting & Automation',
+        color: '#7c3aed',
+        desc: 'Task runners, CI/CD, workflows, cron, CLI, templates',
+        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>'
+      },
+      'config-formats': {
+        name: 'Config / Markup / Data',
+        color: '#0891b2',
+        desc: 'YAML, JSON, TOML, Markdown, env config, XML/HTML',
+        icon: '<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>'
+      }
     };
 
     async function fetchJSON(url) {
       const r = await fetch(url);
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      if (!r.ok) throw new Error(`GitHub API ${r.status}`);
       return r.json();
     }
 
@@ -458,35 +778,17 @@ Do's and don'ts, best practices, and edge cases.</pre>
         if (parts.length !== 2) continue;
         const dir = parts[0];
         const file = parts[1];
-        if (['README.md','CHANGELOG.md','CONTRIBUTING.md'].includes(file)) continue;
+        if (['README.md', 'CHANGELOG.md', 'CONTRIBUTING.md'].includes(file)) continue;
         if (!CATEGORY_META[dir]) continue;
         if (!cats[dir]) cats[dir] = [];
-        const name = file.replace('.md','');
-        cats[dir].push({ name, path: item.path });
+        cats[dir].push({ name: file.replace('.md', ''), path: item.path });
       }
       return cats;
-    }
-
-    async function getAgentDesc(path) {
-      try {
-        const data = await fetchJSON(`${API}/repos/${REPO}/contents/${path}`);
-        const content = atob(data.content);
-        // Extract first non-empty, non-heading line
-        const lines = content.split('\n');
-        for (const line of lines) {
-          const trimmed = line.trim();
-          if (trimmed && !trimmed.startsWith('#') && !trimmed.startsWith('```')) {
-            return trimmed.replace(/^>\s*/, '').substring(0, 120);
-          }
-        }
-        return '';
-      } catch { return ''; }
     }
 
     function renderCategories(cats) {
       const grid = document.getElementById('cat-grid');
       grid.innerHTML = '';
-
       const sortedCats = Object.keys(CATEGORY_META).filter(k => cats[k]);
 
       for (const dir of sortedCats) {
@@ -494,24 +796,23 @@ Do's and don'ts, best practices, and edge cases.</pre>
         const agents = cats[dir];
         const card = document.createElement('div');
         card.className = 'cat-card';
-        card.style.setProperty('--cat-color', meta.color);
-        card.querySelector?.('::before')?.style?.setProperty('background', meta.color);
-
         card.innerHTML = `
           <style>.cat-card[data-dir="${dir}"]::before { background: ${meta.color}; }</style>
           <div class="cat-card-header">
-            <span class="cat-emoji">${meta.emoji}</span>
+            <div class="cat-icon" style="background:${meta.color}15;color:${meta.color}">
+              ${meta.icon}
+            </div>
             <div class="cat-info">
               <h3>${meta.name}</h3>
-              <span>${agents.length} agent${agents.length > 1 ? 's' : ''}</span>
+              <span>${agents.length} agent${agents.length !== 1 ? 's' : ''}</span>
             </div>
           </div>
           <div class="cat-desc">${meta.desc}</div>
           <div class="cat-agents">
             ${agents.map(a => `
-              <a href="https://github.com/${REPO}/blob/main/${a.path}" target="_blank" class="cat-agent">
+              <a href="https://github.com/${REPO}/blob/main/${a.path}" target="_blank" rel="noopener" class="cat-agent">
                 <span class="cat-agent-name">${a.name}</span>
-                <span class="cat-agent-arrow material-icons-outlined">arrow_forward</span>
+                <svg class="cat-agent-arrow icon-sm" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
             `).join('')}
           </div>
@@ -524,13 +825,10 @@ Do's and don'ts, best practices, and edge cases.</pre>
     async function init() {
       try {
         const [stats, cats] = await Promise.all([getRepoStats(), getCategories()]);
-
-        // Update hero stats
         const totalAgents = Object.values(cats).reduce((s, a) => s + a.length, 0);
         document.getElementById('stat-agents').textContent = totalAgents;
         document.getElementById('stat-categories').textContent = Object.keys(cats).length;
-        document.getElementById('stat-stars').textContent = stats.stars || '⭐';
-
+        document.getElementById('stat-stars').textContent = stats.stars || '0';
         renderCategories(cats);
       } catch (err) {
         console.error('Failed to load:', err);

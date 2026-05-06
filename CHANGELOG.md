@@ -7,6 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Newest entries are added at the top.
 
+## [1.12.0] - 2026-05-06
+
+### Changed
+
+#### Complete Website Redesign (`index.html`)
+- Full visual overhaul with polished, production-grade design
+- Replaced all emoji icons with inline SVG icons throughout (categories, features, navigation, footer, usage section)
+- Added dedicated SVG icon system with consistent sizing (icon, icon-sm, icon-lg, icon-xl)
+- New multi-column footer with brand description, project links, community links, and resources
+- Proper copyright notice: "© 2026 Shineii86. All rights reserved. Licensed under the MIT License."
+- Added green pulse indicator for "Auto-synced from GitHub" status
+- Added "Usage" section with three cards: With Any LLM, With OpenClaw, As Templates
+- Added call-to-action (CTA) section with gradient background
+- Enhanced navigation with animated underline on hover and mobile menu button
+- Refined hero section with larger typography and improved spacing
+- Improved card hover states with smoother cubic-bezier transitions
+- Added OG meta tags for better social sharing (og:url, og:title, og:description)
+- Added author meta tag
+- Footer column headings: Project, Community, Resources
+- All contributors credited under @Shineii86
+- Responsive design preserved with mobile-friendly adjustments
+- Zero emojis — pure SVG icons for a professional aesthetic
+
+---
+
 ## [1.11.0] - 2026-05-06
 
 ### Added

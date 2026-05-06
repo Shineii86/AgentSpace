@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Newest entries are added at the top.
 
+## [1.9.2] - 2026-05-06
+
+### Changed
+
+#### SVG Banners — Upgrade with Advanced Effects
+All 6 new category banners upgraded with hero-quality visual effects:
+- Added twinkling starfield (6 stars with staggered animation timing)
+- Added expanding ring animations (2 rings per banner, staggered)
+- Added orbiting particles around floating dots (forward + reverse orbits)
+- Added radial gradient nebula clouds (dual nebula per banner)
+- Added glow filter on animated dots (feGaussianBlur + feMerge)
+- Banner size: ~3.4KB → ~5.9KB (richer visuals, still lightweight)
+
+---
+
 ## [1.9.1] - 2026-05-06
 
 ### Changed
@@ -17,8 +32,8 @@ All 6 new category banners redesigned to match existing v1.8.0 banner style:
 - Added glassmorphism card, left accent bar, animated floating dots, bottom shimmer line
 - Added emoji icon, agent count badge pill, separator line, ambient glow orbs
 
-#### README — New Category Section Style
-Changed 6 new category sections from HTML table layout to clean list-based format:
+#### README — All Sections to List Format
+Converted all 14 category sections (including original 8) from HTML tables to clean list format:
 - `- [**AGENT-NAME**](path) — Description` style for better readability
 - Italicized category descriptions instead of blockquote `>` format
 

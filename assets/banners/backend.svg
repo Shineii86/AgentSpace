@@ -9,8 +9,11 @@
         .cat-badge { fill: rgba(0,0,0,0.04); stroke: rgba(0,0,0,0.1); }
         .cat-badge-text { fill: #1f2328; }
         .cat-sep { stroke: rgba(0,0,0,0.08); }
-        .cat-glow { opacity: 0.1; }
-        .cat-dot { opacity: 0.2; }
+        .cat-glow { opacity: 0.08; }
+        .cat-dot { opacity: 0.15; }
+        .cat-star { fill: rgba(0,0,0,0.12); }
+        .cat-ring { fill:none; stroke:rgba(5,150,105,0.08); }
+        .cat-nebula { stop-opacity: 0.06; }
       }
       @media (prefers-color-scheme: dark) {
         .cat-bg { fill: #0d1117; }
@@ -20,36 +23,72 @@
         .cat-badge { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.08); }
         .cat-badge-text { fill: #c9d1d9; }
         .cat-sep { stroke: rgba(255,255,255,0.06); }
-        .cat-glow { opacity: 0.2; }
+        .cat-glow { opacity: 0.15; }
         .cat-dot { opacity: 0.35; }
+        .cat-star { fill: rgba(255,255,255,0.4); }
+        .cat-ring { fill:none; stroke:rgba(5,150,105,0.1); }
+        .cat-nebula { stop-opacity: 0.1; }
       }
       .cat-pulse1 { animation: cpulse 4s ease-in-out infinite; }
       .cat-pulse2 { animation: cpulse 5s ease-in-out infinite 1.5s; }
       .cat-shimmer { animation: cshimmer 3s ease-in-out infinite; }
+      .tw1 { animation: twinkle 2s ease-in-out infinite; }
+      .tw2 { animation: twinkle 3s ease-in-out infinite 0.7s; }
+      .tw3 { animation: twinkle 2.5s ease-in-out infinite 1.2s; }
+      .tw4 { animation: twinkle 3.5s ease-in-out infinite 0.3s; }
+      .ring-anim { animation: rexpand 5s ease-out infinite; }
+      .ring-anim2 { animation: rexpand 5s ease-out infinite 2.5s; }
+      .orb1 { animation: orbit 12s linear infinite; }
+      .orb2 { animation: orbit-rev 15s linear infinite; }
       @keyframes cpulse { 0%,100%{opacity:0.15;r:3} 50%{opacity:0.45;r:5} }
       @keyframes cshimmer { 0%{opacity:0.4} 50%{opacity:1} 100%{opacity:0.4} }
+      @keyframes twinkle { 0%,100%{opacity:0.15} 50%{opacity:0.6} }
+      @keyframes rexpand { 0%{r:0;opacity:0.2;stroke-width:1.5} 100%{r:60;opacity:0;stroke-width:0.3} }
+      @keyframes orbit { 0%{transform:rotate(0deg) translateX(20px) rotate(0deg)} 100%{transform:rotate(360deg) translateX(20px) rotate(-360deg)} }
+      @keyframes orbit-rev { 0%{transform:rotate(0deg) translateX(15px) rotate(0deg)} 100%{transform:rotate(-360deg) translateX(15px) rotate(360deg)} }
     </style>
-    <linearGradient id="backend-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="be-accent" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#059669"/>
       <stop offset="100%" stop-color="#34d399"/>
     </linearGradient>
-    <clipPath id="backend-clip"><rect width="1200" height="100" rx="10"/></clipPath>
-    <filter id="backend-blur"><feGaussianBlur stdDeviation="15"/></filter>
+    <radialGradient id="be-nebula1" cx="15%" cy="50%">
+      <stop offset="0%" stop-color="#059669" class="cat-nebula"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="be-nebula2" cx="85%" cy="50%">
+      <stop offset="0%" stop-color="#34d399" class="cat-nebula"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="be-clip"><rect width="1200" height="100" rx="10"/></clipPath>
+    <filter id="be-blur"><feGaussianBlur stdDeviation="15"/></filter>
+    <filter id="be-glow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
-  <g clip-path="url(#backend-clip)">
+  <g clip-path="url(#be-clip)">
     <rect width="1200" height="100" class="cat-bg"/>
-    <circle cx="100" cy="50" r="100" fill="#059669" class="cat-glow" filter="url(#backend-blur)"/>
-    <circle cx="1100" cy="50" r="80" fill="#34d399" class="cat-glow" filter="url(#backend-blur)"/>
+    <rect width="1200" height="100" fill="url(#be-nebula1)"/>
+    <rect width="1200" height="100" fill="url(#be-nebula2)"/>
+    <circle cx="100" cy="50" r="100" fill="#059669" class="cat-glow" filter="url(#be-blur)"/>
+    <circle cx="1100" cy="50" r="80" fill="#34d399" class="cat-glow" filter="url(#be-blur)"/>
+    <circle cx="1080" cy="30" r="0.8" class="cat-star tw1"/>
+    <circle cx="1120" cy="70" r="0.6" class="cat-star tw2"/>
+    <circle cx="1160" cy="45" r="0.5" class="cat-star tw3"/>
+    <circle cx="1050" cy="80" r="0.7" class="cat-star tw4"/>
+    <circle cx="1140" cy="15" r="0.5" class="cat-star tw1"/>
+    <circle cx="1170" cy="85" r="0.6" class="cat-star tw3"/>
+    <circle cx="1155" cy="55" r="0" class="cat-ring ring-anim"/>
+    <circle cx="1140" cy="25" r="0" class="cat-ring ring-anim2"/>
     <rect x="12" y="8" width="1176" height="84" rx="10" class="cat-card" stroke-width="1"/>
-    <rect x="12" y="8" width="5" height="84" rx="2.5" fill="url(#backend-accent)"/>
-    <circle cx="1140" cy="25" r="3" fill="#059669" class="cat-dot cat-pulse1"/>
-    <circle cx="1160" cy="65" r="2.5" fill="#34d399" class="cat-dot cat-pulse2"/>
+    <rect x="12" y="8" width="5" height="84" rx="2.5" fill="url(#be-accent)"/>
+    <circle cx="1140" cy="25" r="3" fill="#059669" class="cat-dot cat-pulse1" filter="url(#be-glow)"/>
+    <circle cx="1140" cy="25" r="2" fill="#059669" class="orb1"/>
+    <circle cx="1160" cy="65" r="2.5" fill="#34d399" class="cat-dot cat-pulse2" filter="url(#be-glow)"/>
+    <circle cx="1160" cy="65" r="1.5" fill="#34d399" class="orb2"/>
     <text x="40" y="62" font-family="'SF Pro Display','Segoe UI',sans-serif" font-size="32">🗄️</text>
     <text x="90" y="58" font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="700" font-size="28" class="cat-title">Backend</text>
     <line x1="250" y1="25" x2="250" y2="75" class="cat-sep" stroke-width="1"/>
     <rect x="265" y="32" width="88" height="28" rx="14" class="cat-badge" stroke-width="1"/>
     <text x="309" y="51" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',sans-serif" font-size="12" font-weight="600" class="cat-badge-text">6 agents</text>
     <text x="373" y="52" font-family="'SF Pro Text','Segoe UI',Helvetica,Arial,sans-serif" font-size="15" class="cat-sub">API Servers · Databases · Auth · Microservices · Caching · Middleware</text>
-    <rect x="12" y="89" width="1176" height="3" rx="1.5" fill="url(#backend-accent)" opacity="0.4" class="cat-shimmer"/>
+    <rect x="12" y="89" width="1176" height="3" rx="1.5" fill="url(#be-accent)" opacity="0.4" class="cat-shimmer"/>
   </g>
 </svg>

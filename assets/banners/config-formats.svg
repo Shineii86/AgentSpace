@@ -1,39 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100">
   <defs>
-    <linearGradient id="cf-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0f172a"/>
-      <stop offset="100%" style="stop-color:#1e293b"/>
+    <style>
+      @media (prefers-color-scheme: light) {
+        .cat-bg { fill: #f6f8fa; }
+        .cat-card { fill: rgba(255,255,255,0.85); stroke: rgba(0,0,0,0.08); }
+        .cat-title { fill: #1f2328; }
+        .cat-sub { fill: #656d76; }
+        .cat-badge { fill: rgba(0,0,0,0.04); stroke: rgba(0,0,0,0.1); }
+        .cat-badge-text { fill: #1f2328; }
+        .cat-sep { stroke: rgba(0,0,0,0.08); }
+        .cat-glow { opacity: 0.1; }
+        .cat-dot { opacity: 0.2; }
+      }
+      @media (prefers-color-scheme: dark) {
+        .cat-bg { fill: #0d1117; }
+        .cat-card { fill: rgba(22,27,34,0.6); stroke: rgba(255,255,255,0.06); }
+        .cat-title { fill: #f0f6fc; }
+        .cat-sub { fill: #8b949e; }
+        .cat-badge { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.08); }
+        .cat-badge-text { fill: #c9d1d9; }
+        .cat-sep { stroke: rgba(255,255,255,0.06); }
+        .cat-glow { opacity: 0.2; }
+        .cat-dot { opacity: 0.35; }
+      }
+      .cat-pulse1 { animation: cpulse 4s ease-in-out infinite; }
+      .cat-pulse2 { animation: cpulse 5s ease-in-out infinite 1.5s; }
+      .cat-shimmer { animation: cshimmer 3s ease-in-out infinite; }
+      @keyframes cpulse { 0%,100%{opacity:0.15;r:3} 50%{opacity:0.45;r:5} }
+      @keyframes cshimmer { 0%{opacity:0.4} 50%{opacity:1} 100%{opacity:0.4} }
+    </style>
+    <linearGradient id="config-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0891b2"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
     </linearGradient>
-    <linearGradient id="cf-accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#0891b2"/>
-      <stop offset="50%" style="stop-color:#06b6d4"/>
-      <stop offset="100%" style="stop-color:#22d3ee"/>
-    </linearGradient>
-    <filter id="cf-glow">
-      <feGaussianBlur stdDeviation="20" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
+    <clipPath id="config-clip"><rect width="1200" height="100" rx="10"/></clipPath>
+    <filter id="config-blur"><feGaussianBlur stdDeviation="15"/></filter>
   </defs>
-  <rect width="800" height="200" fill="url(#cf-bg)"/>
-  <rect x="0" y="0" width="800" height="4" fill="url(#cf-accent)"/>
-  <circle cx="650" cy="100" r="80" fill="#0891b2" opacity="0.08" filter="url(#cf-glow)"/>
-  <circle cx="150" cy="150" r="60" fill="#06b6d4" opacity="0.06" filter="url(#cf-glow)"/>
-  <rect x="40" y="50" width="4" height="100" rx="2" fill="url(#cf-accent)" opacity="0.6"/>
-  <text x="60" y="85" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#f1f5f9">Config / Markup / Data Formats</text>
-  <text x="60" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94a3b8">6 Agents · YAML · JSON · TOML · Markdown · Environment Config · XML/HTML</text>
-  <rect x="60" y="135" width="60" height="24" rx="12" fill="#0891b2" opacity="0.2"/>
-  <text x="90" y="152" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#67e8f9" text-anchor="middle">6 Agents</text>
-  <rect x="130" y="135" width="50" height="24" rx="12" fill="#06b6d4" opacity="0.2"/>
-  <text x="155" y="152" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#a5f3fc" text-anchor="middle">Markup</text>
-  <rect x="190" y="135" width="75" height="24" rx="12" fill="#22d3ee" opacity="0.2"/>
-  <text x="227" y="152" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#cffafe" text-anchor="middle">Data Formats</text>
-  <circle cx="720" cy="60" r="3" fill="#06b6d4" opacity="0.5">
-    <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="700" cy="90" r="2" fill="#22d3ee" opacity="0.4">
-    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="740" cy="130" r="2.5" fill="#0891b2" opacity="0.3">
-    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
-  </circle>
+  <g clip-path="url(#config-clip)">
+    <rect width="1200" height="100" class="cat-bg"/>
+    <circle cx="100" cy="50" r="100" fill="#0891b2" class="cat-glow" filter="url(#config-blur)"/>
+    <circle cx="1100" cy="50" r="80" fill="#22d3ee" class="cat-glow" filter="url(#config-blur)"/>
+    <rect x="12" y="8" width="1176" height="84" rx="10" class="cat-card" stroke-width="1"/>
+    <rect x="12" y="8" width="5" height="84" rx="2.5" fill="url(#config-accent)"/>
+    <circle cx="1140" cy="25" r="3" fill="#0891b2" class="cat-dot cat-pulse1"/>
+    <circle cx="1160" cy="65" r="2.5" fill="#22d3ee" class="cat-dot cat-pulse2"/>
+    <text x="40" y="62" font-family="'SF Pro Display','Segoe UI',sans-serif" font-size="32">📝</text>
+    <text x="90" y="58" font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="700" font-size="28" class="cat-title">Config / Markup / Data Formats</text>
+    <line x1="510" y1="25" x2="510" y2="75" class="cat-sep" stroke-width="1"/>
+    <rect x="525" y="32" width="88" height="28" rx="14" class="cat-badge" stroke-width="1"/>
+    <text x="569" y="51" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',sans-serif" font-size="12" font-weight="600" class="cat-badge-text">6 agents</text>
+    <text x="633" y="52" font-family="'SF Pro Text','Segoe UI',Helvetica,Arial,sans-serif" font-size="15" class="cat-sub">YAML · JSON · TOML · Markdown · Env Config · XML/HTML</text>
+    <rect x="12" y="89" width="1176" height="3" rx="1.5" fill="url(#config-accent)" opacity="0.4" class="cat-shimmer"/>
+  </g>
 </svg>

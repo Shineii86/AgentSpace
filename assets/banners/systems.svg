@@ -1,39 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100">
   <defs>
-    <linearGradient id="sy-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0f172a"/>
-      <stop offset="100%" style="stop-color:#1e293b"/>
+    <style>
+      @media (prefers-color-scheme: light) {
+        .cat-bg { fill: #f6f8fa; }
+        .cat-card { fill: rgba(255,255,255,0.85); stroke: rgba(0,0,0,0.08); }
+        .cat-title { fill: #1f2328; }
+        .cat-sub { fill: #656d76; }
+        .cat-badge { fill: rgba(0,0,0,0.04); stroke: rgba(0,0,0,0.1); }
+        .cat-badge-text { fill: #1f2328; }
+        .cat-sep { stroke: rgba(0,0,0,0.08); }
+        .cat-glow { opacity: 0.1; }
+        .cat-dot { opacity: 0.2; }
+      }
+      @media (prefers-color-scheme: dark) {
+        .cat-bg { fill: #0d1117; }
+        .cat-card { fill: rgba(22,27,34,0.6); stroke: rgba(255,255,255,0.06); }
+        .cat-title { fill: #f0f6fc; }
+        .cat-sub { fill: #8b949e; }
+        .cat-badge { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.08); }
+        .cat-badge-text { fill: #c9d1d9; }
+        .cat-sep { stroke: rgba(255,255,255,0.06); }
+        .cat-glow { opacity: 0.2; }
+        .cat-dot { opacity: 0.35; }
+      }
+      .cat-pulse1 { animation: cpulse 4s ease-in-out infinite; }
+      .cat-pulse2 { animation: cpulse 5s ease-in-out infinite 1.5s; }
+      .cat-shimmer { animation: cshimmer 3s ease-in-out infinite; }
+      @keyframes cpulse { 0%,100%{opacity:0.15;r:3} 50%{opacity:0.45;r:5} }
+      @keyframes cshimmer { 0%{opacity:0.4} 50%{opacity:1} 100%{opacity:0.4} }
+    </style>
+    <linearGradient id="systems-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#f87171"/>
     </linearGradient>
-    <linearGradient id="sy-accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#dc2626"/>
-      <stop offset="50%" style="stop-color:#ef4444"/>
-      <stop offset="100%" style="stop-color:#f87171"/>
-    </linearGradient>
-    <filter id="sy-glow">
-      <feGaussianBlur stdDeviation="20" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
+    <clipPath id="systems-clip"><rect width="1200" height="100" rx="10"/></clipPath>
+    <filter id="systems-blur"><feGaussianBlur stdDeviation="15"/></filter>
   </defs>
-  <rect width="800" height="200" fill="url(#sy-bg)"/>
-  <rect x="0" y="0" width="800" height="4" fill="url(#sy-accent)"/>
-  <circle cx="650" cy="100" r="80" fill="#dc2626" opacity="0.08" filter="url(#sy-glow)"/>
-  <circle cx="150" cy="150" r="60" fill="#ef4444" opacity="0.06" filter="url(#sy-glow)"/>
-  <rect x="40" y="50" width="4" height="100" rx="2" fill="url(#sy-accent)" opacity="0.6"/>
-  <text x="60" y="85" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#f1f5f9">Systems</text>
-  <text x="60" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94a3b8">6 Agents · Shell · Linux · Networking · Containers · Systemd · Log Analysis</text>
-  <rect x="60" y="135" width="60" height="24" rx="12" fill="#dc2626" opacity="0.2"/>
-  <text x="90" y="152" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#fca5a5" text-anchor="middle">6 Agents</text>
-  <rect x="130" y="135" width="55" height="24" rx="12" fill="#ef4444" opacity="0.2"/>
-  <text x="157" y="152" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#fecaca" text-anchor="middle">DevOps</text>
-  <rect x="195" y="135" width="65" height="24" rx="12" fill="#f87171" opacity="0.2"/>
-  <text x="227" y="152" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#fee2e2" text-anchor="middle">SysAdmin</text>
-  <circle cx="720" cy="60" r="3" fill="#ef4444" opacity="0.5">
-    <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="700" cy="90" r="2" fill="#f87171" opacity="0.4">
-    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="740" cy="130" r="2.5" fill="#dc2626" opacity="0.3">
-    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
-  </circle>
+  <g clip-path="url(#systems-clip)">
+    <rect width="1200" height="100" class="cat-bg"/>
+    <circle cx="100" cy="50" r="100" fill="#dc2626" class="cat-glow" filter="url(#systems-blur)"/>
+    <circle cx="1100" cy="50" r="80" fill="#f87171" class="cat-glow" filter="url(#systems-blur)"/>
+    <rect x="12" y="8" width="1176" height="84" rx="10" class="cat-card" stroke-width="1"/>
+    <rect x="12" y="8" width="5" height="84" rx="2.5" fill="url(#systems-accent)"/>
+    <circle cx="1140" cy="25" r="3" fill="#dc2626" class="cat-dot cat-pulse1"/>
+    <circle cx="1160" cy="65" r="2.5" fill="#f87171" class="cat-dot cat-pulse2"/>
+    <text x="40" y="62" font-family="'SF Pro Display','Segoe UI',sans-serif" font-size="32">🖥️</text>
+    <text x="90" y="58" font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="700" font-size="28" class="cat-title">Systems</text>
+    <line x1="240" y1="25" x2="240" y2="75" class="cat-sep" stroke-width="1"/>
+    <rect x="255" y="32" width="88" height="28" rx="14" class="cat-badge" stroke-width="1"/>
+    <text x="299" y="51" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',sans-serif" font-size="12" font-weight="600" class="cat-badge-text">6 agents</text>
+    <text x="363" y="52" font-family="'SF Pro Text','Segoe UI',Helvetica,Arial,sans-serif" font-size="15" class="cat-sub">Shell · Linux · Networking · Containers · Systemd · Log Analysis</text>
+    <rect x="12" y="89" width="1176" height="3" rx="1.5" fill="url(#systems-accent)" opacity="0.4" class="cat-shimmer"/>
+  </g>
 </svg>

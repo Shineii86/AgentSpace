@@ -488,34 +488,14 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ### 🌐 Web & Frontend
 
-> *Agents for building modern web interfaces — from CSS architecture to design systems.*
+*Agents for building modern web interfaces — from CSS architecture to design systems.*
 
-<table>
-<tr>
-<td width="30%"><strong><a href="web-frontend/CSS-ARCHITECT.md">CSS-ARCHITECT</a></strong></td>
-<td>Design scalable, maintainable CSS architectures. BEM, ITCSS, utility-first, design tokens, theming strategies.</td>
-</tr>
-<tr>
-<td><strong><a href="web-frontend/REACT-ENGINEER.md">REACT-ENGINEER</a></strong></td>
-<td>Build production-grade React applications with hooks, server components, state management, and TypeScript.</td>
-</tr>
-<tr>
-<td><strong><a href="web-frontend/ACCESSIBILITY-AUDITOR.md">ACCESSIBILITY-AUDITOR</a></strong></td>
-<td>Audit and remediate web interfaces for WCAG 2.2 AA/AAA compliance. Keyboard, screen reader, color contrast.</td>
-</tr>
-<tr>
-<td><strong><a href="web-frontend/PERFORMANCE-OPTIMIZER.md">PERFORMANCE-OPTIMIZER</a></strong></td>
-<td>Diagnose and fix Core Web Vitals (LCP, INP, CLS). Bundle optimization, caching, loading strategies.</td>
-</tr>
-<tr>
-<td><strong><a href="web-frontend/RESPONSIVE-DESIGNER.md">RESPONSIVE-DESIGNER</a></strong></td>
-<td>Design fluid, responsive layouts with CSS Grid, Flexbox, container queries, and fluid typography.</td>
-</tr>
-<tr>
-<td><strong><a href="web-frontend/DESIGN-SYSTEM-BUILDER.md">DESIGN-SYSTEM-BUILDER</a></strong></td>
-<td>Build and maintain scalable design systems with tokens, components, documentation, and governance.</td>
-</tr>
-</table>
+- [**CSS-ARCHITECT**](web-frontend/CSS-ARCHITECT.md) — Design scalable, maintainable CSS architectures. BEM, ITCSS, utility-first, design tokens, theming strategies.
+- [**REACT-ENGINEER**](web-frontend/REACT-ENGINEER.md) — Build production-grade React applications with hooks, server components, state management, and TypeScript.
+- [**ACCESSIBILITY-AUDITOR**](web-frontend/ACCESSIBILITY-AUDITOR.md) — Audit and remediate web interfaces for WCAG 2.2 AA/AAA compliance. Keyboard, screen reader, color contrast.
+- [**PERFORMANCE-OPTIMIZER**](web-frontend/PERFORMANCE-OPTIMIZER.md) — Diagnose and fix Core Web Vitals (LCP, INP, CLS). Bundle optimization, caching, loading strategies.
+- [**RESPONSIVE-DESIGNER**](web-frontend/RESPONSIVE-DESIGNER.md) — Design fluid, responsive layouts with CSS Grid, Flexbox, container queries, and fluid typography.
+- [**DESIGN-SYSTEM-BUILDER**](web-frontend/DESIGN-SYSTEM-BUILDER.md) — Build and maintain scalable design systems with tokens, components, documentation, and governance.
 
 ---
 
@@ -525,34 +505,14 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ### 🗄️ Backend
 
-> *Agents for server-side development — APIs, databases, authentication, and distributed systems.*
+*Agents for server-side development — APIs, databases, authentication, and distributed systems.*
 
-<table>
-<tr>
-<td width="30%"><strong><a href="backend/API-SERVER-BUILDER.md">API-SERVER-BUILDER</a></strong></td>
-<td>Build production-ready API servers with clean architecture, middleware, validation, error handling, and observability.</td>
-</tr>
-<tr>
-<td><strong><a href="backend/DATABASE-ENGINEER.md">DATABASE-ENGINEER</a></strong></td>
-<td>Design schemas, optimize queries, write migrations, and manage database operations across SQL and NoSQL engines.</td>
-</tr>
-<tr>
-<td><strong><a href="backend/AUTH-ARCHITECT.md">AUTH-ARCHITECT</a></strong></td>
-<td>Design authentication and authorization systems. OAuth 2.0, JWT, RBAC/ABAC, MFA, social login, SSO.</td>
-</tr>
-<tr>
-<td><strong><a href="backend/MICROSERVICE-ARCHITECT.md">MICROSERVICE-ARCHITECT</a></strong></td>
-<td>Design microservice architectures with bounded contexts, communication patterns, resilience, and observability.</td>
-</tr>
-<tr>
-<td><strong><a href="backend/CACHING-STRATEGIST.md">CACHING-STRATEGIST</a></strong></td>
-<td>Design multi-layer caching strategies. Browser, CDN, application, and database caching with invalidation.</td>
-</tr>
-<tr>
-<td><strong><a href="backend/MIDDLEWARE-DESIGNER.md">MIDDLEWARE-DESIGNER</a></strong></td>
-<td>Design reusable middleware pipelines for auth, logging, validation, rate limiting, and error handling.</td>
-</tr>
-</table>
+- [**API-SERVER-BUILDER**](backend/API-SERVER-BUILDER.md) — Build production-ready API servers with clean architecture, middleware, validation, error handling, and observability.
+- [**DATABASE-ENGINEER**](backend/DATABASE-ENGINEER.md) — Design schemas, optimize queries, write migrations, and manage database operations across SQL and NoSQL engines.
+- [**AUTH-ARCHITECT**](backend/AUTH-ARCHITECT.md) — Design authentication and authorization systems. OAuth 2.0, JWT, RBAC/ABAC, MFA, social login, SSO.
+- [**MICROSERVICE-ARCHITECT**](backend/MICROSERVICE-ARCHITECT.md) — Design microservice architectures with bounded contexts, communication patterns, resilience, and observability.
+- [**CACHING-STRATEGIST**](backend/CACHING-STRATEGIST.md) — Design multi-layer caching strategies. Browser, CDN, application, and database caching with invalidation.
+- [**MIDDLEWARE-DESIGNER**](backend/MIDDLEWARE-DESIGNER.md) — Design reusable middleware pipelines for auth, logging, validation, rate limiting, and error handling.
 
 ---
 
@@ -562,34 +522,14 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ### 🖥️ Systems
 
-> *Agents for system administration, infrastructure, and DevOps — from shell scripts to containers.*
+*Agents for system administration, infrastructure, and DevOps — from shell scripts to containers.*
 
-<table>
-<tr>
-<td width="30%"><strong><a href="systems/SHELL-SCRIPTER.md">SHELL-SCRIPTER</a></strong></td>
-<td>Write robust, portable shell scripts with proper error handling, argument parsing, and safety patterns.</td>
-</tr>
-<tr>
-<td><strong><a href="systems/LINUX-ADMIN.md">LINUX-ADMIN</a></strong></td>
-<td>Manage Linux systems: packages, services, users, networking, storage, and security hardening.</td>
-</tr>
-<tr>
-<td><strong><a href="systems/NETWORK-ENGINEER.md">NETWORK-ENGINEER</a></strong></td>
-<td>Design and troubleshoot network infrastructure. DNS, load balancing, firewalls, VPNs, TCP tuning.</td>
-</tr>
-<tr>
-<td><strong><a href="systems/CONTAINER-SPECIALIST.md">CONTAINER-SPECIALIST</a></strong></td>
-<td>Build optimized Docker images, manage orchestration, implement security hardening and health checks.</td>
-</tr>
-<tr>
-<td><strong><a href="systems/SYSTEMD-ENGINEER.md">SYSTEMD-ENGINEER</a></strong></td>
-<td>Design systemd services, timers, socket activation, resource controls, and security sandboxing.</td>
-</tr>
-<tr>
-<td><strong><a href="systems/LOG-ANALYZER.md">LOG-ANALYZER</a></strong></td>
-<td>Analyze system, application, and security logs. Pattern detection, anomaly identification, root cause analysis.</td>
-</tr>
-</table>
+- [**SHELL-SCRIPTER**](systems/SHELL-SCRIPTER.md) — Write robust, portable shell scripts with proper error handling, argument parsing, and safety patterns.
+- [**LINUX-ADMIN**](systems/LINUX-ADMIN.md) — Manage Linux systems: packages, services, users, networking, storage, and security hardening.
+- [**NETWORK-ENGINEER**](systems/NETWORK-ENGINEER.md) — Design and troubleshoot network infrastructure. DNS, load balancing, firewalls, VPNs, TCP tuning.
+- [**CONTAINER-SPECIALIST**](systems/CONTAINER-SPECIALIST.md) — Build optimized Docker images, manage orchestration, implement security hardening and health checks.
+- [**SYSTEMD-ENGINEER**](systems/SYSTEMD-ENGINEER.md) — Design systemd services, timers, socket activation, resource controls, and security sandboxing.
+- [**LOG-ANALYZER**](systems/LOG-ANALYZER.md) — Analyze system, application, and security logs. Pattern detection, anomaly identification, root cause analysis.
 
 ---
 
@@ -599,34 +539,14 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ### 📊 Data & Query
 
-> *Agents for data engineering, querying, and analysis — SQL to search engines.*
+*Agents for data engineering, querying, and analysis — SQL to search engines.*
 
-<table>
-<tr>
-<td width="30%"><strong><a href="data-query/SQL-ENGINEER.md">SQL-ENGINEER</a></strong></td>
-<td>Write optimized SQL queries, analyze execution plans, design schemas, and handle complex analytical queries.</td>
-</tr>
-<tr>
-<td><strong><a href="data-query/ETL-DESIGNER.md">ETL-DESIGNER</a></strong></td>
-<td>Design ETL/ELT data pipelines with extraction, transformation, loading, quality checks, and monitoring.</td>
-</tr>
-<tr>
-<td><strong><a href="data-query/DATA-MODELER.md">DATA-MODELER</a></strong></td>
-<td>Design conceptual, logical, and physical data models. ERDs, normalization, denormalization, data dictionaries.</td>
-</tr>
-<tr>
-<td><strong><a href="data-query/GRAPHQL-ARCHITECT.md">GRAPHQL-ARCHITECT</a></strong></td>
-<td>Design GraphQL schemas, resolvers, federation, pagination, authorization, and N+1 prevention.</td>
-</tr>
-<tr>
-<td><strong><a href="data-query/TIME-SERIES-ANALYST.md">TIME-SERIES-ANALYST</a></strong></td>
-<td>Analyze temporal data patterns, design time-series storage, detect anomalies, and build aggregations.</td>
-</tr>
-<tr>
-<td><strong><a href="data-query/SEARCH-ENGINEER.md">SEARCH-ENGINEER</a></strong></td>
-<td>Design full-text search with Elasticsearch/OpenSearch. Autocomplete, relevance tuning, faceting, and indexing.</td>
-</tr>
-</table>
+- [**SQL-ENGINEER**](data-query/SQL-ENGINEER.md) — Write optimized SQL queries, analyze execution plans, design schemas, and handle complex analytical queries.
+- [**ETL-DESIGNER**](data-query/ETL-DESIGNER.md) — Design ETL/ELT data pipelines with extraction, transformation, loading, quality checks, and monitoring.
+- [**DATA-MODELER**](data-query/DATA-MODELER.md) — Design conceptual, logical, and physical data models. ERDs, normalization, denormalization, data dictionaries.
+- [**GRAPHQL-ARCHITECT**](data-query/GRAPHQL-ARCHITECT.md) — Design GraphQL schemas, resolvers, federation, pagination, authorization, and N+1 prevention.
+- [**TIME-SERIES-ANALYST**](data-query/TIME-SERIES-ANALYST.md) — Analyze temporal data patterns, design time-series storage, detect anomalies, and build aggregations.
+- [**SEARCH-ENGINEER**](data-query/SEARCH-ENGINEER.md) — Design full-text search with Elasticsearch/OpenSearch. Autocomplete, relevance tuning, faceting, and indexing.
 
 ---
 
@@ -636,34 +556,14 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ### ⚙️ Scripting & Automation
 
-> *Agents for automating workflows, CI/CD pipelines, and developer productivity tooling.*
+*Agents for automating workflows, CI/CD pipelines, and developer productivity tooling.*
 
-<table>
-<tr>
-<td width="30%"><strong><a href="scripting-automation/TASK-RUNNER.md">TASK-RUNNER</a></strong></td>
-<td>Design task automation with Make, Just, Taskfile. Dependency tracking, self-documenting help, parallel execution.</td>
-</tr>
-<tr>
-<td><strong><a href="scripting-automation/CI-CD-ENGINEER.md">CI-CD-ENGINEER</a></strong></td>
-<td>Design CI/CD pipelines with testing, building, deployment strategies, gates, caching, and rollback.</td>
-</tr>
-<tr>
-<td><strong><a href="scripting-automation/WORKFLOW-AUTOMATOR.md">WORKFLOW-AUTOMATOR</a></strong></td>
-<td>Automate repetitive workflows and integrations. Webhooks, API connections, error handling, monitoring.</td>
-</tr>
-<tr>
-<td><strong><a href="scripting-automation/CRON-SCHEDULER.md">CRON-SCHEDULER</a></strong></td>
-<td>Design reliable scheduled tasks. Timezone handling, idempotency, overlap prevention, missed run recovery.</td>
-</tr>
-<tr>
-<td><strong><a href="scripting-automation/CLI-BUILDER.md">CLI-BUILDER</a></strong></td>
-<td>Build user-friendly CLI tools with argument parsing, help systems, error handling, and progress indicators.</td>
-</tr>
-<tr>
-<td><strong><a href="scripting-automation/TEMPLATE-ENGINE.md">TEMPLATE-ENGINE</a></strong></td>
-<td>Design code generation, scaffolding, and template systems for projects, components, and configurations.</td>
-</tr>
-</table>
+- [**TASK-RUNNER**](scripting-automation/TASK-RUNNER.md) — Design task automation with Make, Just, Taskfile. Dependency tracking, self-documenting help, parallel execution.
+- [**CI-CD-ENGINEER**](scripting-automation/CI-CD-ENGINEER.md) — Design CI/CD pipelines with testing, building, deployment strategies, gates, caching, and rollback.
+- [**WORKFLOW-AUTOMATOR**](scripting-automation/WORKFLOW-AUTOMATOR.md) — Automate repetitive workflows and integrations. Webhooks, API connections, error handling, monitoring.
+- [**CRON-SCHEDULER**](scripting-automation/CRON-SCHEDULER.md) — Design reliable scheduled tasks. Timezone handling, idempotency, overlap prevention, missed run recovery.
+- [**CLI-BUILDER**](scripting-automation/CLI-BUILDER.md) — Build user-friendly CLI tools with argument parsing, help systems, error handling, and progress indicators.
+- [**TEMPLATE-ENGINE**](scripting-automation/TEMPLATE-ENGINE.md) — Design code generation, scaffolding, and template systems for projects, components, and configurations.
 
 ---
 
@@ -673,34 +573,14 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 
 ### 📝 Config / Markup / Data Formats
 
-> *Agents for configuration languages, markup formats, and data interchange.*
+*Agents for configuration languages, markup formats, and data interchange.*
 
-<table>
-<tr>
-<td width="30%"><strong><a href="config-formats/YAML-SPECIALIST.md">YAML-SPECIALIST</a></strong></td>
-<td>Write, validate, and optimize YAML for Kubernetes, Docker Compose, CI/CD, Ansible, and Helm.</td>
-</tr>
-<tr>
-<td><strong><a href="config-formats/JSON-ARCHITECT.md">JSON-ARCHITECT</a></strong></td>
-<td>Design JSON data structures, write JSON Schema definitions, and handle transformations with jq.</td>
-</tr>
-<tr>
-<td><strong><a href="config-formats/TOML-EXPERT.md">TOML-EXPERT</a></strong></td>
-<td>Write TOML configurations for Cargo, pyproject.toml, and modern CLI tools. Migrations and validation.</td>
-</tr>
-<tr>
-<td><strong><a href="config-formats/MARKDOWN-ENGINEER.md">MARKDOWN-ENGINEER</a></strong></td>
-<td>Write structured Markdown for docs, READMEs, and technical content. Mermaid diagrams, tables, cross-references.</td>
-</tr>
-<tr>
-<td><strong><a href="config-formats/ENV-CONFIG-MANAGER.md">ENV-CONFIG-MANAGER</a></strong></td>
-<td>Design environment configurations, .env files, secret management, and feature flag systems.</td>
-</tr>
-<tr>
-<td><strong><a href="config-formats/XML-HTML-SPECIALIST.md">XML-HTML-SPECIALIST</a></strong></td>
-<td>Write and validate XML/HTML. Schema design (XSD/DTD), XSLT transforms, semantic HTML5 markup.</td>
-</tr>
-</table>
+- [**YAML-SPECIALIST**](config-formats/YAML-SPECIALIST.md) — Write, validate, and optimize YAML for Kubernetes, Docker Compose, CI/CD, Ansible, and Helm.
+- [**JSON-ARCHITECT**](config-formats/JSON-ARCHITECT.md) — Design JSON data structures, write JSON Schema definitions, and handle transformations with jq.
+- [**TOML-EXPERT**](config-formats/TOML-EXPERT.md) — Write TOML configurations for Cargo, pyproject.toml, and modern CLI tools. Migrations and validation.
+- [**MARKDOWN-ENGINEER**](config-formats/MARKDOWN-ENGINEER.md) — Write structured Markdown for docs, READMEs, and technical content. Mermaid diagrams, tables, cross-references.
+- [**ENV-CONFIG-MANAGER**](config-formats/ENV-CONFIG-MANAGER.md) — Design environment configurations, .env files, secret management, and feature flag systems.
+- [**XML-HTML-SPECIALIST**](config-formats/XML-HTML-SPECIALIST.md) — Write and validate XML/HTML. Schema design (XSD/DTD), XSLT transforms, semantic HTML5 markup.
 
 ---
 

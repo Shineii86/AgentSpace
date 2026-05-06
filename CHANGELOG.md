@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Newest entries are added at the top.
 
+## [1.9.1] - 2026-05-06
+
+### Changed
+
+#### SVG Banners — Style Consistency Fix
+All 6 new category banners redesigned to match existing v1.8.0 banner style:
+- Changed from 800×200 dark-only to 1200×100 with `@media (prefers-color-scheme: light/dark)` auto-switching
+- Added glassmorphism card, left accent bar, animated floating dots, bottom shimmer line
+- Added emoji icon, agent count badge pill, separator line, ambient glow orbs
+
+#### README — New Category Section Style
+Changed 6 new category sections from HTML table layout to clean list-based format:
+- `- [**AGENT-NAME**](path) — Description` style for better readability
+- Italicized category descriptions instead of blockquote `>` format
+
+---
+
 ## [1.9.0] - 2026-05-06
 
 ### Added
@@ -61,13 +78,14 @@ Newest entries are added at the top.
 - `ENV-CONFIG-MANAGER.md` — Design environment configs, .env files, secret management, feature flags
 - `XML-HTML-SPECIALIST.md` — Write and validate XML/HTML, schema design (XSD/DTD), XSLT transforms
 
-#### Banners
-- `assets/banners/web-frontend.svg` — Indigo/purple gradient theme
-- `assets/banners/backend.svg` — Green/emerald gradient theme
-- `assets/banners/systems.svg` — Red/rose gradient theme
-- `assets/banners/data-query.svg` — Amber/gold gradient theme
-- `assets/banners/scripting-automation.svg` — Purple/violet gradient theme
-- `assets/banners/config-formats.svg` — Cyan/teal gradient theme
+#### Banners (6 new category banners matching v1.8.0 style)
+- `assets/banners/web-frontend.svg` — Indigo/purple accent gradient
+- `assets/banners/backend.svg` — Green/emerald accent gradient
+- `assets/banners/systems.svg` — Red/rose accent gradient
+- `assets/banners/data-query.svg` — Amber/gold accent gradient
+- `assets/banners/scripting-automation.svg` — Purple/violet accent gradient
+- `assets/banners/config-formats.svg` — Cyan/teal accent gradient
+- All banners: 1200×100, dark/light theme support, glassmorphism, animated dots, shimmer line
 
 #### Documentation
 - `README.md` — Updated agent count (65 → 101), category count (8 → 14), added 6 new category sections with full agent tables

@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banners/hero.svg" alt="AgentSpace" width="100%"/>
+<img src="assets/hero.svg" alt="AgentSpace" width="100%"/>
 
 **A curated library of 114 battle-tested AI agent definitions across 15 categories.**
 **Copy-paste ready for any LLM — OpenAI, Claude, Gemini, Llama, and more.**

@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Newest entries are added at the top.
 
+## [1.15.0] - 2026-05-06
+
+### Fixed
+
+#### SVG Banner Rendering (`assets/banners/*.svg`)
+- Fixed broken SVG references in all 14 category banners
+- Replaced `{id}` template placeholders with actual category IDs in url() references
+- Affected files: api, backend, communication, config-formats, content, data-query, development, evaluation, github, operations, research, scripting-automation, systems, web-frontend
+
+### Added
+
+#### Frameworks Banner (`assets/banners/frameworks.svg`)
+- New banner matching existing design system (1200x100, light/dark auto-switch)
+- Rose accent (#e11d48 / #f43f5e) with animated constellation and particles
+
+#### README.md — Frameworks Section
+- Added Frameworks to Table of Contents
+- Added Frameworks row to Categories table (13 agents)
+- Added full Frameworks section with subcategories:
+  - Full-Stack & Meta-Frameworks: Next.js, Nuxt, SvelteKit, Remix, Gatsby, Astro
+  - UI Frameworks: React, Vue, Angular, Svelte
+  - Backend & Build Tools: Express, Vite, Webpack
+- Fixed badge display text: "Categories: 14" → "Categories: 15"
+
+---
+
 ## [1.14.0] - 2026-05-06
 
 ### Added

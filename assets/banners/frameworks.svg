@@ -47,28 +47,28 @@
       @keyframes bfl { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
       @keyframes bdm { 0%{stroke-dashoffset:0} 100%{stroke-dashoffset:-14} }
     </style>
-    <linearGradient id="data-query-acc" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#d97706"/>
-      <stop offset="100%" stop-color="#fbbf24"/>
+    <linearGradient id="frameworks-acc" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
     </linearGradient>
-    <radialGradient id="data-query-n1" cx="15%" cy="50%">
-      <stop offset="0%" stop-color="#d97706" class="b-neb"/>
-      <stop offset="100%" stop-color="#d97706" stop-opacity="0"/>
+    <radialGradient id="frameworks-n1" cx="15%" cy="50%">
+      <stop offset="0%" stop-color="#e11d48" class="b-neb"/>
+      <stop offset="100%" stop-color="#e11d48" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="data-query-n2" cx="85%" cy="50%">
-      <stop offset="0%" stop-color="#fbbf24" class="b-neb"/>
-      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    <radialGradient id="frameworks-n2" cx="85%" cy="50%">
+      <stop offset="0%" stop-color="#f43f5e" class="b-neb"/>
+      <stop offset="100%" stop-color="#f43f5e" stop-opacity="0"/>
     </radialGradient>
-    <clipPath id="data-query-cl"><rect width="1200" height="100" rx="10"/></clipPath>
-    <filter id="data-query-bl"><feGaussianBlur stdDeviation="15"/></filter>
-    <filter id="data-query-gw"><feGaussianBlur stdDeviation="2" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <clipPath id="frameworks-cl"><rect width="1200" height="100" rx="10"/></clipPath>
+    <filter id="frameworks-bl"><feGaussianBlur stdDeviation="15"/></filter>
+    <filter id="frameworks-gw"><feGaussianBlur stdDeviation="2" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
-  <g clip-path="url(#data-query-cl)">
+  <g clip-path="url(#frameworks-cl)">
     <rect width="1200" height="100" class="b-bg"/>
-    <rect width="1200" height="100" fill="url(#data-query-n1)"/>
-    <rect width="1200" height="100" fill="url(#data-query-n2)"/>
-    <circle cx="80" cy="50" r="80" fill="#d97706" class="b-glow" filter="url(#data-query-bl)"/>
-    <circle cx="1120" cy="50" r="60" fill="#fbbf24" class="b-glow" filter="url(#data-query-bl)"/>
+    <rect width="1200" height="100" fill="url(#frameworks-n1)"/>
+    <rect width="1200" height="100" fill="url(#frameworks-n2)"/>
+    <circle cx="80" cy="50" r="80" fill="#e11d48" class="b-glow" filter="url(#frameworks-bl)"/>
+    <circle cx="1120" cy="50" r="60" fill="#f43f5e" class="b-glow" filter="url(#frameworks-bl)"/>
     <g class="b-line" stroke-width="0.5">
       <line x1="900" y1="20" x2="1000" y2="40"/>
       <line x1="1000" y1="40" x2="950" y2="80"/>
@@ -86,21 +86,21 @@
     <circle cx="1050" cy="80" r="0.7" class="b-star s4"/>
     <circle cx="1140" cy="15" r="0.5" class="b-star s5"/>
     <circle cx="1170" cy="85" r="0.6" class="b-star s6"/>
-    <circle cx="900" cy="20" r="4" fill="#d97706" class="b-dot b-p1" filter="url(#data-query-gw)"/>
-    <circle cx="900" cy="20" r="2" fill="#d97706" class="bf1"/>
-    <circle cx="1000" cy="40" r="3" fill="#fbbf24" class="b-dot b-p2" filter="url(#data-query-gw)"/>
-    <circle cx="1000" cy="40" r="1.5" fill="#fbbf24" class="bf2"/>
-    <circle cx="950" cy="80" r="3.5" fill="#d97706" class="b-dot b-p1" filter="url(#data-query-gw)"/>
-    <circle cx="1100" cy="60" r="2.5" fill="#fbbf24" class="b-dot b-p2" filter="url(#data-query-gw)"/>
-    <circle cx="1050" cy="25" r="3" fill="#d97706" class="b-dot b-p1" filter="url(#data-query-gw)"/>
+    <circle cx="900" cy="20" r="4" fill="#e11d48" class="b-dot b-p1" filter="url(#frameworks-gw)"/>
+    <circle cx="900" cy="20" r="2" fill="#e11d48" class="bf1"/>
+    <circle cx="1000" cy="40" r="3" fill="#f43f5e" class="b-dot b-p2" filter="url(#frameworks-gw)"/>
+    <circle cx="1000" cy="40" r="1.5" fill="#f43f5e" class="bf2"/>
+    <circle cx="950" cy="80" r="3.5" fill="#e11d48" class="b-dot b-p1" filter="url(#frameworks-gw)"/>
+    <circle cx="1100" cy="60" r="2.5" fill="#f43f5e" class="b-dot b-p2" filter="url(#frameworks-gw)"/>
+    <circle cx="1050" cy="25" r="3" fill="#e11d48" class="b-dot b-p1" filter="url(#frameworks-gw)"/>
     <rect x="12" y="8" width="1176" height="84" rx="10" class="b-card" stroke-width="1"/>
-    <rect x="12" y="8" width="5" height="84" rx="2.5" fill="url(#data-query-acc)"/>
-    <text x="40" y="62" font-family="'SF Pro Display','Segoe UI',sans-serif" font-size="32">📊</text>
-    <text x="90" y="58" font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="700" font-size="28" class="b-title">Data & Query</text>
-    <line x1="294" y1="25" x2="294" y2="75" class="b-sep" stroke-width="1"/>
-    <rect x="309" y="32" width="96" height="28" rx="14" class="b-badge" stroke-width="1"/>
-    <text x="357" y="51" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',sans-serif" font-size="12" font-weight="600" class="b-badge-t">6 agents</text>
-    <text x="423" y="52" font-family="'SF Pro Text','Segoe UI',Helvetica,Arial,sans-serif" font-size="15" class="b-sub">SQL · ETL · Modeling · GraphQL · Time Series · Search</text>
-    <rect x="12" y="89" width="1176" height="3" rx="1.5" fill="url(#data-query-acc)" opacity="0.35" class="b-shim"/>
+    <rect x="12" y="8" width="5" height="84" rx="2.5" fill="url(#frameworks-acc)"/>
+    <text x="40" y="62" font-family="'SF Pro Display','Segoe UI',sans-serif" font-size="32">&#x1F3D7;</text>
+    <text x="90" y="58" font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="700" font-size="28" class="b-title">Frameworks</text>
+    <line x1="290" y1="25" x2="290" y2="75" class="b-sep" stroke-width="1"/>
+    <rect x="305" y="32" width="112" height="28" rx="14" class="b-badge" stroke-width="1"/>
+    <text x="361" y="51" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',sans-serif" font-size="12" font-weight="600" class="b-badge-t">13 agents</text>
+    <text x="435" y="52" font-family="'SF Pro Text','Segoe UI',Helvetica,Arial,sans-serif" font-size="15" class="b-sub">Next.js · React · Vue · Angular · Svelte · Astro · Express · Vite · Webpack</text>
+    <rect x="12" y="89" width="1176" height="3" rx="1.5" fill="url(#frameworks-acc)" opacity="0.35" class="b-shim"/>
   </g>
 </svg>

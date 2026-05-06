@@ -63,12 +63,12 @@
     <filter id="operations-bl"><feGaussianBlur stdDeviation="15"/></filter>
     <filter id="operations-gw"><feGaussianBlur stdDeviation="2" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
-  <g clip-path="url(#{id}-cl)">
+  <g clip-path="url(#operations-cl)">
     <rect width="1200" height="100" class="b-bg"/>
-    <rect width="1200" height="100" fill="url(#{id}-n1)"/>
-    <rect width="1200" height="100" fill="url(#{id}-n2)"/>
-    <circle cx="80" cy="50" r="80" fill="#f0883e" class="b-glow" filter="url(#{id}-bl)"/>
-    <circle cx="1120" cy="50" r="60" fill="#f6d36b" class="b-glow" filter="url(#{id}-bl)"/>
+    <rect width="1200" height="100" fill="url(#operations-n1)"/>
+    <rect width="1200" height="100" fill="url(#operations-n2)"/>
+    <circle cx="80" cy="50" r="80" fill="#f0883e" class="b-glow" filter="url(#operations-bl)"/>
+    <circle cx="1120" cy="50" r="60" fill="#f6d36b" class="b-glow" filter="url(#operations-bl)"/>
     <g class="b-line" stroke-width="0.5">
       <line x1="900" y1="20" x2="1000" y2="40"/>
       <line x1="1000" y1="40" x2="950" y2="80"/>
@@ -86,21 +86,21 @@
     <circle cx="1050" cy="80" r="0.7" class="b-star s4"/>
     <circle cx="1140" cy="15" r="0.5" class="b-star s5"/>
     <circle cx="1170" cy="85" r="0.6" class="b-star s6"/>
-    <circle cx="900" cy="20" r="4" fill="#f0883e" class="b-dot b-p1" filter="url(#{id}-gw)"/>
+    <circle cx="900" cy="20" r="4" fill="#f0883e" class="b-dot b-p1" filter="url(#operations-gw)"/>
     <circle cx="900" cy="20" r="2" fill="#f0883e" class="bf1"/>
-    <circle cx="1000" cy="40" r="3" fill="#f6d36b" class="b-dot b-p2" filter="url(#{id}-gw)"/>
+    <circle cx="1000" cy="40" r="3" fill="#f6d36b" class="b-dot b-p2" filter="url(#operations-gw)"/>
     <circle cx="1000" cy="40" r="1.5" fill="#f6d36b" class="bf2"/>
-    <circle cx="950" cy="80" r="3.5" fill="#f0883e" class="b-dot b-p1" filter="url(#{id}-gw)"/>
-    <circle cx="1100" cy="60" r="2.5" fill="#f6d36b" class="b-dot b-p2" filter="url(#{id}-gw)"/>
-    <circle cx="1050" cy="25" r="3" fill="#f0883e" class="b-dot b-p1" filter="url(#{id}-gw)"/>
+    <circle cx="950" cy="80" r="3.5" fill="#f0883e" class="b-dot b-p1" filter="url(#operations-gw)"/>
+    <circle cx="1100" cy="60" r="2.5" fill="#f6d36b" class="b-dot b-p2" filter="url(#operations-gw)"/>
+    <circle cx="1050" cy="25" r="3" fill="#f0883e" class="b-dot b-p1" filter="url(#operations-gw)"/>
     <rect x="12" y="8" width="1176" height="84" rx="10" class="b-card" stroke-width="1"/>
-    <rect x="12" y="8" width="5" height="84" rx="2.5" fill="url(#{id}-acc)"/>
+    <rect x="12" y="8" width="5" height="84" rx="2.5" fill="url(#operations-acc)"/>
     <text x="40" y="62" font-family="'SF Pro Display','Segoe UI',sans-serif" font-size="32">⚙️</text>
     <text x="90" y="58" font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-weight="700" font-size="28" class="b-title">Operations</text>
     <line x1="260" y1="25" x2="260" y2="75" class="b-sep" stroke-width="1"/>
     <rect x="275" y="32" width="96" height="28" rx="14" class="b-badge" stroke-width="1"/>
     <text x="323" y="51" text-anchor="middle" font-family="'SF Pro Text','Segoe UI',sans-serif" font-size="12" font-weight="600" class="b-badge-t">4 agents</text>
     <text x="389" y="52" font-family="'SF Pro Text','Segoe UI',Helvetica,Arial,sans-serif" font-size="15" class="b-sub">Deploy · Monitor · Schedule · Postmortem</text>
-    <rect x="12" y="89" width="1176" height="3" rx="1.5" fill="url(#{id}-acc)" opacity="0.35" class="b-shim"/>
+    <rect x="12" y="89" width="1176" height="3" rx="1.5" fill="url(#operations-acc)" opacity="0.35" class="b-shim"/>
   </g>
 </svg>

@@ -7,7 +7,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Agents: 114](https://img.shields.io/badge/Agents-114-brightgreen.svg?style=flat-square)](#-categories)
-[![Categories: 14](https://img.shields.io/badge/Categories-15-orange.svg?style=flat-square)](#-categories)
+[![Categories: 15](https://img.shields.io/badge/Categories-15-orange.svg?style=flat-square)](#-categories)
 [![GitHub Stars](https://img.shields.io/github/stars/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/network/members)
 [![GitHub Issues](https://img.shields.io/github/issues/Shineii86/AgentSpace?style=flat-square)](https://github.com/Shineii86/AgentSpace/issues)
@@ -39,6 +39,7 @@
   - [📊 Data & Query](#-data--query)
   - [⚙️ Scripting & Automation](#%EF%B8%8F-scripting--automation)
   - [📝 Config / Markup / Data Formats](#-config--markup--data-formats)
+  - [Frameworks](#-frameworks)
 - [Agent Definition Format](#-agent-definition-format)
 - [Usage](#-usage)
 - [Contributing](#-contributing)
@@ -81,6 +82,7 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 | [📊 Data & Query](#-data--query) | 6 | SQL, ETL, data modeling, GraphQL, time series, search engines |
 | [⚙️ Scripting & Automation](#%EF%B8%8F-scripting--automation) | 6 | Task runners, CI/CD, workflows, cron, CLI tools, templates |
 | [📝 Config / Markup / Data Formats](#-config--markup--data-formats) | 6 | YAML, JSON, TOML, Markdown, environment config, XML/HTML |
+| [Frameworks](#-frameworks) | 13 | Next.js, React, Vue, Angular, Svelte, Astro, Express, Vite, Webpack |
 
 </div>
 
@@ -363,6 +365,38 @@ Agent definitions are the **"source code"** of AI agents. They tell an AI:
 - [**MARKDOWN-ENGINEER**](config-formats/MARKDOWN-ENGINEER.md) — Write structured Markdown for docs, READMEs, and technical content. Mermaid diagrams, tables, cross-references.
 - [**ENV-CONFIG-MANAGER**](config-formats/ENV-CONFIG-MANAGER.md) — Design environment configurations, .env files, secret management, and feature flag systems.
 - [**XML-HTML-SPECIALIST**](config-formats/XML-HTML-SPECIALIST.md) — Write and validate XML/HTML. Schema design (XSD/DTD), XSLT transforms, semantic HTML5 markup.
+
+---
+
+<div align="center">
+<img src="assets/banners/frameworks.svg" alt="Frameworks" width="100%"/>
+</div>
+
+### Frameworks
+
+*Agents for modern web frameworks and build tools — from full-stack meta-frameworks to bundlers.*
+
+#### Full-Stack & Meta-Frameworks
+
+- [**NEXTJS**](frameworks/NEXTJS.md) — Build production-grade Next.js applications with App Router, server components, and full-stack capabilities.
+- [**NUXT**](frameworks/NUXT.md) — Build full-stack Nuxt applications with server routes, auto-imports, and hybrid rendering strategies.
+- [**SVELTEKIT**](frameworks/SVELTEKIT.md) — Build full-stack SvelteKit applications with server-side rendering, form actions, and edge deployment.
+- [**REMIX**](frameworks/REMIX.md) — Build resilient, progressively enhanced web applications with Remix's web-standard approach and nested routing.
+- [**GATSBY**](frameworks/GATSBY.md) — Build fast, SEO-optimized static sites and progressive web apps with Gatsby's GraphQL data layer.
+- [**ASTRO**](frameworks/ASTRO.md) — Build fast, content-focused websites with Astro's island architecture and zero-JS-by-default approach.
+
+#### UI Frameworks
+
+- [**REACT**](frameworks/REACT.md) — Build modern React applications with hooks, concurrent features, and component architecture best practices.
+- [**VUE**](frameworks/VUE.md) — Build modern Vue.js applications with the Composition API, reactivity system, and component architecture.
+- [**ANGULAR**](frameworks/ANGULAR.md) — Build enterprise-grade Angular applications with signals, standalone components, and dependency injection.
+- [**SVELTE**](frameworks/SVELTE.md) — Build fast, lightweight web applications with Svelte's compile-time reactivity and minimal boilerplate.
+
+#### Backend & Build Tools
+
+- [**EXPRESS**](frameworks/EXPRESS.md) — Build robust, production-ready Node.js APIs and web servers with Express.js middleware architecture.
+- [**VITE**](frameworks/VITE.md) — Configure and optimize Vite-based build pipelines for fast development and production-optimized bundles.
+- [**WEBPACK**](frameworks/WEBPACK.md) — Configure and optimize Webpack build pipelines for complex applications requiring fine-grained bundle control.
 
 ---
 
